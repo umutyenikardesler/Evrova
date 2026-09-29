@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<style>:root{--bg:#101827;--card:#202C3D;--card2:#2A3950;--lime:#B9F227;--lime-soft:rgba(185,242,39,.14);--ink:#FFFFFF;--muted:#9AA4B2;--line:rgba(255,255,255,.08);--up:#FF8A65;--down:#6EE09A}*{box-sizing:border-box}body{margin:0;background:#070b12;color:var(--ink);font-family:"Manrope",system-ui,sans-serif}a{color:var(--lime)}a:hover{color:#d4ff6a}button:focus-visible{outline:2px solid var(--lime);outline-offset:2px}.scr::-webkit-scrollbar{display:none}</style>
+</helmet>
+<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px 16px">
+<div style="width:390px;height:844px;flex:none;border-radius:52px;background:var(--bg);box-shadow:0 0 0 10px #000,0 0 0 11px #2a3546,0 30px 80px rgba(0,0,0,.6);overflow:hidden;position:relative;display:flex;flex-direction:column">
+  <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 30px;font-size:14px;font-weight:700">
+    <span>9:41</span><div style="width:110px;height:30px;border-radius:999px;background:#000"></div><span>87%</span>
+  </div>
+
+  <div ref="{{ scrollRef }}" class="scr" style="flex:1;overflow-y:auto;scrollbar-width:none;position:relative">
+
+  <sc-if value="{{ showHome }}" hint-placeholder-val="{{ true }}">
+    <div style="padding:10px 18px 24px;display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="width:48px;height:48px;flex:none;border-radius:14px;background:var(--lime);display:flex;align-items:center;justify-content:center;color:var(--bg)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg>
+        </div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:21px;font-weight:800;letter-spacing:.01em;line-height:1.1">EVROVA</div>
+          <div style="font-size:13px;color:var(--muted)">Merhaba Deniz</div>
+        </div>
+        <button onClick="{{ goNotif }}" aria-label="Bildirimler" style="position:relative;width:40px;height:40px;border:0;border-radius:50%;background:transparent;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center" style-hover="background:var(--card)">
+          <sc-if value="{{ hasUnread }}"><span style="position:absolute;top:7px;right:8px;width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 2px var(--bg)"></span></sc-if>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.268 21a2 2 0 0 0 3.464 0"></path><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path></svg>
+        </button>
+        <button onClick="{{ goProfile }}" aria-label="Profil" style="width:40px;height:40px;flex:none;border:2px solid var(--lime);border-radius:50%;background:var(--card);color:var(--lime);font:800 15px Manrope,sans-serif;cursor:pointer" style-hover="background:var(--card2)">D</button>
+      </div>
+
+      <div style="background:var(--card);border-radius:22px;padding:18px;display:flex;flex-direction:column;gap:6px">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px">
+          <span style="font-size:13px;font-weight:600;color:var(--muted)">Güncel araç fiyatları</span>
+          <span style="font-size:12px;font-weight:600;color:var(--down);background:rgba(110,224,154,.12);padding:4px 10px;border-radius:999px">Eylül 2026</span>
+        </div>
+        <div style="font-size:30px;font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-top:4px">Araçları keşfet</div>
+        <div style="font-size:14px;color:var(--muted)">Motosiklet, otomobil ve kamyonet fiyatlarını karşılaştır.</div>
+        <button onClick="{{ goVehicles }}" style="margin-top:12px;height:50px;border:0;border-radius:14px;background:var(--lime);color:var(--bg);font:700 16px Manrope,sans-serif;cursor:pointer" style-hover="background:#ccff4d" style-active="background:#a5d91f">Araçları incele →</button>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+        <button onClick="{{ goPrices }}" style="border:0;cursor:pointer;text-align:left;font:inherit;color:inherit;background:var(--card);border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:14px" style-hover="background:var(--card2)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"></path><path d="M16 7h6v6"></path></svg>
+          <div><div style="font-size:16px;font-weight:700">Fiyat takibi</div><div style="font-size:12px;color:var(--muted);margin-top:4px">Aylık fiyat değişimleri</div></div>
+        </button>
+        <button onClick="{{ soonCharge }}" style="border:0;cursor:pointer;text-align:left;font:inherit;color:inherit;background:var(--card);border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:14px" style-hover="background:var(--card2)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg>
+          <div><div style="font-size:16px;font-weight:700">Şarj noktaları</div><div style="font-size:12px;color:var(--muted);margin-top:4px">İstasyonlar ve ücretler</div></div>
+        </button>
+        <button onClick="{{ goNews }}" style="border:0;cursor:pointer;text-align:left;font:inherit;color:inherit;background:var(--card);border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:14px" style-hover="background:var(--card2)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18h-5"></path><path d="M18 14h-8"></path><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2"></path><rect width="8" height="4" x="10" y="6" rx="1"></rect></svg>
+          <div><div style="font-size:16px;font-weight:700">Haberler</div><div style="font-size:12px;color:var(--muted);margin-top:4px">Mobilite gündemi</div></div>
+        </button>
+        <button onClick="{{ soonTax }}" style="border:0;cursor:pointer;text-align:left;font:inherit;color:inherit;background:var(--card);border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:14px" style-hover="background:var(--card2)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M7 21h10"></path><path d="M12 3v18"></path><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"></path></svg>
+          <div><div style="font-size:16px;font-weight:700">Vergi rehberi</div><div style="font-size:12px;color:var(--muted);margin-top:4px">MTV ve ÖTV bilgileri</div></div>
+        </button>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:6px">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <div style="font-size:17px;font-weight:700">Takip ettiklerin</div>
+          <button onClick="{{ goPrices }}" style="border:0;background:transparent;color:var(--lime);font:600 13px Manrope,sans-serif;cursor:pointer">Tümü</button>
+        </div>
+        <sc-if value="{{ hasWatch }}" hint-placeholder-val="{{ true }}">
+          <div style="background:var(--card);border-radius:20px;padding:4px 16px">
+            <sc-for list="{{ watchRows }}" as="r" hint-placeholder-count="3">
+              <button onClick="{{ r.onClick }}" style="width:100%;border:0;background:transparent;font:inherit;color:inherit;cursor:pointer;display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:{{ r.border }};text-align:left">
+                <div style="flex:1;min-width:0"><div style="font-weight:700;font-size:15px">{{ r.name }}</div><div style="font-size:12px;color:var(--muted)">{{ r.type }}</div></div>
+                <div style="text-align:right"><div style="font-weight:700;font-size:15px">{{ r.priceText }}</div><div style="font-size:12px;font-weight:700;color:{{ r.momColor }}">{{ r.momText }} bu ay</div></div>
+              </button>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ noWatch }}" hint-placeholder-val="{{ false }}">
+          <div style="background:var(--card);border-radius:20px;padding:16px;font-size:13px;color:var(--muted)">Henüz takip ettiğin bir araç yok. Araç kartındaki kalp simgesiyle fiyatını takibe alabilirsin.</div>
+        </sc-if>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showVehicles }}" hint-placeholder-val="{{ false }}">
+    <div style="padding:10px 18px 24px;display:flex;flex-direction:column;gap:16px">
+      <div style="font-size:28px;font-weight:800;letter-spacing:-.02em">Araçlar</div>
+      <div style="display:flex;gap:6px">
+        <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+          <button onClick="{{ f.onClick }}" style="flex:1 1 auto;min-width:0;white-space:nowrap;border:0;cursor:pointer;font:700 12.5px Manrope,sans-serif;padding:10px 8px;border-radius:12px;background:{{ f.bg }};color:{{ f.color }}">{{ f.label }}</button>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <sc-for list="{{ vehicleList }}" as="v" hint-placeholder-count="4">
+          <div onClick="{{ v.onClick }}" style="background:var(--card);border-radius:20px;display:flex;align-items:center;gap:14px;padding:14px;cursor:pointer" style-hover="background:var(--card2)">
+            <div style="width:76px;height:76px;flex:none;border-radius:16px;background:var(--lime-soft);display:flex;align-items:center;justify-content:center;color:var(--lime)">
+              <sc-if value="{{ v.isMoto }}"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18.5" cy="17.5" r="3.5"></circle><circle cx="5.5" cy="17.5" r="3.5"></circle><circle cx="15" cy="5" r="1"></circle><path d="M12 17.5V14l-3-3 4-3 2 3h2"></path></svg></sc-if>
+              <sc-if value="{{ v.isCar }}"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle></svg></sc-if>
+              <sc-if value="{{ v.isVan }}"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path d="M15 18H9"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path><circle cx="17" cy="18" r="2"></circle><circle cx="7" cy="18" r="2"></circle></svg></sc-if>
+            </div>
+            <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px">
+              <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--lime)">{{ v.typeLabel }}</div>
+              <div style="font-size:16px;font-weight:700">{{ v.name }}</div>
+              <div style="font-size:12px;color:var(--muted)">{{ v.range }} menzil · {{ v.battery }}</div>
+              <div style="font-weight:800;font-size:15px;margin-top:4px">{{ v.priceText }}</div>
+            </div>
+            <button onClick="{{ v.toggleWatch }}" aria-label="Takibe al" style="width:40px;height:40px;flex:none;align-self:flex-start;border:0;border-radius:50%;background:transparent;color:var(--lime);cursor:pointer;display:flex;align-items:center;justify-content:center" style-hover="background:var(--lime-soft)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="{{ v.heartFill }}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
+            </button>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showDetail }}" hint-placeholder-val="{{ false }}">
+    <div style="padding:6px 18px 24px;display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <button onClick="{{ closeDetail }}" aria-label="Geri" style="width:44px;height:44px;border:0;border-radius:14px;background:var(--card);color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center" style-hover="background:var(--card2)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg></button>
+        <button onClick="{{ d.toggleWatch }}" aria-label="Takibe al" style="width:44px;height:44px;border:0;border-radius:14px;background:var(--card);color:var(--lime);cursor:pointer;display:flex;align-items:center;justify-content:center" style-hover="background:var(--card2)"><svg width="20" height="20" viewBox="0 0 24 24" fill="{{ d.heartFill }}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button>
+      </div>
+      <div style="height:200px;border-radius:22px;background:var(--card);display:flex;align-items:center;justify-content:center;font:600 11px ui-monospace,monospace;color:var(--muted)">araç fotoğrafı</div>
+      <div>
+        <div style="display:flex;gap:6px;margin-bottom:8px">
+          <span style="font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--lime-soft);color:var(--lime)">{{ d.typeLabel }}</span>
+          <span style="font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--card);color:var(--muted)">{{ d.tagline }}</span>
+        </div>
+        <div style="font-size:28px;font-weight:800;letter-spacing:-.02em">{{ d.name }}</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px">
+        <sc-for list="{{ d.specs }}" as="s" hint-placeholder-count="4">
+          <div style="background:var(--card);border-radius:18px;padding:14px 16px"><div style="font-size:12px;color:var(--muted)">{{ s.label }}</div><div style="font-size:19px;font-weight:800;margin-top:2px">{{ s.value }}</div></div>
+        </sc-for>
+      </div>
+      <div style="background:var(--card);border-radius:22px;padding:18px;display:flex;flex-direction:column;gap:4px">
+        <div style="font-size:12px;font-weight:600;color:var(--muted)">Eylül 2026 liste fiyatı</div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px;flex-wrap:wrap">
+          <div style="font-size:26px;font-weight:800">{{ d.priceText }}</div>
+          <span style="font-size:13px;font-weight:700;color:{{ d.yoyColor }}">{{ d.yoyText }} / 12 ay</span>
+        </div>
+        <svg width="100%" viewBox="0 0 310 90" style="display:block;margin-top:8px"><path d="{{ d.area }}" fill="rgba(185,242,39,.12)"></path><path d="{{ d.line }}" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted)"><span>Eki 2025</span><span>Eyl 2026</span></div>
+      </div>
+      <button onClick="{{ d.openPrices }}" style="height:52px;border:0;border-radius:14px;background:var(--lime);color:var(--bg);font:700 16px Manrope,sans-serif;cursor:pointer" style-hover="background:#ccff4d">{{ d.cta }}</button>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showPrices }}" hint-placeholder-val="{{ false }}">
+    <div style="padding:10px 18px 24px;display:flex;flex-direction:column;gap:16px">
+      <div style="font-size:28px;font-weight:800;letter-spacing:-.02em">Fiyat takibi</div>
+      <sc-if value="{{ noWatch }}" hint-placeholder-val="{{ false }}">
+        <div style="background:var(--card);border-radius:22px;padding:18px;display:flex;flex-direction:column;gap:10px"><div style="font-size:17px;font-weight:700">Takip listen boş</div><div style="font-size:13px;color:var(--muted)">Aylık fiyat değişimini görmek için Araçlar sayfasından bir model seç.</div><button onClick="{{ goVehicles }}" style="align-self:flex-start;height:44px;padding:0 18px;border:0;border-radius:12px;background:var(--lime);color:var(--bg);font:700 14px Manrope,sans-serif;cursor:pointer">Araçlara göz at</button></div>
+      </sc-if>
+      <sc-if value="{{ hasWatch }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div ref="{{ dragScroll }}" class="scr" style="display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -18px;padding:0 18px;cursor:grab">
+            <sc-for list="{{ watchChips }}" as="c" hint-placeholder-count="3">
+              <button onClick="{{ c.onClick }}" style="flex:none;white-space:nowrap;border:0;cursor:pointer;font:700 13px Manrope,sans-serif;padding:10px 16px;border-radius:12px;background:{{ c.bg }};color:{{ c.color }}">{{ c.name }}</button>
+            </sc-for>
+          </div>
+          <div style="background:var(--card);border-radius:22px;padding:18px;display:flex;flex-direction:column;gap:14px">
+            <div>
+              <div style="font-size:13px;font-weight:600;color:var(--muted)">{{ p.monthLabel }}</div>
+              <div style="font-size:30px;font-weight:800;letter-spacing:-.02em;line-height:1.2">{{ p.selPrice }}</div>
+              <div style="font-size:13px;font-weight:700;color:{{ p.selColor }}">{{ p.selChange }}</div>
+            </div>
+            <div style="display:flex;align-items:flex-end;gap:5px;height:130px">
+              <sc-for list="{{ p.bars }}" as="b" hint-placeholder-count="12">
+                <button onClick="{{ b.onClick }}" aria-label="{{ b.label }}" style="flex:1;border:0;padding:0;cursor:pointer;background:transparent;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:6px">
+                  <div style="width:100%;height:{{ b.h }};background:{{ b.bg }};border-radius:6px;transition:background .2s"></div>
+                  <div style="font-size:9.5px;font-weight:700;color:{{ b.labelColor }}">{{ b.label }}</div>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;background:var(--card);border-radius:20px;padding:14px 16px">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.268 21a2 2 0 0 0 3.464 0"></path><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path></svg>
+            <div style="flex:1"><div style="font-weight:700;font-size:14px">Fiyat alarmı</div><div style="font-size:12px;color:var(--muted)">Fiyat %2'den fazla değişirse bildir</div></div>
+            <button onClick="{{ p.toggleAlarm }}" role="switch" aria-label="Fiyat alarmı" style="width:50px;height:30px;flex:none;border:0;border-radius:999px;cursor:pointer;position:relative;background:{{ p.alarmBg }};transition:background .2s"><span style="position:absolute;top:3px;left:{{ p.knob }};width:24px;height:24px;border-radius:50%;background:#fff;transition:left .2s"></span></button>
+          </div>
+          <div style="background:var(--card);border-radius:20px;padding:6px 16px">
+            <div style="display:flex;padding:12px 0 8px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)"><span style="flex:1">Ay</span><span style="width:120px;text-align:right">Fiyat</span><span style="width:72px;text-align:right">Değişim</span></div>
+            <sc-for list="{{ p.rows }}" as="r" hint-placeholder-count="6">
+              <div style="display:flex;padding:11px 0;border-top:1px solid var(--line);font-size:14px"><span style="flex:1">{{ r.month }}</span><span style="width:120px;text-align:right;font-weight:700">{{ r.price }}</span><span style="width:72px;text-align:right;font-weight:700;color:{{ r.color }}">{{ r.change }}</span></div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showNews }}" hint-placeholder-val="{{ false }}">
+    <div style="padding:10px 18px 24px;display:flex;flex-direction:column;gap:16px">
+      <div style="font-size:28px;font-weight:800;letter-spacing:-.02em">Haberler</div>
+      <div style="position:relative;margin:0 -18px">
+        <div ref="{{ dragScroll }}" class="scr" style="display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:0 18px;cursor:grab;scroll-behavior:smooth">
+          <sc-for list="{{ newsChips }}" as="c" hint-placeholder-count="5">
+            <button onClick="{{ c.onClick }}" style="flex:none;white-space:nowrap;border:0;cursor:pointer;font:700 13px Manrope,sans-serif;padding:10px 16px;border-radius:12px;background:{{ c.bg }};color:{{ c.color }}">{{ c.label }}</button>
+          </sc-for>
+          <div style="flex:none;width:10px"></div>
+        </div>
+        <div style="position:absolute;top:0;right:0;bottom:0;width:36px;pointer-events:none;background:linear-gradient(to right,rgba(16,24,39,0),var(--bg))"></div>
+      </div>
+      <sc-if value="{{ lead }}">
+        <button onClick="{{ lead.onClick }}" style="border:0;font:inherit;color:inherit;cursor:pointer;text-align:left;background:var(--card);border-radius:22px;padding:12px 12px 18px;display:flex;flex-direction:column;gap:14px" style-hover="background:var(--card2)">
+          <div style="height:170px;border-radius:16px;background:var(--card2);display:flex;align-items:center;justify-content:center;font:600 11px ui-monospace,monospace;color:var(--muted)">haber görseli</div>
+          <div style="padding:0 6px"><div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--lime)">{{ lead.cat }}</div><div style="font-size:20px;font-weight:800;line-height:1.25;text-wrap:pretty;margin:4px 0 6px">{{ lead.title }}</div><div style="font-size:12px;color:var(--muted)">{{ lead.date }} · {{ lead.read }}</div></div>
+        </button>
+      </sc-if>
+      <sc-for list="{{ restNews }}" as="n" hint-placeholder-count="3">
+        <button onClick="{{ n.onClick }}" style="border:0;font:inherit;color:inherit;cursor:pointer;text-align:left;display:flex;gap:14px;align-items:center;background:var(--card);border-radius:20px;padding:12px" style-hover="background:var(--card2)">
+          <div style="width:72px;height:72px;flex:none;border-radius:14px;background:var(--card2);display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:var(--muted)">görsel</div>
+          <div style="min-width:0"><div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--lime)">{{ n.cat }}</div><div style="font-size:15px;font-weight:700;line-height:1.3;text-wrap:pretty">{{ n.title }}</div><div style="font-size:12px;color:var(--muted);margin-top:4px">{{ n.date }} · {{ n.read }}</div></div>
+        </button>
+      </sc-for>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showArticle }}" hint-placeholder-val="{{ false }}">
+    <div style="padding:6px 18px 28px;display:flex;flex-direction:column;gap:16px">
+      <button onClick="{{ closeArticle }}" aria-label="Geri" style="width:44px;height:44px;border:0;border-radius:14px;background:var(--card);color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center" style-hover="background:var(--card2)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg></button>
+      <div><span style="font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--lime-soft);color:var(--lime)">{{ a.cat }}</span></div>
+      <div style="font-size:26px;font-weight:800;line-height:1.2;letter-spacing:-.02em;text-wrap:pretty">{{ a.title }}</div>
+      <div style="font-size:12px;color:var(--muted)">{{ a.date }} · {{ a.read }} okuma</div>
+      <div style="height:200px;border-radius:22px;background:var(--card);display:flex;align-items:center;justify-content:center;font:600 11px ui-monospace,monospace;color:var(--muted)">haber görseli</div>
+      <sc-for list="{{ a.body }}" as="para" hint-placeholder-count="2">
+        <p style="margin:0;font-size:16px;line-height:1.65;color:#dfe4ea;text-wrap:pretty">{{ para }}</p>
+      </sc-for>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showNotif }}" hint-placeholder-val="{{ false }}">
+    <div style="padding:6px 18px 24px;display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <button onClick="{{ goHome }}" aria-label="Geri" style="width:44px;height:44px;flex:none;border:0;border-radius:14px;background:var(--card);color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center" style-hover="background:var(--card2)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg></button>
+        <div style="flex:1;font-size:24px;font-weight:800;letter-spacing:-.02em">Bildirimler</div>
+        <sc-if value="{{ hasUnread }}"><button onClick="{{ readAll }}" style="border:0;background:transparent;color:var(--lime);font:600 13px Manrope,sans-serif;cursor:pointer">Tümünü okundu say</button></sc-if>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <sc-for list="{{ notifs }}" as="n" hint-placeholder-count="5">
+          <button onClick="{{ n.onClick }}" style="border:0;font:inherit;color:inherit;cursor:pointer;text-align:left;display:flex;gap:12px;align-items:flex-start;background:{{ n.bg }};border-radius:18px;padding:14px" style-hover="background:var(--card2)">
+            <div style="width:40px;height:40px;flex:none;border-radius:12px;background:var(--lime-soft);color:var(--lime);display:flex;align-items:center;justify-content:center">
+              <sc-if value="{{ n.isPrice }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"></path><path d="M16 7h6v6"></path></svg></sc-if>
+              <sc-if value="{{ n.isNews }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18h-5"></path><path d="M18 14h-8"></path><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2"></path><rect width="8" height="4" x="10" y="6" rx="1"></rect></svg></sc-if>
+              <sc-if value="{{ n.isSystem }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg></sc-if>
+            </div>
+            <div style="flex:1;min-width:0">
+              <div style="display:flex;justify-content:space-between;gap:8px"><span style="font-size:14px;font-weight:700">{{ n.title }}</span><span style="flex:none;font-size:11px;color:var(--muted)">{{ n.time }}</span></div>
+              <div style="font-size:13px;color:var(--muted);margin-top:2px;text-wrap:pretty">{{ n.text }}</div>
+            </div>
+            <sc-if value="{{ n.unread }}"><span style="width:8px;height:8px;flex:none;margin-top:6px;border-radius:50%;background:var(--lime)"></span></sc-if>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showProfile }}" hint-placeholder-val="{{ false }}">
+    <div style="padding:10px 18px 24px;display:flex;flex-direction:column;gap:16px">
+      <div style="font-size:28px;font-weight:800;letter-spacing:-.02em">Profil</div>
+      <div style="background:var(--card);border-radius:22px;padding:18px;display:flex;align-items:center;gap:14px">
+        <div style="width:64px;height:64px;flex:none;border-radius:50%;background:var(--lime);color:var(--bg);display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:800">D</div>
+        <div style="flex:1;min-width:0"><div style="font-size:19px;font-weight:800">Deniz</div><div style="font-size:13px;color:var(--muted)">deniz@ornek.com</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+        <button onClick="{{ goPrices }}" style="border:0;cursor:pointer;text-align:left;font:inherit;color:inherit;background:var(--card);border-radius:20px;padding:16px" style-hover="background:var(--card2)"><div style="font-size:28px;font-weight:800;color:var(--lime)">{{ watchCount }}</div><div style="font-size:13px;color:var(--muted)">Takip edilen araç</div></button>
+        <button onClick="{{ goPrices }}" style="border:0;cursor:pointer;text-align:left;font:inherit;color:inherit;background:var(--card);border-radius:20px;padding:16px" style-hover="background:var(--card2)"><div style="font-size:28px;font-weight:800;color:var(--lime)">{{ alarmCount }}</div><div style="font-size:13px;color:var(--muted)">Aktif fiyat alarmı</div></button>
+      </div>
+      <div style="background:var(--card);border-radius:20px;padding:4px 16px">
+        <div style="display:flex;align-items:center;gap:12px;padding:14px 0">
+          <div style="flex:1"><div style="font-weight:700;font-size:14px">Bildirimler</div><div style="font-size:12px;color:var(--muted)">Fiyat ve haber bildirimleri</div></div>
+          <button onClick="{{ toggleNotif }}" role="switch" aria-label="Bildirimler" style="width:50px;height:30px;flex:none;border:0;border-radius:999px;cursor:pointer;position:relative;background:{{ notifBg }};transition:background .2s"><span style="position:absolute;top:3px;left:{{ notifKnob }};width:24px;height:24px;border-radius:50%;background:#fff;transition:left .2s"></span></button>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-top:1px solid var(--line)">
+          <div style="flex:1"><div style="font-weight:700;font-size:14px">Kısa fiyat gösterimi</div><div style="font-size:12px;color:var(--muted)">Örn. 1,65 M ₺</div></div>
+          <button onClick="{{ toggleCompact }}" role="switch" aria-label="Kısa fiyat gösterimi" style="width:50px;height:30px;flex:none;border:0;border-radius:999px;cursor:pointer;position:relative;background:{{ compactBg }};transition:background .2s"><span style="position:absolute;top:3px;left:{{ compactKnob }};width:24px;height:24px;border-radius:50%;background:#fff;transition:left .2s"></span></button>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-top:1px solid var(--line)">
+          <div style="flex:1;font-weight:700;font-size:14px">Dil</div><div style="font-size:14px;color:var(--muted)">Türkçe</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-top:1px solid var(--line)">
+          <div style="flex:1;font-weight:700;font-size:14px">Para birimi</div><div style="font-size:14px;color:var(--muted)">TL (₺)</div>
+        </div>
+      </div>
+      <button style="height:50px;border:1px solid var(--line);border-radius:14px;background:transparent;color:var(--up);font:700 15px Manrope,sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px" style-hover="background:var(--card)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 17 5-5-5-5"></path><path d="M21 12H9"></path><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path></svg>Çıkış yap
+      </button>
+    </div>
+  </sc-if>
+  </div>
+
+  <sc-if value="{{ toast }}">
+    <div style="position:absolute;left:18px;right:18px;bottom:104px;background:var(--ink);color:var(--bg);border-radius:14px;padding:13px 16px;font-size:14px;font-weight:700;box-shadow:0 10px 30px rgba(0,0,0,.4)">{{ toast }}</div>
+  </sc-if>
+
+  <div style="flex:none;padding:8px 16px 24px">
+    <div style="background:var(--card);border-radius:20px;height:60px;padding:0 10px;display:flex;align-items:center;justify-content:space-between">
+      <button onClick="{{ goHome }}" aria-label="Ana sayfa" style="width:52px;height:44px;border:0;border-radius:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;background:{{ tb.home }};color:{{ tc.home }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></button>
+      <button onClick="{{ goVehicles }}" aria-label="Araçlar" style="width:52px;height:44px;border:0;border-radius:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;background:{{ tb.vehicles }};color:{{ tc.vehicles }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle></svg></button>
+      <button onClick="{{ goNews }}" aria-label="Haberler" style="width:52px;height:44px;border:0;border-radius:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;background:{{ tb.news }};color:{{ tc.news }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18h-5"></path><path d="M18 14h-8"></path><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2"></path><rect width="8" height="4" x="10" y="6" rx="1"></rect></svg></button>
+      <button onClick="{{ goPrices }}" aria-label="Fiyat takibi" style="width:52px;height:44px;border:0;border-radius:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;background:{{ tb.prices }};color:{{ tc.prices }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button>
+      <button onClick="{{ goProfile }}" aria-label="Profil" style="width:52px;height:44px;border:0;border-radius:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;background:{{ tb.profile }};color:{{ tc.profile }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></button>
+    </div>
+  </div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;startScreen&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;vehicles&quot;,&quot;prices&quot;,&quot;news&quot;,&quot;profile&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;compactPrices&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+const MONTHS = ['Eki','Kas','Ara','Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl'];
+const MONTHS_LONG = ['Ekim 2025','Kasım 2025','Aralık 2025','Ocak 2026','Şubat 2026','Mart 2026','Nisan 2026','Mayıs 2026','Haziran 2026','Temmuz 2026','Ağustos 2026','Eylül 2026'];
+const TYPES = { moto: 'Motosiklet', car: 'Otomobil', van: 'Kamyonet' };
+function series(base, pct) { let p = base; const out = [base]; pct.forEach(x => { p = Math.round(p * (1 + x / 100) / 1000) * 1000; out.push(p); }); return out; }
+const V = [
+  { id: 'm1', type: 'moto', name: 'Akım Kıvılcım', tagline: 'Şehir scooterı', range: '130 km', battery: '5,4 kWh', prices: series(189000, [1.2, 0.8, 2.1, 1.5, 0, -1.8, 0.6, 1.1, 0.9, 1.4, 0.7]), specs: [['Menzil', '130 km'], ['Batarya', '5,4 kWh'], ['0–50 km/s', '3,1 sn'], ['Şarj (AC)', '2,5 sa']] },
+  { id: 'm2', type: 'moto', name: 'Akım Fırtına R', tagline: 'Sport naked', range: '210 km', battery: '11 kWh', prices: series(529000, [0.9, 1.6, 2.4, 0.4, -2.2, -0.8, 1.3, 1.9, 0.5, 2.6, -1.1]), specs: [['Menzil', '210 km'], ['Batarya', '11 kWh'], ['0–100 km/s', '3,9 sn'], ['Hızlı şarj', '45 dk']] },
+  { id: 'c1', type: 'car', name: 'Volta Şehir', tagline: 'Kompakt hatchback', range: '410 km', battery: '60 kWh', prices: series(1649000, [1.1, 1.8, 3.2, 0.9, 1.2, -1.5, 0.8, 1.4, 2.0, 1.1, 1.6]), specs: [['Menzil', '410 km'], ['Batarya', '60 kWh'], ['0–100 km/s', '7,4 sn'], ['%10–80 şarj', '28 dk']] },
+  { id: 'c2', type: 'car', name: 'Volta Tur GT', tagline: 'Uzun yol sedan', range: '605 km', battery: '94 kWh', prices: series(2890000, [0.6, 1.2, 2.8, 1.5, -0.9, -2.4, 0.4, 1.0, 1.8, 0.3, 1.2]), specs: [['Menzil', '605 km'], ['Batarya', '94 kWh'], ['0–100 km/s', '4,6 sn'], ['%10–80 şarj', '22 dk']] },
+  { id: 'v1', type: 'van', name: 'Yük Mini', tagline: 'Şehir içi teslimat', range: '280 km', battery: '50 kWh', prices: series(1180000, [1.4, 1.0, 2.5, 1.2, 0.8, 0.2, 1.6, 1.1, 0.7, 1.9, 0.9]), specs: [['Menzil', '280 km'], ['Batarya', '50 kWh'], ['Taşıma kapasitesi', '750 kg'], ['%10–80 şarj', '32 dk']] },
+  { id: 'v2', type: 'van', name: 'Yük Pro', tagline: 'Panelvan', range: '350 km', battery: '83 kWh', prices: series(1960000, [0.8, 1.5, 2.9, 0.6, 1.1, -1.2, 1.9, 0.4, 1.3, 2.2, -0.6]), specs: [['Menzil', '350 km'], ['Batarya', '83 kWh'], ['Taşıma kapasitesi', '1.300 kg'], ['%10–80 şarj', '35 dk']] },
+];
+const NEWS = [
+  { id: 'n1', cat: 'Batarya', title: 'Katı hal hücreleri pilot üretim hattına taşındı', date: '28 Eyl', read: '4 dk', body: ['Birkaç üretici, katı hal batarya hücrelerini laboratuvar ölçeğinden pilot üretim hatlarına taşıdığını açıkladı. Hücrelerin aynı hacimde daha yüksek enerji yoğunluğu sunması bekleniyor.', 'Seri üretim takvimi için verilen tarihler henüz netleşmedi; ilk uygulamaların üst segment otomobillerde görülmesi öngörülüyor.'] },
+  { id: 'n2', cat: 'Şarj', title: 'Otoyol güzergâhlarında yüksek güçlü şarj noktaları çoğalıyor', date: '26 Eyl', read: '3 dk', body: ['Şarj ağı işletmecileri, şehirlerarası güzergâhlarda 150 kW ve üzeri istasyon sayısını artırmaya devam ediyor.', 'Kullanıcılar için en önemli başlıklar istasyon doluluk bilgisinin anlık paylaşılması ve tek uygulamadan ödeme imkânı olarak öne çıkıyor.'] },
+  { id: 'n3', cat: 'Motosiklet', title: 'Değiştirilebilir batarya istasyonları kuryelerin gündeminde', date: '24 Eyl', read: '5 dk', body: ['Batarya değişim istasyonları, şarj için beklemek yerine dolu bir modülü birkaç saniyede takmaya imkân veriyor.', 'Kurye filoları, bu modelin araç başına çalışma süresini artırabileceğini değerlendiriyor.'] },
+  { id: 'n4', cat: 'Yazılım', title: 'Uzaktan güncellemeyle menzil tahmini daha isabetli hale geliyor', date: '22 Eyl', read: '3 dk', body: ['Yeni nesil araç yazılımları; hava durumu, eğim ve sürüş alışkanlığını birlikte hesaba katarak kalan menzili tahmin ediyor.', 'Güncellemeler servis ziyareti gerektirmeden kablosuz olarak yükleniyor.'] },
+  { id: 'n5', cat: 'Ticari', title: 'Elektrikli kamyonetlerde yük ve menzil dengesi', date: '19 Eyl', read: '6 dk', body: ['Hafif ticari araçlarda batarya kapasitesi arttıkça taşınabilecek yük miktarı azalabiliyor.', 'Üreticiler hafif şasi malzemeleri ve verimli motorlarla bu dengeyi iyileştirmeye çalışıyor.'] },
+];
+const NOTIFS = [
+  { id: 'a1', kind: 'price', title: 'Volta Şehir fiyatı arttı', text: 'Eylül listesinde fiyat önceki aya göre %1,6 yükseldi.', time: '2 sa', go: ['prices', 'c1'] },
+  { id: 'a2', kind: 'news', title: 'Yeni haber: Batarya', text: 'Katı hal hücreleri pilot üretim hattına taşındı.', time: '5 sa', news: 'n1' },
+  { id: 'a3', kind: 'price', title: 'Yük Pro fiyatı düştü', text: 'Eylül listesinde fiyat önceki aya göre %0,6 geriledi.', time: 'Dün', go: ['prices', 'v2'] },
+  { id: 'a4', kind: 'news', title: 'Yeni haber: Şarj', text: 'Otoyol güzergâhlarında yüksek güçlü şarj noktaları çoğalıyor.', time: '3 gün', news: 'n2' },
+  { id: 'a5', kind: 'system', title: 'Eylül fiyat listeleri yayında', text: 'Tüm modellerin aylık fiyatları güncellendi.', time: '1 hf', go: ['vehicles'] },
+];
+const NEWS_CATS = ['Tümü', 'Batarya', 'Şarj', 'Motosiklet', 'Yazılım', 'Ticari'];
+const pct = (a, b) => (b - a) / a * 100;
+const fmtPct = x => (x > 0 ? '+' : x < 0 ? '−' : '±') + Math.abs(x).toFixed(1).replace('.', ',') + '%';
+const upColor = x => x > 0 ? 'var(--up)' : x < 0 ? 'var(--down)' : 'var(--muted)';
+const chip = on => ({ bg: on ? 'var(--lime)' : 'var(--card)', color: on ? 'var(--bg)' : 'var(--ink)' });
+const sw = on => ({ bg: on ? 'var(--lime)' : '#3a4a60', knob: on ? '23px' : '3px' });
+
+class Component extends DCLogic {
+  state = { tab: this.props.startScreen ?? 'home', filter: 'all', detailId: null, newsId: null, watch: ['c1', 'm2', 'v2'], priceSel: 'c1', monthSel: 11, alarms: { c1: true }, newsCat: 'Tümü', compact: !!this.props.compactPrices, notif: true, toast: null, read: ['a4', 'a5'] };
+  dragScroll = el => {
+    if (!el || el._ds) return; el._ds = 1;
+    el.addEventListener('wheel', e => { if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) { el.scrollLeft += e.deltaY; e.preventDefault(); } }, { passive: false });
+    let x0 = null, s0 = 0, moved = false;
+    el.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse') return; x0 = e.clientX; s0 = el.scrollLeft; moved = false; el.style.scrollBehavior = 'auto'; });
+    window.addEventListener('pointermove', e => { if (x0 === null) return; const dx = e.clientX - x0; if (Math.abs(dx) > 4) moved = true; el.scrollLeft = s0 - dx; });
+    window.addEventListener('pointerup', () => { x0 = null; el.style.scrollBehavior = ''; });
+    el.addEventListener('click', e => { if (moved) { e.stopPropagation(); e.preventDefault(); moved = false; } }, true);
+  };
+  scrollRef = React.createRef();
+  componentDidUpdate(pp) { if (pp.compactPrices !== this.props.compactPrices) this.setState({ compact: !!this.props.compactPrices }); }
+  componentWillUnmount() { clearTimeout(this.tt); }
+  top() { requestAnimationFrame(() => { if (this.scrollRef.current) this.scrollRef.current.scrollTop = 0; }); }
+  go(tab, extra) { this.setState({ tab, detailId: null, newsId: null, ...(extra || {}) }); this.top(); }
+  showToast(t) { clearTimeout(this.tt); this.setState({ toast: t }); this.tt = setTimeout(() => this.setState({ toast: null }), 2200); }
+  fmt(n) {
+    if (this.state.compact) return n >= 1e6 ? (n / 1e6).toLocaleString('tr-TR', { maximumFractionDigits: 2 }) + ' M ₺' : Math.round(n / 1000) + ' B ₺';
+    return n.toLocaleString('tr-TR') + ' ₺';
+  }
+  toggleWatch(id, e) {
+    if (e) e.stopPropagation();
+    this.setState(s => {
+      const w = s.watch.includes(id) ? s.watch.filter(x => x !== id) : [...s.watch, id];
+      return { watch: w, priceSel: w.includes(s.priceSel) ? s.priceSel : (w[0] || null) };
+    });
+  }
+  openNews(id) { this.setState({ tab: 'news', newsId: id, detailId: null }); this.top(); }
+  renderVals() {
+    const s = this.state;
+    const vis = v => ({ ...v, typeLabel: TYPES[v.type], priceText: this.fmt(v.prices[11]), isMoto: v.type === 'moto', isCar: v.type === 'car', isVan: v.type === 'van', watched: s.watch.includes(v.id), heartFill: s.watch.includes(v.id) ? 'currentColor' : 'none' });
+    const watched = s.watch.map(id => V.find(v => v.id === id));
+    const newsItem = n => ({ ...n, onClick: () => this.openNews(n.id) });
+    const tc = {}, tb = {};
+    ['home', 'vehicles', 'news', 'prices', 'profile'].forEach(k => { const on = k === s.tab; tc[k] = on ? 'var(--lime)' : 'var(--muted)'; tb[k] = on ? 'var(--lime-soft)' : 'transparent'; });
+
+    let d = {};
+    if (s.detailId) {
+      const v = vis(V.find(x => x.id === s.detailId));
+      const P = v.prices, min = Math.min(...P), max = Math.max(...P), W = 310, H = 90, pad = 6;
+      const pts = P.map((p, i) => [pad + i * (W - 2 * pad) / 11, H - pad - (p - min) / (max - min || 1) * (H - 2 * pad)]);
+      const line = pts.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ');
+      const yoy = pct(P[0], P[11]);
+      d = { ...v, specs: v.specs.map(([label, value]) => ({ label, value })), line, area: line + ` L${W - pad} ${H} L${pad} ${H} Z`, yoyText: fmtPct(yoy), yoyColor: upColor(yoy), toggleWatch: () => this.toggleWatch(v.id), cta: v.watched ? 'Aylık fiyat geçmişini gör' : 'Fiyatını takibe al', openPrices: () => { if (!v.watched) this.toggleWatch(v.id); this.go('prices', { priceSel: v.id, monthSel: 11 }); } };
+    }
+
+    let p = {};
+    const sel = watched.find(v => v.id === s.priceSel) || watched[0];
+    if (sel) {
+      const P = sel.prices, min = Math.min(...P) * 0.96, max = Math.max(...P);
+      const m = s.monthSel, ch = m > 0 ? pct(P[m - 1], P[m]) : null;
+      const a = sw(!!s.alarms[sel.id]);
+      p = {
+        monthLabel: MONTHS_LONG[m], selPrice: this.fmt(P[m]),
+        selChange: ch === null ? 'Takip başlangıcı' : fmtPct(ch) + ' önceki aya göre', selColor: ch === null ? 'var(--muted)' : upColor(ch),
+        bars: P.map((v, i) => ({ h: (18 + (v - min) / (max - min) * 82).toFixed(0) + '%', bg: i === m ? 'var(--lime)' : '#34445c', labelColor: i === m ? 'var(--lime)' : 'var(--muted)', label: MONTHS[i], onClick: () => this.setState({ monthSel: i }) })),
+        rows: [11, 10, 9, 8, 7, 6].map(i => { const c = pct(P[i - 1], P[i]); return { month: MONTHS_LONG[i], price: this.fmt(P[i]), change: fmtPct(c), color: upColor(c) }; }),
+        alarmBg: a.bg, knob: a.knob,
+        toggleAlarm: () => this.setState(st => ({ alarms: { ...st.alarms, [sel.id]: !st.alarms[sel.id] } })),
+      };
+    }
+
+    const newsF = NEWS.filter(n => s.newsCat === 'Tümü' || n.cat === s.newsCat).map(newsItem);
+    const n = sw(s.notif), c = sw(s.compact);
+    const noDet = !s.detailId;
+    return {
+      scrollRef: this.scrollRef,
+      showHome: noDet && s.tab === 'home', showVehicles: noDet && s.tab === 'vehicles', showDetail: !!s.detailId,
+      showPrices: noDet && s.tab === 'prices', showNews: noDet && s.tab === 'news' && !s.newsId, showArticle: noDet && s.tab === 'news' && !!s.newsId,
+      showProfile: noDet && s.tab === 'profile', showNotif: noDet && s.tab === 'notif',
+      goNotif: () => this.go('notif'), dragScroll: this.dragScroll,
+      hasUnread: NOTIFS.some(x => !s.read.includes(x.id)),
+      readAll: () => this.setState({ read: NOTIFS.map(x => x.id) }),
+      notifs: NOTIFS.map(x => { const unread = !s.read.includes(x.id); return { ...x, unread, bg: unread ? 'var(--card)' : 'transparent', isPrice: x.kind === 'price', isNews: x.kind === 'news', isSystem: x.kind === 'system', onClick: () => { this.setState(st => ({ read: st.read.includes(x.id) ? st.read : [...st.read, x.id] })); if (x.news) this.openNews(x.news); else if (x.go[1]) this.go('prices', { priceSel: x.go[1], monthSel: 11, watch: s.watch.includes(x.go[1]) ? s.watch : [...s.watch, x.go[1]] }); else this.go(x.go[0]); } }; }),
+      goHome: () => this.go('home'), goVehicles: () => this.go('vehicles'), goPrices: () => this.go('prices'), goNews: () => this.go('news'), goProfile: () => this.go('profile'),
+      soonCharge: () => this.showToast('Şarj noktaları yakında'), soonTax: () => this.showToast('Vergi rehberi yakında'),
+      toast: s.toast,
+      tc, tb,
+      hasWatch: watched.length > 0, noWatch: watched.length === 0,
+      watchCount: String(watched.length), alarmCount: String(watched.filter(v => s.alarms[v.id]).length),
+      watchRows: watched.map((v, i) => { const ch = pct(v.prices[10], v.prices[11]); return { name: v.name, type: TYPES[v.type], priceText: this.fmt(v.prices[11]), momText: fmtPct(ch), momColor: upColor(ch), border: i < watched.length - 1 ? '1px solid var(--line)' : '0', onClick: () => this.go('prices', { priceSel: v.id, monthSel: 11 }) }; }),
+      filters: [['all', 'Tümü'], ['moto', 'Motosiklet'], ['car', 'Otomobil'], ['van', 'Kamyonet']].map(([k, label]) => ({ label, ...chip(s.filter === k), onClick: () => this.setState({ filter: k }) })),
+      vehicleList: V.filter(v => s.filter === 'all' || v.type === s.filter).map(v => ({ ...vis(v), onClick: () => { this.setState({ detailId: v.id }); this.top(); }, toggleWatch: e => this.toggleWatch(v.id, e) })),
+      d, closeDetail: () => { this.setState({ detailId: null }); this.top(); },
+      p,
+      watchChips: watched.map(v => ({ name: v.name, ...chip(v.id === (sel && sel.id)), onClick: () => this.setState({ priceSel: v.id, monthSel: 11 }) })),
+      newsChips: NEWS_CATS.map(cat => ({ label: cat, ...chip(cat === s.newsCat), onClick: () => this.setState({ newsCat: cat }) })),
+      lead: newsF[0] || null, restNews: newsF.slice(1),
+      a: s.newsId ? NEWS.find(x => x.id === s.newsId) : {}, closeArticle: () => { this.setState({ newsId: null }); this.top(); },
+      notifBg: n.bg, notifKnob: n.knob, toggleNotif: () => this.setState(st => ({ notif: !st.notif })),
+      compactBg: c.bg, compactKnob: c.knob, toggleCompact: () => this.setState(st => ({ compact: !st.compact })),
+    };
+  }
+}
+</script>
+</body>
+</html>
