@@ -19,12 +19,14 @@ function groupCount(list: Vehicle[], key: (v: Vehicle) => string) {
   return [...map].map(([name, count]) => ({ name, count }));
 }
 
-/** Markalar ve model sayıları (ilk görünme sırasıyla). */
+const byName = (a: string, b: string) => a.localeCompare(b, 'tr', { numeric: true, sensitivity: 'base' });
+
+/** Markalar (A-Z) ve model sayıları. */
 export const brandsOf = (list: Vehicle[]) =>
-  [...new Map(list.map((v) => [brandOf(v), new Set<string>()])).keys()].map((brand) => ({
+  [...new Set(list.map(brandOf))].sort(byName).map((brand) => ({
     brand,
     count: new Set(list.filter((v) => brandOf(v) === brand).map(modelOf)).size,
   }));
 
-/** Bir markanın modelleri ve paket sayıları. */
-export const modelsOf = (list: Vehicle[]) => groupCount(list, modelOf);
+/** Bir markanın modelleri (A-Z, sayılar doğal sırada) ve paket sayıları. */
+export const modelsOf = (list: Vehicle[]) => groupCount(list, modelOf).sort((a, b) => byName(a.name, b.name));

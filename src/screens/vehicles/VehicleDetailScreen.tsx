@@ -3,13 +3,15 @@ import { View } from 'react-native';
 import AppText from '../../components/AppText';
 import { BackButton, HeartButton, PrimaryButton } from '../../components/Buttons';
 import { Pill } from '../../components/Chips';
-import { Card, Page, PhotoPlaceholder } from '../../components/Layout';
+import { Card, Page } from '../../components/Layout';
 import PriceLineChart from '../../components/PriceLineChart';
 import { useApp } from '../../context/AppContext';
 import { useNav } from '../../navigation/NavContext';
 import { colors } from '../../theme/colors';
 import { changeColor } from '../../utils/color';
 import { formatPct, pctChange } from '../../utils/format';
+import { vehicleGallery } from '../../utils/vehicleImage';
+import DetailPhoto from './DetailPhoto';
 
 export default function VehicleDetailScreen({ id }: { id: string }) {
   const { t, lang, vehicles, price, isWatched, toggleWatch } = useApp();
@@ -27,7 +29,7 @@ export default function VehicleDetailScreen({ id }: { id: string }) {
         <HeartButton square size={44} active={watched} onPress={() => toggleWatch(v.id)} label={t('vehicles.watch')} />
       </View>
 
-      <PhotoPlaceholder label={t('common.photo')} height={200} />
+      <DetailPhoto images={vehicleGallery(v)} />
 
       <View>
         <View style={{ flexDirection: 'row', gap: 6, marginBottom: 8 }}>

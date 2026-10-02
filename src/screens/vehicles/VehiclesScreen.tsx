@@ -8,6 +8,7 @@ import { useApp } from '../../context/AppContext';
 import { useNav } from '../../navigation/NavContext';
 import type { VehicleType } from '../../types';
 import { brandOf, brandsOf, modelOf, modelsOf, trimOf } from '../../utils/brand';
+import { modelImage } from '../../utils/vehicleImage';
 import BrandRow from './BrandRow';
 import VehicleCard from './VehicleCard';
 
@@ -60,11 +61,13 @@ export default function VehiclesScreen() {
       <View style={{ gap: 12 }}>
         {!brand &&
           brandsOf(ofType).map((b) => (
-            <BrandRow key={b.brand} brand={b.brand} count={t('vehicles.modelCount', { n: b.count })} onPress={() => nav.setVehicleBrand(b.brand)} />
+            <BrandRow key={b.brand} brand={b.brand} count={t('vehicles.modelCount', { n: b.count })} onPress={() => nav.setVehicleBrand(b.brand)}
+              type={ofType.find((v) => brandOf(v) === b.brand)?.type} />
           ))}
         {brand && !model &&
           modelsOf(ofBrand).map((m) => (
-            <BrandRow key={m.name} brand={m.name} count={t('vehicles.versionCount', { n: m.count })} onPress={() => openModel(m.name)} />
+            <BrandRow key={m.name} brand={m.name} count={t('vehicles.versionCount', { n: m.count })} onPress={() => openModel(m.name)} logoBrand={brand} type={ofBrand[0]?.type}
+              image={modelImage(ofBrand.find((v) => modelOf(v) === m.name)!)} />
           ))}
         {model &&
           versions.map((v) => <VehicleCard key={v.id} vehicle={v} title={trimOf(v) || v.name} onPress={() => nav.openDetail(v.id)} />)}

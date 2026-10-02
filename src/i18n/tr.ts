@@ -32,7 +32,7 @@ const tr = {
     emptyWatch: 'Henüz takip ettiğin bir araç yok. Araç kartındaki kalp simgesiyle fiyatını takibe alabilirsin.',
   },
   vehicles: { modelCount: '{n} model', versionCount: '{n} paket', title: 'Araçlar', watch: 'Takibe al', rangeLine: '{range} menzil · {battery}', rangeOnly: '{range} menzil', batteryOnly: '{battery}' },
-  detail: { listPrice: 'Eylül 2026 liste fiyatı', per12: '{pct} / 12 ay', oct: 'Eki 2025', sep: 'Eyl 2026', history: 'Aylık fiyat geçmişini gör', track: 'Fiyatını takibe al' },
+  detail: { photoBy: 'Fotoğraf: {author} · {license}', listPrice: 'Eylül 2026 liste fiyatı', per12: '{pct} / 12 ay', oct: 'Eki 2025', sep: 'Eyl 2026', history: 'Aylık fiyat geçmişini gör', track: 'Fiyatını takibe al' },
   prices: {
     title: 'Fiyat takibi', emptyTitle: 'Takip listen boş',
     emptyText: 'Aylık fiyat değişimini görmek için Araçlar sayfasından bir model seç.', browse: 'Araçlara göz at',

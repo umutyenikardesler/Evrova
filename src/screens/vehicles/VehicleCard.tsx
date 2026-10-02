@@ -4,11 +4,13 @@ import AppText from '../../components/AppText';
 import { HeartButton } from '../../components/Buttons';
 import { Eyebrow } from '../../components/Layout';
 import Tap from '../../components/Tap';
-import VehicleTypeIcon from '../../components/VehicleTypeIcon';
+import Icon from '../../components/Icon';
+import VehiclePhoto from '../../components/VehiclePhoto';
 import { useApp } from '../../context/AppContext';
 import { colors } from '../../theme/colors';
 import type { Vehicle } from '../../types';
 import { formatBattery } from '../../utils/format';
+import { versionImage } from '../../utils/vehicleImage';
 
 export default function VehicleCard({ vehicle, onPress, title }: { vehicle: Vehicle; onPress: () => void; title?: string }) {
   const { t, lang, price, isWatched, toggleWatch } = useApp();
@@ -18,7 +20,9 @@ export default function VehicleCard({ vehicle, onPress, title }: { vehicle: Vehi
   return (
     <Tap onPress={onPress} pressedBg={colors.card2}
       style={{ backgroundColor: colors.card, borderRadius: 20, flexDirection: 'row', alignItems: 'center', gap: 14, padding: 14 }}>
-      <VehicleTypeIcon type={vehicle.type} />
+      <VehiclePhoto image={versionImage(vehicle)}>
+        <Icon name={vehicle.type} size={30} color={colors.lime} />
+      </VehiclePhoto>
       <View style={{ flex: 1, minWidth: 0, gap: 2 }}>
         <Eyebrow>{t(`types.${vehicle.type}`)}</Eyebrow>
         <AppText weight="bold" size={16}>{title ?? vehicle.name}</AppText>
