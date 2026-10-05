@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import React, { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { BackHandler } from 'react-native';
 import type { VehicleType } from '../types';
 import { onNotificationOpened, type NotificationTarget } from '../services/notifications';
@@ -28,7 +28,26 @@ interface Nav extends NavState {
   setVehicleType: (t: 'all' | VehicleType) => void;
   setVehicleBrand: (b: string | null) => void;
   setVehicleModel: (m: string | null) => void;
+  /** Bir üst seviyeye döner (detay → paketler → modeller → markalar; makale → haberler; bildirimler → ana sayfa). Geri gidilecek seviye yoksa false. */
+  goBack: () => boolean;
+  /** Geri gidilecek bir üst seviye var mı? */
+  canGoBack: boolean;
+  /** Sayfa derinliği (geçiş animasyonunun yönü için). */
+  depth: number;
 }
+
+/** Bir üst seviyedeki durum; geri gidilecek seviye yoksa null. */
+function parentOf(p: NavState): NavState | null {
+  if (p.detailId) return { ...p, detailId: null };
+  if (p.newsId) return { ...p, newsId: null };
+  if (p.tab === 'vehicles' && p.vehicleModel) return { ...p, vehicleModel: null };
+  if (p.tab === 'vehicles' && p.vehicleBrand) return { ...p, vehicleBrand: null };
+  if (p.tab === 'notif') return { ...p, tab: 'home' };
+  return null;
+}
+
+const depthOf = (p: NavState) =>
+  (p.detailId ? 1 : 0) + (p.newsId ? 1 : 0) + (p.tab === 'vehicles' ? (p.vehicleBrand ? 1 : 0) + (p.vehicleModel ? 1 : 0) : 0) + (p.tab === 'notif' ? 1 : 0);
 
 const initial: NavState = { tab: 'home', detailId: null, newsId: null, priceSel: 'togg-t10x-std', monthSel: 11, vehicleType: 'all', vehicleBrand: null, vehicleModel: null };
 const Ctx = createContext<Nav | null>(null);
@@ -41,6 +60,8 @@ export const useNav = (): Nav => {
 
 export function NavProvider({ enabled, children }: { enabled: boolean; children: React.ReactNode }) {
   const [s, setS] = useState<NavState>(initial);
+  const sRef = useRef(s);
+  sRef.current = s;
 
   const go = useCallback<Nav['go']>((tab, extra) => setS((p) => ({ ...p, tab, detailId: null, newsId: null, ...extra })), []);
   const openNews = useCallback((id: string) => setS((p) => ({ ...p, tab: 'news', newsId: id, detailId: null })), []);
@@ -51,19 +72,23 @@ export function NavProvider({ enabled, children }: { enabled: boolean; children:
     setS(initial);
   }, [enabled]);
 
-  // Android geri tuşu: detay → liste → ana sayfa → çık
+  const goBack = useCallback(() => {
+    const parent = parentOf(sRef.current);
+    if (!parent) return false;
+    setS(parent);
+    return true;
+  }, []);
+
+  // Android geri tuşu: bir üst seviye → (üst seviye yoksa) ana sayfa → çık
   useEffect(() => {
     if (!enabled) return;
     const sub = BackHandler.addEventListener('hardwareBackPress', () => {
-      if (s.detailId) return setS((p) => ({ ...p, detailId: null })), true;
-      if (s.newsId) return setS((p) => ({ ...p, newsId: null })), true;
-      if (s.tab === 'vehicles' && s.vehicleModel) return setS((p) => ({ ...p, vehicleModel: null })), true;
-      if (s.tab === 'vehicles' && s.vehicleBrand) return setS((p) => ({ ...p, vehicleBrand: null })), true;
-      if (s.tab !== 'home') return go('home'), true;
+      if (goBack()) return true;
+      if (sRef.current.tab !== 'home') return go('home'), true;
       return false;
     });
     return () => sub.remove();
-  }, [enabled, s.detailId, s.newsId, s.tab, s.vehicleBrand, s.vehicleModel, go]);
+  }, [enabled, goBack, go]);
 
   // Push bildirimine dokununca ilgili ekrana git
   useEffect(() => {
@@ -86,8 +111,9 @@ export function NavProvider({ enabled, children }: { enabled: boolean; children:
       setVehicleType: (t) => setS((p) => ({ ...p, vehicleType: t, vehicleBrand: null, vehicleModel: null })),
       setVehicleBrand: (b) => setS((p) => ({ ...p, vehicleBrand: b, vehicleModel: null })),
       setVehicleModel: (m) => setS((p) => ({ ...p, vehicleModel: m })),
+      goBack, canGoBack: parentOf(s) !== null, depth: depthOf(s),
     }),
-    [s, go, openNews, openPrices],
+    [s, go, openNews, openPrices, goBack],
   );
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;

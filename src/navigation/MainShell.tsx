@@ -1,7 +1,8 @@
 import React, { useEffect, useMemo, useRef } from 'react';
 import { Animated, Easing, PanResponder, ScrollView, useWindowDimensions, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import TabBar from '../components/TabBar';
+import { GlassTarget } from '../components/Glass';
+import TabBar, { TAB_BAR_SPACE } from '../components/TabBar';
 import Toast from '../components/Toast';
 import HomeScreen from '../screens/home/HomeScreen';
 import NewsScreen from '../screens/news/NewsScreen';
@@ -35,33 +36,43 @@ export default function MainShell() {
   const nav = useNav();
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
+  const blurTarget = useRef<View>(null); // Android: menünün bulanıklaştıracağı içerik
   // Ekran değişince kaydırma başa döner (key değişir).
   const screenKey = `${nav.tab}:${nav.detailId ?? ''}:${nav.newsId ?? ''}:${nav.vehicleType}:${nav.vehicleBrand ?? ''}:${nav.vehicleModel ?? ''}`;
 
-  // Sekme değişince yeni ekran, sekme sırasına göre sağdan/soldan kayarak girer.
+  // Geçiş animasyonu: sekme değişince sekme sırasına göre, aynı sekmede derinlik değişince (ileri/geri)
+  // yeni ekran sağdan/soldan kayarak girer.
   const slide = useRef(new Animated.Value(0)).current;
-  const prevTab = useRef<Tab>(nav.tab);
+  const prev = useRef({ tab: nav.tab, depth: nav.depth });
   useEffect(() => {
-    const from = ORDER.indexOf(prevTab.current);
-    const to = ORDER.indexOf(nav.tab);
-    prevTab.current = nav.tab;
-    if (from < 0 || to < 0 || from === to) return;
-    slide.setValue(Math.sign(to - from) * width * 0.35);
+    const p = prev.current;
+    prev.current = { tab: nav.tab, depth: nav.depth };
+    let dir = 0;
+    if (p.tab !== nav.tab) {
+      const from = ORDER.indexOf(p.tab), to = ORDER.indexOf(nav.tab);
+      // Bildirimlerden ana sayfaya dönüş "geri" sayılır.
+      dir = from < 0 || to < 0 ? (nav.depth < p.depth ? -1 : 1) : Math.sign(to - from);
+    } else dir = Math.sign(nav.depth - p.depth);
+    if (!dir) return;
+    slide.setValue(dir * width * 0.35);
     Animated.timing(slide, { toValue: 0, duration: 240, easing: Easing.out(Easing.cubic), useNativeDriver: true }).start();
-  }, [nav.tab, width, slide]);
+  }, [nav.tab, nav.depth, width, slide]);
 
-  // Yatay kaydırma: sola → sonraki sekme, sağa → önceki sekme.
-  const swipe = useRef({ tab: nav.tab, canSwipe: false, go: nav.go });
-  swipe.current = { tab: nav.tab, canSwipe: !nav.detailId && !nav.newsId && ORDER.includes(nav.tab), go: nav.go };
+  // Yatay kaydırma:
+  //  - sağa çek: önce bir üst seviyeye geri (detay → paketler → modeller → markalar), üst seviye yoksa önceki sekme
+  //  - sola çek: sonraki sekme (yalnızca en üst seviyede)
+  const navRef = useRef(nav);
+  navRef.current = nav;
   const pan = useMemo(
     () =>
       PanResponder.create({
-        onMoveShouldSetPanResponder: (_, g) =>
-          swipe.current.canSwipe && Math.abs(g.dx) > 24 && Math.abs(g.dx) > Math.abs(g.dy) * 2,
+        onMoveShouldSetPanResponder: (_, g) => Math.abs(g.dx) > 24 && Math.abs(g.dx) > Math.abs(g.dy) * 2,
         onPanResponderRelease: (_, g) => {
-          const i = ORDER.indexOf(swipe.current.tab);
-          if (g.dx < -60 && i < ORDER.length - 1) swipe.current.go(ORDER[i + 1]);
-          else if (g.dx > 60 && i > 0) swipe.current.go(ORDER[i - 1]);
+          const n = navRef.current;
+          const i = ORDER.indexOf(n.tab);
+          if (g.dx > 60) {
+            if (!n.goBack() && i > 0) n.go(ORDER[i - 1]);
+          } else if (g.dx < -60 && !n.canGoBack && i >= 0 && i < ORDER.length - 1) n.go(ORDER[i + 1]);
         },
       }),
     [],
@@ -69,13 +80,17 @@ export default function MainShell() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top }}>
-      <Animated.View style={{ flex: 1, transform: [{ translateX: slide }] }} {...pan.panHandlers}>
-        <ScrollView key={screenKey} style={{ flex: 1 }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
-          <CurrentScreen />
-        </ScrollView>
-      </Animated.View>
+      {/* İçerik menünün arkasından akar; menü cam efektiyle bunu bulanık gösterir */}
+      <GlassTarget ref={blurTarget} style={{ flex: 1 }}>
+        <Animated.View style={{ flex: 1, transform: [{ translateX: slide }] }} {...pan.panHandlers}>
+          <ScrollView key={screenKey} style={{ flex: 1 }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled"
+            contentContainerStyle={{ paddingBottom: TAB_BAR_SPACE + Math.max(insets.bottom, 12) }}>
+            <CurrentScreen />
+          </ScrollView>
+        </Animated.View>
+      </GlassTarget>
       <Toast />
-      <TabBar />
+      <TabBar blurTarget={blurTarget} />
     </View>
   );
 }
