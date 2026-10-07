@@ -1,0 +1,45 @@
+{
+  "_doc": "Marka resmi sitelerinden elle doğrulanan liste fiyatları. update-prices.mjs bunları aggregator verisinin üzerine yazar. Anahtar: ay -> araç id -> TL.",
+  "2026-10": {
+    "mercedes-benz-eqa-250plus-night-edition": {
+      "price": 4612000,
+      "src": "fiyat.mercedes-benz.com.tr (01.10.2026)"
+    },
+    "mercedes-benz-eqe-280-amg": {
+      "price": 6292000,
+      "src": "fiyat.mercedes-benz.com.tr (01.10.2026)"
+    },
+    "mercedes-benz-eqe-350-4matic-amg": {
+      "price": 7188000,
+      "src": "fiyat.mercedes-benz.com.tr (01.10.2026)"
+    },
+    "mercedes-benz-g-580-heritage": {
+      "price": 15715000,
+      "src": "fiyat.mercedes-benz.com.tr (01.10.2026)"
+    },
+    "hyundai-ioniq-5-dynamic-vision-roof-125-kw-4x2": {
+      "price": 3350000,
+      "src": "hyundai.com/tr ekim kampanya fiyatı"
+    },
+    "hyundai-ioniq-6-advance-125-kw-standart-menzil": {
+      "price": 3246000,
+      "src": "hyundai.com/tr ekim kampanya fiyatı"
+    },
+    "tesla-model-y": {
+      "price": 2474985,
+      "src": "Tesla TR resmi liste (tesla.com 403; gzt.com + webtekno.com 02.10.2026 ile çapraz doğrulandı)"
+    },
+    "tesla-model-y-premium-uzun-menzil-arkadan-cekis": {
+      "price": 3906000,
+      "src": "Tesla TR resmi liste (tesla.com 403; gzt.com + webtekno.com 02.10.2026 ile çapraz doğrulandı)"
+    },
+    "tesla-model-y-premium-uzun-menzil-dort-ceker": {
+      "price": 4620000,
+      "src": "Tesla TR resmi liste (tesla.com 403; gzt.com + webtekno.com 02.10.2026 ile çapraz doğrulandı)"
+    },
+    "tesla-model-y-performance-dort-ceker": {
+      "price": 4966500,
+      "src": "Tesla TR resmi liste (tesla.com 403; gzt.com + webtekno.com 02.10.2026 ile çapraz doğrulandı)"
+    }
+  }
+}

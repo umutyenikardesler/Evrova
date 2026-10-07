@@ -11,7 +11,7 @@
 //
 // Ay, DonanımHaber tablo başlığından ("... (Ekim 2026)") okunur; bilgisayarın tarihine bağlı değildir.
 // Listede olmayan/eşleşmeyen araçların önceki fiyatı korunur (rapor edilir).
-import { writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 import { VEHICLES } from '../src/data/vehicles.ts';
 import { MONTHLY_PRICES } from '../src/data/monthlyPrices.ts';
 
@@ -147,6 +147,9 @@ if (unmatchedVehicles.length) console.log(`\nİki listede de bulunamayan araçla
 if (dry) { console.log('\n(--dry: dosya yazılmadı)'); process.exit(0); }
 if (ym <= BASE_MONTH) { console.log(`\nBu ay uygulamanın taban ayı (${BASE_MONTH}) veya öncesi; yazılmadı.`); process.exit(0); }
 
+// Resmi sitelerden elle doğrulanan fiyatlar (data/official-prices.json) aggregator verisinin üzerine yazılır.
+const official = JSON.parse(readFileSync('data/official-prices.json', 'utf8'))[ym] ?? {};
+for (const [id, o] of Object.entries(official)) next[id] = o.price;
 const merged = { ...MONTHLY_PRICES, [ym]: { ...(MONTHLY_PRICES[ym] ?? {}), ...next } };
 if (JSON.stringify(merged[ym]) === JSON.stringify(MONTHLY_PRICES[ym])) { console.log('\nDeğişiklik yok, dosya güncellenmedi.'); process.exit(0); }
 
