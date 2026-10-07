@@ -16,7 +16,7 @@ import ThemeRow from './ThemeRow';
 
 function Stat({ value, label, onPress }: { value: number; label: string; onPress: () => void }) {
   return (
-    <Tap onPress={onPress} pressedBg={colors.card2} style={{ width: '48.5%', backgroundColor: colors.card, borderRadius: 20, padding: 16 }}>
+    <Tap onPress={onPress} pressedBg={colors.card2} style={{ width: '48.5%', backgroundColor: colors.card, borderRadius: 20, padding: 12 }}>
       <AppText weight="extrabold" size={28} color={colors.lime}>{String(value)}</AppText>
       <AppText size={13} color={colors.muted}>{label}</AppText>
     </Tap>
@@ -28,7 +28,7 @@ function SettingRow({ title, sub, first, children, onPress }: {
 }) {
   return (
     <Tap onPress={onPress} disabled={!onPress}
-      style={{ flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 14, borderTopWidth: first ? 0 : 1, borderTopColor: colors.line }}>
+      style={{ flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 10, borderTopWidth: first ? 0 : 1, borderTopColor: colors.line }}>
       <View style={{ flex: 1 }}>
         <AppText weight="bold" size={14}>{title}</AppText>
         {sub ? <AppText size={12} color={colors.muted}>{sub}</AppText> : null}
@@ -55,7 +55,7 @@ export default function ProfileScreen() {
         <Stat value={alarmCount} label={t('profile.alarms')} onPress={() => nav.go('prices')} />
       </View>
 
-      <Card style={{ paddingVertical: 4, paddingHorizontal: 16 }}>
+      <Card style={{ paddingVertical: 2, paddingHorizontal: 16 }}>
         <SettingRow first title={t('profile.notifications')} sub={t('profile.notificationsSub')}>
           <ToggleSwitch value={!!profile?.notif} onToggle={toggleNotif} label={t('profile.notifications')} />
         </SettingRow>

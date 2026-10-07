@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { View } from 'react-native';
 import AppText from '../../components/AppText';
 import { ChipScroller } from '../../components/Chips';
-import { Eyebrow, Page, PhotoPlaceholder, ScreenTitle } from '../../components/Layout';
+import { Eyebrow, Page, ScreenTitle } from '../../components/Layout';
 import Tap from '../../components/Tap';
 import { NEWS_CATS } from '../../data/news';
 import { useApp } from '../../context/AppContext';
 import { useNav } from '../../navigation/NavContext';
 import { colors } from '../../theme/colors';
 import type { NewsItem } from '../../types';
+import NewsPhoto from './NewsPhoto';
 
 export default function NewsScreen() {
   const { t, lang, news } = useApp();
@@ -16,7 +17,7 @@ export default function NewsScreen() {
   const [cat, setCat] = useState('all');
 
   const catLabel = (id: string) => NEWS_CATS.find((c) => c.id === id)?.label[lang] ?? id;
-  const list = news.filter((n) => cat === 'all' || n.cat === cat);
+  const list = news.filter((n) => cat === 'all' || n.cat === cat).sort((a, b) => b.published.localeCompare(a.published));
   const [lead, ...rest] = list;
 
   const meta = (n: NewsItem) => `${n.date[lang]} · ${n.readMin} ${lang === 'tr' ? 'dk' : 'min'}`;
@@ -34,7 +35,7 @@ export default function NewsScreen() {
       {lead && (
         <Tap onPress={() => nav.openNews(lead.id)} pressedBg={colors.card2}
           style={{ backgroundColor: colors.card, borderRadius: 22, paddingTop: 12, paddingHorizontal: 12, paddingBottom: 18, gap: 14 }}>
-          <PhotoPlaceholder label={t('common.newsImage')} height={170} radius={16} bg={colors.card2} />
+          <NewsPhoto item={lead} label={t('common.newsImage')} height={170} radius={16} />
           <View style={{ paddingHorizontal: 6 }}>
             <Eyebrow>{catLabel(lead.cat)}</Eyebrow>
             <AppText weight="extrabold" size={20} style={{ lineHeight: 25, marginTop: 4, marginBottom: 6 }}>{lead.title[lang]}</AppText>
@@ -47,7 +48,7 @@ export default function NewsScreen() {
         <Tap key={n.id} onPress={() => nav.openNews(n.id)} pressedBg={colors.card2}
           style={{ flexDirection: 'row', gap: 14, alignItems: 'center', backgroundColor: colors.card, borderRadius: 20, padding: 12 }}>
           <View style={{ width: 72 }}>
-            <PhotoPlaceholder label={t('common.image')} height={72} radius={14} bg={colors.card2} />
+            <NewsPhoto item={n} label={t('common.image')} height={72} radius={14} />
           </View>
           <View style={{ flex: 1, minWidth: 0 }}>
             <Eyebrow>{catLabel(n.cat)}</Eyebrow>

@@ -60,7 +60,7 @@ export const VEHICLE_IMAGES: Record<string, VehicleImage> = {
  "Polestar|2": { src: require('../../assets/vehicles/polestar/2/model.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:Polestar_2_Genf_2019_1Y7A6000.jpg", title: "Polestar 2 Genf 2019 1Y7A6000.jpg" },
  "Polestar|4": { src: require('../../assets/vehicles/polestar/4/model.jpg'), author: "Alexander-93", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:Polestar_4_Auto_Zuerich_2024_DSC_6364.jpg", title: "Polestar 4 Auto Zuerich 2024 DSC 6364.jpg" },
  "MG|ZS EV": { src: require('../../assets/vehicles/mg/zs-ev/model.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:MG_ZS_EV_Facelift_Automesse_Ludwigsburg_2022_1X7A5928.jpg", title: "MG ZS EV Facelift Automesse Ludwigsburg 2022 1X7A5928.jpg" },
- "MG|MG4": { src: require('../../assets/vehicles/mg/mg4/model.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:MG4_EV_Automesse_Ludwigsburg_2022_1X7A5870.jpg", title: "MG4 EV Automesse Ludwigsburg 2022 1X7A5870.jpg" },
+ "MG|MG4": { src: require('../../assets/vehicles/mg/mg4/model.jpg'), author: "Soggietoes", license: "CC BY 4.0", page: "https://commons.wikimedia.org/wiki/File:MG_MG4.jpg", title: "MG MG4.jpg" },
  "Toyota|bZ4X": { src: require('../../assets/vehicles/toyota/bz4x/model.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:Toyota_bZ4X_Automesse_Ludwigsburg_2022_1X7A5895.jpg", title: "Toyota bZ4X Automesse Ludwigsburg 2022 1X7A5895.jpg" },
  "Nissan|Ariya": { src: require('../../assets/vehicles/nissan/ariya/model.jpg'), author: "User3204", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:2022_Dongfeng-Nissan_Ariya_(front).jpg", title: "2022 Dongfeng-Nissan Ariya (front).jpg" },
  "MINI|Countryman E": { src: require('../../assets/vehicles/mini/countryman-e/model.jpg'), author: "Tokumeigakarinoaoshima", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:BMW_MINI_COUNTRYMAN_E_(U25)_front.jpg", title: "BMW MINI COUNTRYMAN E (U25) front.jpg" },
@@ -115,6 +115,10 @@ export const VEHICLE_IMAGES: Record<string, VehicleImage> = {
  "Citroën|ë-C3 Aircross": { src: require('../../assets/vehicles/citroen/e-c3-aircross/model.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:Citro%C3%ABn_%C3%AB-C3_Aircross_DSC_8364.jpg", title: "Citroën ë-C3 Aircross DSC 8364.jpg" },
  "Citroën|ë-C4": { src: require('../../assets/vehicles/citroen/e-c4/model.jpg'), author: "© M 93", license: "CC BY-SA 3.0 de", page: "https://commons.wikimedia.org/wiki/File:Citro%C3%ABn_%C3%AB-C4_Feel_(III)_%E2%80%93_f_14042024.jpg", title: "Citroën ë-C4 Feel (III) – f 14042024.jpg" },
  "Citroën|Ami": { src: require('../../assets/vehicles/citroen/ami/model.jpg'), author: "Damian B Oh", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:Citro%C3%ABn_Ami_(3).jpg", title: "Citroën Ami (3).jpg" },
+ "MG|MG4|Comfort": { src: require('../../assets/vehicles/mg/mg4/comfort/cover.jpg'), author: "LuvsMG481", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:2024_MG_4_51KWH_EV_RWD_front.jpg", title: "2024 MG 4 51KWH EV RWD front.jpg" },
+ "MG|MG4|Luxury": { src: require('../../assets/vehicles/mg/mg4/luxury/cover.jpg'), author: "MoCars", license: "CC0", page: "https://commons.wikimedia.org/wiki/File:2023_MG_4_Trophy_Long_Range_in_Holborn_Blue_(Front).jpg", title: "2023 MG 4 Trophy Long Range in Holborn Blue (Front).jpg" },
+ "MG|MG4|XPOWER": { src: require('../../assets/vehicles/mg/mg4/xpower/cover.jpg'), author: "Alexander-93", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:MG4_EV_XPower_Automesse_Ludwigsburg_2023_1X7A0027.jpg", title: "MG4 EV XPower Automesse Ludwigsburg 2023 1X7A0027.jpg" },
+ "MG|Marvel R": { src: require('../../assets/vehicles/mg/marvel-r/model.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:MG_Marvel_R_1X7A0397.jpg", title: "MG Marvel R 1X7A0397.jpg" },
 };
 
 /** Detay sayfası slider'ı için ek fotoğraflar (arka, iç mekân, yan...). Anahtar: "Marka|Model" */
@@ -502,5 +506,22 @@ export const VEHICLE_GALLERY: Record<string, VehicleImage[]> = {
   { src: require('../../assets/vehicles/citroen/ami/gallery/1.jpg'), author: "Damian B Oh", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:Citro%C3%ABn_Ami_(2).jpg", title: "Citroën Ami (2).jpg" },
   { src: require('../../assets/vehicles/citroen/ami/gallery/2.jpg'), author: "Damian B Oh", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:Citro%C3%ABn_Ami_(5).jpg", title: "Citroën Ami (5).jpg" },
   { src: require('../../assets/vehicles/citroen/ami/gallery/3.jpg'), author: "Damian B Oh", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:Citro%C3%ABn_Ami_(7).jpg", title: "Citroën Ami (7).jpg" },
+ ],
+ "MG|MG4|Comfort": [
+  { src: require('../../assets/vehicles/mg/mg4/comfort/1.jpg'), author: "LuvsMG481", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:2024_MG_4_51KWH_EV_RWD_rear.jpg", title: "2024 MG 4 51KWH EV RWD rear.jpg" },
+ ],
+ "MG|MG4|Luxury": [
+  { src: require('../../assets/vehicles/mg/mg4/luxury/1.jpg'), author: "MoCars", license: "CC0", page: "https://commons.wikimedia.org/wiki/File:2023_MG_4_Trophy_Long_Range_in_Holborn_Blue_(Rear).jpg", title: "2023 MG 4 Trophy Long Range in Holborn Blue (Rear).jpg" },
+  { src: require('../../assets/vehicles/mg/mg4/luxury/2.jpg'), author: "MoCars", license: "CC0", page: "https://commons.wikimedia.org/wiki/File:2023_MG_4_Trophy_Long_Range_in_Holborn_Blue_(Interior).jpg", title: "2023 MG 4 Trophy Long Range in Holborn Blue (Interior).jpg" },
+ ],
+ "MG|MG4|XPOWER": [
+  { src: require('../../assets/vehicles/mg/mg4/xpower/1.jpg'), author: "Alexander-93", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:MG4_EV_XPower_Automesse_Ludwigsburg_2023_1X7A0030.jpg", title: "MG4 EV XPower Automesse Ludwigsburg 2023 1X7A0030.jpg" },
+  { src: require('../../assets/vehicles/mg/mg4/xpower/2.jpg'), author: "Matti Blume", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:MG4_EV_XPower,_IAA_Summit_2023,_Munich_(P1110742).jpg", title: "MG4 EV XPower, IAA Summit 2023, Munich (P1110742).jpg" },
+  { src: require('../../assets/vehicles/mg/mg4/xpower/3.jpg'), author: "Alexander-93", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:MG4_EV_XPower_Automesse_Ludwigsburg_2023_1X7A0099.jpg", title: "MG4 EV XPower Automesse Ludwigsburg 2023 1X7A0099.jpg" },
+ ],
+ "MG|Marvel R": [
+  { src: require('../../assets/vehicles/mg/marvel-r/gallery/1.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:MG_Marvel_R_Automesse_Ludwigsburg_2022_1X7A5916.jpg", title: "MG Marvel R Automesse Ludwigsburg 2022 1X7A5916.jpg" },
+  { src: require('../../assets/vehicles/mg/marvel-r/gallery/2.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:MG_Marvel_R_Automesse_Ludwigsburg_2022_1X7A5930.jpg", title: "MG Marvel R Automesse Ludwigsburg 2022 1X7A5930.jpg" },
+  { src: require('../../assets/vehicles/mg/marvel-r/gallery/3.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:MG_Marvel_R_1X7A0401.jpg", title: "MG Marvel R 1X7A0401.jpg" },
  ],
 };

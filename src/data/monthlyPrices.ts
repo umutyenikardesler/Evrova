@@ -95,8 +95,6 @@ export const MONTHLY_PRICES: Record<string, Record<string, number>> = {
     'mercedes-benz-eqe-350plus-89-kwh-agustos': 5500000,
     'mercedes-benz-eqs-450-4matic-inspiration': 10108500,
     'mercedes-benz-g-580-heritage': 15715000,
-    'mg-mg4-trophy-extended-range-agustos': 1799000,
-    'mg-mg5-long-range-luxury-agustos': 1499000,
     'mg-zs-ev-long-range-luxury-agustos': 1699000,
     'mini-countryman-e-66-5-kwh-agustos': 2493300,
     'nissan-ariya-87-kwh-evolveplus-awd-agustos': 2750000,

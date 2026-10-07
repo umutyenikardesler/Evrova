@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View } from 'react-native';
 import AppText from '../../components/AppText';
 import { BackButton, HeartButton, PrimaryButton } from '../../components/Buttons';
@@ -17,11 +17,15 @@ import DetailPhoto from './DetailPhoto';
 export default function VehicleDetailScreen({ id }: { id: string }) {
   const { t, lang, vehicles, listMonth, price, isWatched, toggleWatch } = useApp();
   const nav = useNav();
+  const [sel, setSel] = useState<number | null>(null);
   const v = vehicles.find((x) => x.id === id);
   if (!v) return null;
 
   const watched = isWatched(v.id);
   const yoy = pctChange(v.prices[0], v.prices[11]);
+  const labels = monthLabels(lang, v.listMonth ?? listMonth);
+  const shown = sel ?? 11;
+  const prev = sel !== null && sel > 0 ? pctChange(v.prices[sel - 1], v.prices[sel]) : null;
 
   return (
     <Page top={6}>
@@ -50,15 +54,23 @@ export default function VehicleDetailScreen({ id }: { id: string }) {
       </View>
 
       <Card style={{ borderRadius: 22, padding: 18, gap: 4 }}>
-        <AppText weight="semibold" size={12} color={colors.muted}>{t('detail.listPrice', { month: monthLong(lang, v.listMonth ?? listMonth) })}</AppText>
+        <AppText weight="semibold" size={12} color={colors.muted}>
+          {sel === null ? t('detail.listPrice', { month: monthLong(lang, v.listMonth ?? listMonth) }) : labels.long[shown]}
+        </AppText>
         <View style={{ flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
-          <AppText weight="extrabold" size={26}>{price(v.prices[11])}</AppText>
-          <AppText weight="bold" size={13} color={changeColor(yoy)}>{t('detail.per12', { pct: formatPct(yoy, lang) })}</AppText>
+          <AppText weight="extrabold" size={26}>{price(v.prices[shown])}</AppText>
+          {sel === null || prev !== null ? (
+            <AppText weight="bold" size={13} color={changeColor(prev ?? yoy)}>
+              {sel === null ? t('detail.per12', { pct: formatPct(yoy, lang) }) : t('prices.vsPrev', { pct: formatPct(prev!, lang) })}
+            </AppText>
+          ) : (
+            <AppText weight="bold" size={13} color={colors.muted}>{t('prices.start')}</AppText>
+          )}
         </View>
-        <PriceLineChart prices={v.prices} />
+        <PriceLineChart prices={v.prices} selected={sel} onSelect={setSel} />
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-          <AppText size={11} color={colors.muted}>{monthLabels(lang, v.listMonth ?? listMonth).first}</AppText>
-          <AppText size={11} color={colors.muted}>{monthLabels(lang, v.listMonth ?? listMonth).last}</AppText>
+          <AppText size={11} color={colors.muted}>{labels.first}</AppText>
+          <AppText size={11} color={colors.muted}>{labels.last}</AppText>
         </View>
       </Card>
 

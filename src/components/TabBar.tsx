@@ -10,6 +10,9 @@ import { blurAvailable, GlassBlur } from './Glass';
 import Icon, { type IconName } from './Icon';
 import Tap from './Tap';
 
+/** Karanlık temada aktif (limon yeşili) ikonun içindeki detay rengi; menü zeminine yakın koyu ton. */
+const DARK_DETAIL = "#1C283A";
+
 const TABS: { tab: Tab; icon: IconName; label: 'nav.home' | 'nav.vehicles' | 'nav.news' | 'nav.prices' | 'nav.profile' }[] = [
   { tab: 'home', icon: 'home', label: 'nav.home' },
   { tab: 'vehicles', icon: 'car', label: 'nav.vehicles' },
@@ -112,7 +115,7 @@ export default function TabBar({ blurTarget }: { blurTarget?: React.RefObject<Vi
                 const on = nav.tab === tab;
                 return (
                   <Tap key={tab} onPress={() => nav.go(tab)} accessibilityLabel={t(label)} style={{ flex: 1, height: BUBBLE_H, alignItems: 'center', justifyContent: 'center' }}>
-                    <Icon name={icon} size={22} color={on ? colors.lime : colors.muted} solid={on} detailColor="#FFFFFF" />
+                    <Icon name={icon} size={22} color={on ? colors.lime : colors.muted} solid={on} detailColor={dark ? DARK_DETAIL : "#FFFFFF"} />
                   </Tap>
                 );
               })}

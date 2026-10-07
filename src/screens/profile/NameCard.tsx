@@ -30,7 +30,7 @@ export default function NameCard() {
   };
 
   return (
-    <Card style={{ borderRadius: 22, padding: 18, gap: 14 }}>
+    <Card style={{ borderRadius: 22, padding: 14, gap: 12 }}>
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 14 }}>
         <View style={{ width: 64, height: 64, borderRadius: 32, backgroundColor: colors.lime, alignItems: 'center', justifyContent: 'center' }}>
           <AppText weight="extrabold" size={26} color={colors.bg}>{(firstName[0] ?? '?').toUpperCase()}</AppText>

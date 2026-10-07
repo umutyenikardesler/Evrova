@@ -33,6 +33,10 @@ export interface NewsItem {
   /** "28 Eyl" gibi gösterilecek tarih */
   date: L10n;
   readMin: number;
+  /** Yayın tarihi (YYYY-MM-DD); liste yeniden eskiye sıralanır. */
+  published: string;
+  /** Haberin özetlendiği kaynak sayfa. */
+  source?: { name: string; url: string };
   body: { tr: string[]; en: string[] };
 }
 

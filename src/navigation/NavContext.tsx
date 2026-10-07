@@ -3,7 +3,7 @@ import { BackHandler } from 'react-native';
 import type { VehicleType } from '../types';
 import { onNotificationOpened, type NotificationTarget } from '../services/notifications';
 
-export type Tab = 'home' | 'vehicles' | 'news' | 'prices' | 'profile' | 'notif';
+export type Tab = 'home' | 'vehicles' | 'news' | 'prices' | 'profile' | 'notif' | 'tax';
 
 interface NavState {
   tab: Tab;
@@ -42,12 +42,12 @@ function parentOf(p: NavState): NavState | null {
   if (p.newsId) return { ...p, newsId: null };
   if (p.tab === 'vehicles' && p.vehicleModel) return { ...p, vehicleModel: null };
   if (p.tab === 'vehicles' && p.vehicleBrand) return { ...p, vehicleBrand: null };
-  if (p.tab === 'notif') return { ...p, tab: 'home' };
+  if (p.tab === 'notif' || p.tab === 'tax') return { ...p, tab: 'home' };
   return null;
 }
 
 const depthOf = (p: NavState) =>
-  (p.detailId ? 1 : 0) + (p.newsId ? 1 : 0) + (p.tab === 'vehicles' ? (p.vehicleBrand ? 1 : 0) + (p.vehicleModel ? 1 : 0) : 0) + (p.tab === 'notif' ? 1 : 0);
+  (p.detailId ? 1 : 0) + (p.newsId ? 1 : 0) + (p.tab === 'vehicles' ? (p.vehicleBrand ? 1 : 0) + (p.vehicleModel ? 1 : 0) : 0) + (p.tab === 'notif' || p.tab === 'tax' ? 1 : 0);
 
 const initial: NavState = { tab: 'home', detailId: null, newsId: null, priceSel: 'togg-t10x-std', monthSel: 11, vehicleType: 'all', vehicleBrand: null, vehicleModel: null };
 const Ctx = createContext<Nav | null>(null);

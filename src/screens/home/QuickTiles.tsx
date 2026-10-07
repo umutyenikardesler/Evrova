@@ -29,7 +29,7 @@ export default function QuickTiles() {
       <Tile icon="trending" title={t('home.priceTracking')} sub={t('home.priceTrackingSub')} onPress={() => nav.go('prices')} />
       <Tile icon="zap" title={t('home.charging')} sub={t('home.chargingSub')} onPress={() => showToast(t('home.chargingSoon'))} />
       <Tile icon="news" title={t('home.news')} sub={t('home.newsSub')} onPress={() => nav.go('news')} />
-      <Tile icon="scale" title={t('home.tax')} sub={t('home.taxSub')} onPress={() => showToast(t('home.taxSoon'))} />
+      <Tile icon="scale" title={t('home.tax')} sub={t('home.taxSub')} onPress={() => nav.go('tax')} />
     </View>
   );
 }

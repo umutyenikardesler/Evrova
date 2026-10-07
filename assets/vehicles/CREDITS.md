@@ -62,7 +62,7 @@ Fotoğraflar Wikimedia Commons'tan alınmıştır; yazarları ve lisansları aş
 | Polestar / 2 | polestar/2/model.jpg | Alexander Migl | CC BY-SA 4.0 | [sayfa](https://commons.wikimedia.org/wiki/File:Polestar_2_Genf_2019_1Y7A6000.jpg) |
 | Polestar / 4 | polestar/4/model.jpg | Alexander-93 | CC BY-SA 4.0 | [sayfa](https://commons.wikimedia.org/wiki/File:Polestar_4_Auto_Zuerich_2024_DSC_6364.jpg) |
 | MG / ZS EV | mg/zs-ev/model.jpg | Alexander Migl | CC BY-SA 4.0 | [sayfa](https://commons.wikimedia.org/wiki/File:MG_ZS_EV_Facelift_Automesse_Ludwigsburg_2022_1X7A5928.jpg) |
-| MG / MG4 | mg/mg4/model.jpg | Alexander Migl | CC BY-SA 4.0 | [sayfa](https://commons.wikimedia.org/wiki/File:MG4_EV_Automesse_Ludwigsburg_2022_1X7A5870.jpg) |
+| MG / MG4 | mg/mg4/model.jpg | Soggietoes | CC BY 4.0 | [sayfa](https://commons.wikimedia.org/wiki/File:MG_MG4.jpg) |
 | Toyota / bZ4X | toyota/bz4x/model.jpg | Alexander Migl | CC BY-SA 4.0 | [sayfa](https://commons.wikimedia.org/wiki/File:Toyota_bZ4X_Automesse_Ludwigsburg_2022_1X7A5895.jpg) |
 | Nissan / Ariya | nissan/ariya/model.jpg | User3204 | CC BY-SA 4.0 | [sayfa](https://commons.wikimedia.org/wiki/File:2022_Dongfeng-Nissan_Ariya_(front).jpg) |
 | MINI / Countryman E | mini/countryman-e/model.jpg | Tokumeigakarinoaoshima | CC BY-SA 4.0 | [sayfa](https://commons.wikimedia.org/wiki/File:BMW_MINI_COUNTRYMAN_E_(U25)_front.jpg) |
@@ -339,3 +339,16 @@ Fotoğraflar Wikimedia Commons'tan alınmıştır; yazarları ve lisansları aş
 | Citroën / Ami / galeri 1 | citroen/ami/gallery/1.jpg | Damian B Oh | CC BY-SA 4.0 | [sayfa](https://commons.wikimedia.org/wiki/File:Citro%C3%ABn_Ami_(2).jpg) |
 | Citroën / Ami / galeri 2 | citroen/ami/gallery/2.jpg | Damian B Oh | CC BY-SA 4.0 | [sayfa](https://commons.wikimedia.org/wiki/File:Citro%C3%ABn_Ami_(5).jpg) |
 | Citroën / Ami / galeri 3 | citroen/ami/gallery/3.jpg | Damian B Oh | CC BY-SA 4.0 | [sayfa](https://commons.wikimedia.org/wiki/File:Citro%C3%ABn_Ami_(7).jpg) |
+| MG / MG4 / Comfort | mg/mg4/comfort/cover.jpg | LuvsMG481 | CC BY-SA 4.0 | [sayfa](https://commons.wikimedia.org/wiki/File:2024_MG_4_51KWH_EV_RWD_front.jpg) |
+| MG / MG4 / Luxury | mg/mg4/luxury/cover.jpg | MoCars | CC0 | [sayfa](https://commons.wikimedia.org/wiki/File:2023_MG_4_Trophy_Long_Range_in_Holborn_Blue_(Front).jpg) |
+| MG / MG4 / XPOWER | mg/mg4/xpower/cover.jpg | Alexander-93 | CC BY-SA 4.0 | [sayfa](https://commons.wikimedia.org/wiki/File:MG4_EV_XPower_Automesse_Ludwigsburg_2023_1X7A0027.jpg) |
+| MG / MG4 / Comfort / galeri 1 | mg/mg4/comfort/1.jpg | LuvsMG481 | CC BY-SA 4.0 | [sayfa](https://commons.wikimedia.org/wiki/File:2024_MG_4_51KWH_EV_RWD_rear.jpg) |
+| MG / MG4 / Luxury / galeri 1 | mg/mg4/luxury/1.jpg | MoCars | CC0 | [sayfa](https://commons.wikimedia.org/wiki/File:2023_MG_4_Trophy_Long_Range_in_Holborn_Blue_(Rear).jpg) |
+| MG / MG4 / Luxury / galeri 2 | mg/mg4/luxury/2.jpg | MoCars | CC0 | [sayfa](https://commons.wikimedia.org/wiki/File:2023_MG_4_Trophy_Long_Range_in_Holborn_Blue_(Interior).jpg) |
+| MG / MG4 / XPOWER / galeri 1 | mg/mg4/xpower/1.jpg | Alexander-93 | CC BY-SA 4.0 | [sayfa](https://commons.wikimedia.org/wiki/File:MG4_EV_XPower_Automesse_Ludwigsburg_2023_1X7A0030.jpg) |
+| MG / MG4 / XPOWER / galeri 2 | mg/mg4/xpower/2.jpg | Matti Blume | CC BY-SA 4.0 | [sayfa](https://commons.wikimedia.org/wiki/File:MG4_EV_XPower,_IAA_Summit_2023,_Munich_(P1110742).jpg) |
+| MG / MG4 / XPOWER / galeri 3 | mg/mg4/xpower/3.jpg | Alexander-93 | CC BY-SA 4.0 | [sayfa](https://commons.wikimedia.org/wiki/File:MG4_EV_XPower_Automesse_Ludwigsburg_2023_1X7A0099.jpg) |
+| MG / Marvel R | mg/marvel-r/model.jpg | Alexander Migl | CC BY-SA 4.0 | [sayfa](https://commons.wikimedia.org/wiki/File:MG_Marvel_R_1X7A0397.jpg) |
+| MG / Marvel R / galeri 1 | mg/marvel-r/gallery/1.jpg | Alexander Migl | CC BY-SA 4.0 | [sayfa](https://commons.wikimedia.org/wiki/File:MG_Marvel_R_Automesse_Ludwigsburg_2022_1X7A5916.jpg) |
+| MG / Marvel R / galeri 2 | mg/marvel-r/gallery/2.jpg | Alexander Migl | CC BY-SA 4.0 | [sayfa](https://commons.wikimedia.org/wiki/File:MG_Marvel_R_Automesse_Ludwigsburg_2022_1X7A5930.jpg) |
+| MG / Marvel R / galeri 3 | mg/marvel-r/gallery/3.jpg | Alexander Migl | CC BY-SA 4.0 | [sayfa](https://commons.wikimedia.org/wiki/File:MG_Marvel_R_1X7A0401.jpg) |

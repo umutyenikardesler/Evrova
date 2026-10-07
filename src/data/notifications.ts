@@ -31,9 +31,9 @@ export const localNotifications = (): AppNotification[] => {
       },
     },
     {
-      id: 'a2', kind: 'news', createdAt: ago(5), newsId: 'n1',
+      id: 'a2', kind: 'news', createdAt: ago(5), newsId: 'n3',
       title: { tr: 'Yeni haber: Batarya', en: 'New story: Battery' },
-      text: { tr: 'Katı hal hücreleri pilot üretim hattına taşındı.', en: 'Solid-state cells move to pilot production lines.' },
+      text: { tr: 'Gotion katı hal bataryada 400 Wh/kg hedefini açıkladı.', en: 'Gotion sets a 400 Wh/kg target for solid-state batteries.' },
     },
     {
       id: 'a3', kind: 'price', createdAt: ago(28), vehicleId: 'ford-e-transit-custom',
@@ -44,9 +44,9 @@ export const localNotifications = (): AppNotification[] => {
       },
     },
     {
-      id: 'a4', kind: 'news', createdAt: ago(24 * 3 + 1), newsId: 'n2',
+      id: 'a4', kind: 'news', createdAt: ago(24 * 3 + 1), newsId: 'n9',
       title: { tr: 'Yeni haber: Şarj', en: 'New story: Charging' },
-      text: { tr: 'Otoyol güzergâhlarında yüksek güçlü şarj noktaları çoğalıyor.', en: 'High-power charging points multiply along highways.' },
+      text: { tr: 'Geely’den 2,25 MW şarj sistemi: %10’dan %70’e 4,5 dakika.', en: 'Geely unveils a 2.25 MW charger: 10 to 70% in 4.5 minutes.' },
     },
     {
       id: 'a5', kind: 'system', createdAt: ago(24 * 7 + 1),

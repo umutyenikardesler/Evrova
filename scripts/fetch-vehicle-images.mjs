@@ -46,7 +46,7 @@ const strip = (h) => (h ?? '').replace(/<[^>]*>/g, '').replace(/&amp;/g, '&').re
 /** Otomatik aramada yanlış/eski nesil çıkan modeller: fotoğraf atlanır (elle koyulabilir). */
 const EXCLUDE = new Set([
   'Opel|Corsa-e', 'Opel|Grandland', 'Peugeot|E-3008', 'Ford|Capri',
-  'Mercedes-Benz|EQS', 'Mercedes-Benz|G', 'MG|MG5', 'smart|#1', 'Opel|Combo', 'Ford|E-Transit', 'Fiat|E-Doblo Cargo',
+  'Mercedes-Benz|EQS', 'Mercedes-Benz|G', 'smart|#1', 'Opel|Combo', 'Ford|E-Transit', 'Fiat|E-Doblo Cargo',
   // Elle seçildi / uygun fotoğraf yok:
   'Ford|E-Transit Custom', 'Peugeot|e-2008|Allure 115 kW', 'Ford|Journey Courier BEV|Titanium 100 kW',
 ]);
@@ -64,6 +64,7 @@ const BLOCK = {
 
 /** Elle seçilen Commons dosyaları (otomatik arama yanlış/eski nesil bulduğunda). Anahtar: "Marka|Model" */
 const MANUAL = {
+  'MG|Marvel R': 'MG Marvel R 1X7A0397.jpg',
   'Citroën|ë-C3 Aircross': 'Citroën ë-C3 Aircross DSC 8364.jpg',
   'Citroën|ë-C4': 'Citroën ë-C4 Feel (III) – f 14042024.jpg',
   'Citroën|Ami': 'Citroën Ami (3).jpg',
@@ -71,6 +72,9 @@ const MANUAL = {
 
 /** Elle seçilen paket fotoğrafı. Anahtar: "Marka|Model|Paket" */
 const MANUAL_TRIM = {
+  'MG|MG4|Comfort': '2024 MG 4 51KWH EV RWD front.jpg',
+  'MG|MG4|Luxury': '2023 MG 4 Trophy Long Range in Holborn Blue (Front).jpg',
+  'MG|MG4|XPOWER': 'MG4 EV XPower Automesse Ludwigsburg 2023 1X7A0027.jpg',
   'Tesla|Model Y|Standart Menzil Arkadan Çekiş': 'Tesla Model Y Standard front view dllu.jpg',
   'Tesla|Model Y|Premium Uzun Menzil Arkadan Çekiş': 'Tesla Model Y Juniper Long Range RWD Quicksilver 01.jpg',
   'Tesla|Model Y|Premium Uzun Menzil Dört Çeker': '2025 Tesla Model Y Juniper Long Range AWD.jpg',
@@ -82,6 +86,10 @@ const MANUAL_TRIM = {
  * Paket galerisi varsa o paketin detayında model galerisi yerine o kullanılır.
  */
 const MANUAL_GALLERY = {
+  'MG|Marvel R': ['MG Marvel R Automesse Ludwigsburg 2022 1X7A5916.jpg', 'MG Marvel R Automesse Ludwigsburg 2022 1X7A5930.jpg', 'MG Marvel R 1X7A0401.jpg'],
+  'MG|MG4|Comfort': ['2024 MG 4 51KWH EV RWD rear.jpg'],
+  'MG|MG4|Luxury': ['2023 MG 4 Trophy Long Range in Holborn Blue (Rear).jpg', '2023 MG 4 Trophy Long Range in Holborn Blue (Interior).jpg'],
+  'MG|MG4|XPOWER': ['MG4 EV XPower Automesse Ludwigsburg 2023 1X7A0030.jpg', 'MG4 EV XPower, IAA Summit 2023, Munich (P1110742).jpg', 'MG4 EV XPower Automesse Ludwigsburg 2023 1X7A0099.jpg'],
   'Citroën|Ami': ['Citroën Ami (2).jpg', 'Citroën Ami (5).jpg', 'Citroën Ami (7).jpg'],
   'Tesla|Model Y|Standart Menzil Arkadan Çekiş': ['Tesla Model Y Standard dllu.jpg'],
   'Tesla|Model Y|Premium Uzun Menzil Arkadan Çekiş': [
