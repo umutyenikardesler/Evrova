@@ -10,11 +10,12 @@ import { useNav } from '../../navigation/NavContext';
 import { colors } from '../../theme/colors';
 import { changeColor } from '../../utils/color';
 import { formatPct, pctChange } from '../../utils/format';
+import { monthLabels, monthLong } from '../../utils/months';
 import { vehicleGallery } from '../../utils/vehicleImage';
 import DetailPhoto from './DetailPhoto';
 
 export default function VehicleDetailScreen({ id }: { id: string }) {
-  const { t, lang, vehicles, price, isWatched, toggleWatch } = useApp();
+  const { t, lang, vehicles, listMonth, price, isWatched, toggleWatch } = useApp();
   const nav = useNav();
   const v = vehicles.find((x) => x.id === id);
   if (!v) return null;
@@ -49,15 +50,15 @@ export default function VehicleDetailScreen({ id }: { id: string }) {
       </View>
 
       <Card style={{ borderRadius: 22, padding: 18, gap: 4 }}>
-        <AppText weight="semibold" size={12} color={colors.muted}>{t('detail.listPrice')}</AppText>
+        <AppText weight="semibold" size={12} color={colors.muted}>{t('detail.listPrice', { month: monthLong(lang, v.listMonth ?? listMonth) })}</AppText>
         <View style={{ flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
           <AppText weight="extrabold" size={26}>{price(v.prices[11])}</AppText>
           <AppText weight="bold" size={13} color={changeColor(yoy)}>{t('detail.per12', { pct: formatPct(yoy, lang) })}</AppText>
         </View>
         <PriceLineChart prices={v.prices} />
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-          <AppText size={11} color={colors.muted}>{t('detail.oct')}</AppText>
-          <AppText size={11} color={colors.muted}>{t('detail.sep')}</AppText>
+          <AppText size={11} color={colors.muted}>{monthLabels(lang, v.listMonth ?? listMonth).first}</AppText>
+          <AppText size={11} color={colors.muted}>{monthLabels(lang, v.listMonth ?? listMonth).last}</AppText>
         </View>
       </Card>
 

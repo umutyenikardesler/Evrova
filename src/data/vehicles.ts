@@ -1,4 +1,5 @@
 import type { Spec, Vehicle, VehicleType } from '../types.ts';
+import { MONTHLY_PRICES } from './monthlyPrices.ts';
 
 /**
  * Türkiye'de satılan elektrikli araçlar (marka > model > paket/versiyon).
@@ -12,10 +13,40 @@ import type { Spec, Vehicle, VehicleType } from '../types.ts';
  *
  * Menzil (WLTP), batarya ve güç yalnızca kaynaklarda bulunduğunda girilmiştir; yoksa boştur.
  *
- * DİKKAT: Aylık fiyat GEÇMİŞİ gerçek veri değildir. Geçmiş liste elde olmadığı için, geçerli fiyata
- * varan 12 aylık seri araç kimliğinden üretilen sabit (deterministik) bir simülasyondur.
- * Gerçek geçmiş Firestore'a yazıldığında (prices dizisi) onun yerine geçer.
+ * FİYAT GEÇMİŞİ: Satırlardaki fiyat BASE_MONTH (Eylül 2026) listesidir. Sonraki aylar
+ * src/data/monthlyPrices.ts içindedir ve her ayın ilk haftasında `npm run prices` (scripts/update-prices.mjs)
+ * ile DonanımHaber listesinden otomatik eklenir. 12 aylık seri, son listeden (LIST_MONTH) geriye doğru kurulur:
+ *  - gerçek (kaydedilmiş) aylar gerçek fiyatla,
+ *  - bir ayın listesinde olmayan araç önceki fiyatını korur,
+ *  - kayıtlı ilk aydan ÖNCEKİ aylar gerçek değildir: kimlikten üretilen sabit bir simülasyondur
+ *    (aylar geçtikçe simülasyon dışarı kayar, seri tamamen gerçek veriye döner).
  */
+
+/** Satırlardaki fiyatların ait olduğu liste ayı. */
+const BASE_MONTH = '2026-09';
+/** Elimizdeki en yeni liste ayı. */
+export const LIST_MONTH: string = [BASE_MONTH, ...Object.keys(MONTHLY_PRICES)].sort().pop()!;
+
+const monthIndex = (ym: string) => {
+  const [y, m] = ym.split('-').map(Number);
+  return y * 12 + (m - 1);
+};
+
+/** 12 aylık seri (son ay = LIST_MONTH). */
+function priceSeries(id: string, basePrice: number): number[] {
+  const known = new Map<number, number>([[monthIndex(BASE_MONTH), basePrice]]);
+  for (const [ym, prices] of Object.entries(MONTHLY_PRICES)) if (prices[id] != null) known.set(monthIndex(ym), prices[id]);
+  const knownIdx = [...known.keys()].sort((a, b) => a - b);
+  const first = knownIdx[0];
+  const sim = history(id, known.get(first)!); // sim[11] = ilk kayıtlı ay
+  const end = monthIndex(LIST_MONTH);
+  return Array.from({ length: 12 }, (_, k) => {
+    const m = end - 11 + k;
+    if (m < first) return sim[Math.max(0, 11 - (first - m))];
+    const last = [...knownIdx].reverse().find((i) => i <= m)!; // o aya kadarki son gerçek fiyat
+    return known.get(last)!;
+  });
+}
 
 /** Deterministik sözde-rastgele: aynı id her zaman aynı seriyi üretir. */
 function history(id: string, current: number): number[] {
@@ -71,7 +102,7 @@ function build(type: VehicleType, brand: string, rows: Row[]): Vehicle[] {
     specs.push(...(x.specs ?? []));
     return {
       id, type, brand, model, trim, name, tagline: { tr: trim || model, en: toEn(trim || model) },
-      rangeKm: x.range, batteryKwh: x.kwh, prices: history(id, price), specs,
+      rangeKm: x.range, batteryKwh: x.kwh, prices: priceSeries(id, price), listMonth: LIST_MONTH, specs,
     };
   });
 }
@@ -93,7 +124,7 @@ const CARS: Vehicle[] = [
     ['Model Y', 'Standart Menzil Arkadan Çekiş', 2474985, { id: 'tesla-model-y', range: 534 }],
     ['Model Y', 'Premium Uzun Menzil Arkadan Çekiş', 3682800, { range: 622 }],
     ['Model Y', 'Premium Uzun Menzil Dört Çeker', 4410000, { kwh: 79, range: 551 }],
-    ['Model Y', 'Performance Dört Çeker', 4756500],
+    ['Model Y', 'Performance Dört Çeker', 4756000],
   ]),
   ...cars('Renault', [
     ['5 E-Tech', 'EV52 150hp', 2099000, { kwh: 52, range: 410 }],

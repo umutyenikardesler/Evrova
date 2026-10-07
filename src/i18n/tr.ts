@@ -22,7 +22,7 @@ const tr = {
     socialSoon: 'Bu giriş yöntemi yakında',
   },
   home: {
-    hello: 'Merhaba {name}', prices: 'Güncel araç fiyatları', month: 'Eylül 2026',
+    hello: 'Merhaba {name}', prices: 'Güncel araç fiyatları',
     discover: 'Araçları keşfet', discoverSub: 'Motosiklet, otomobil ve kamyonet fiyatlarını karşılaştır.', browse: 'Araçları incele →',
     priceTracking: 'Fiyat takibi', priceTrackingSub: 'Aylık fiyat değişimleri',
     charging: 'Şarj noktaları', chargingSub: 'İstasyonlar ve ücretler', chargingSoon: 'Şarj noktaları yakında',
@@ -32,7 +32,7 @@ const tr = {
     emptyWatch: 'Henüz takip ettiğin bir araç yok. Araç kartındaki kalp simgesiyle fiyatını takibe alabilirsin.',
   },
   vehicles: { modelCount: '{n} model', versionCount: '{n} paket', title: 'Araçlar', watch: 'Takibe al', rangeLine: '{range} menzil · {battery}', rangeOnly: '{range} menzil', batteryOnly: '{battery}' },
-  detail: { photoBy: 'Fotoğraf: {author} · {license}', listPrice: 'Eylül 2026 liste fiyatı', per12: '{pct} / 12 ay', oct: 'Eki 2025', sep: 'Eyl 2026', history: 'Aylık fiyat geçmişini gör', track: 'Fiyatını takibe al' },
+  detail: { photoBy: 'Fotoğraf: {author} · {license}', listPrice: '{month} liste fiyatı', per12: '{pct} / 12 ay', history: 'Aylık fiyat geçmişini gör', track: 'Fiyatını takibe al' },
   prices: {
     title: 'Fiyat takibi', emptyTitle: 'Takip listen boş',
     emptyText: 'Aylık fiyat değişimini görmek için Araçlar sayfasından bir model seç.', browse: 'Araçlara göz at',

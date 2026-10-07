@@ -38,7 +38,9 @@
     "web": "expo start --web",
     "typecheck": "tsc --noEmit",
     "seed": "node scripts/seed.mjs",
-    "logos": "node scripts/build-logos.mjs"
+    "logos": "node scripts/build-logos.mjs",
+    "icons": "node scripts/build-icons.mjs",
+    "prices": "node scripts/update-prices.mjs"
   },
   "private": true
 }

@@ -24,7 +24,7 @@ const en: Dict = {
     socialSoon: 'This sign-in method is coming soon',
   },
   home: {
-    hello: 'Hello {name}', prices: 'Current vehicle prices', month: 'Sep 2026',
+    hello: 'Hello {name}', prices: 'Current vehicle prices',
     discover: 'Discover vehicles', discoverSub: 'Compare motorcycle, car and van prices.', browse: 'Browse vehicles →',
     priceTracking: 'Price tracking', priceTrackingSub: 'Monthly price changes',
     charging: 'Charging points', chargingSub: 'Stations and fees', chargingSoon: 'Charging points coming soon',
@@ -34,7 +34,7 @@ const en: Dict = {
     emptyWatch: "You aren't tracking any vehicle yet. Tap the heart on a vehicle card to track its price.",
   },
   vehicles: { modelCount: '{n} models', versionCount: '{n} trims', title: 'Vehicles', watch: 'Track', rangeLine: '{range} range · {battery}', rangeOnly: '{range} range', batteryOnly: '{battery}' },
-  detail: { photoBy: 'Photo: {author} · {license}', listPrice: 'September 2026 list price', per12: '{pct} / 12 mo', oct: 'Oct 2025', sep: 'Sep 2026', history: 'View monthly price history', track: 'Track its price' },
+  detail: { photoBy: 'Photo: {author} · {license}', listPrice: '{month} list price', per12: '{pct} / 12 mo', history: 'View monthly price history', track: 'Track its price' },
   prices: {
     title: 'Price tracking', emptyTitle: 'Your watchlist is empty',
     emptyText: 'Pick a model from the Vehicles page to see its monthly price changes.', browse: 'Browse vehicles',

@@ -8,12 +8,14 @@ import { useApp } from '../../context/AppContext';
 import { useNav } from '../../navigation/NavContext';
 import { colors } from '../../theme/colors';
 import { changeColor } from '../../utils/color';
-import { formatPct, MONTHS_LONG, pctChange } from '../../utils/format';
+import { formatPct, pctChange } from '../../utils/format';
+import { monthLabels } from '../../utils/months';
 import AlarmRow from './AlarmRow';
 import MonthBars from './MonthBars';
 
 export default function PricesScreen() {
-  const { t, lang, vehicles, profile, price } = useApp();
+  const { t, lang, vehicles, listMonth, profile, price } = useApp();
+  const months = monthLabels(lang, listMonth);
   const nav = useNav();
   const watched = (profile?.watch ?? [])
     .map((id) => vehicles.find((v) => v.id === id))
@@ -48,7 +50,7 @@ export default function PricesScreen() {
 
       <Card style={{ borderRadius: 22, padding: 18, gap: 14 }}>
         <View>
-          <AppText weight="semibold" size={13} color={colors.muted}>{MONTHS_LONG[lang][m]}</AppText>
+          <AppText weight="semibold" size={13} color={colors.muted}>{months.long[m]}</AppText>
           <AppText weight="extrabold" size={30} style={{ letterSpacing: -0.6, lineHeight: 36 }}>{price(P[m])}</AppText>
           <AppText weight="bold" size={13} color={ch === null ? colors.muted : changeColor(ch)}>
             {ch === null ? t('prices.start') : t('prices.vsPrev', { pct: formatPct(ch, lang) })}
@@ -69,7 +71,7 @@ export default function PricesScreen() {
           const c = pctChange(P[i - 1], P[i]);
           return (
             <View key={i} style={{ flexDirection: 'row', paddingVertical: 11, borderTopWidth: 1, borderTopColor: colors.line }}>
-              <AppText size={14} style={{ flex: 1 }}>{MONTHS_LONG[lang][i]}</AppText>
+              <AppText size={14} style={{ flex: 1 }}>{months.long[i]}</AppText>
               <AppText weight="bold" size={14} style={{ width: 120, textAlign: 'right' }}>{price(P[i])}</AppText>
               <AppText weight="bold" size={14} color={changeColor(c)} style={{ width: 72, textAlign: 'right' }}>{formatPct(c, lang)}</AppText>
             </View>

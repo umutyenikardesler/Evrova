@@ -59,3 +59,16 @@ scripts/seed.mjs           Firestore'a örnek veri yükleme
 ```
 
 Hiçbir dosya 200 satırı geçmez (sınır 1000).
+
+## Aylık fiyat güncelleme (otomatik)
+
+Fiyat listeleri her ayın ilk haftasında yayınlanır. `scripts/update-prices.mjs` listeleri okur
+(DonanımHaber + hibritelektrik.com), araçlarla eşleştirir ve `src/data/monthlyPrices.ts` dosyasına o ayı ekler.
+Uygulamadaki ay etiketleri (ana sayfa rozeti, "… liste fiyatı", fiyat grafikleri) bu veriden türetilir; elle değiştirmek gerekmez.
+
+- Elle çalıştırma: `npm run prices` (yazmadan görmek için `node scripts/update-prices.mjs --dry`)
+- Otomatik: `.github/workflows/update-prices.yml` her ayın 1–7'si sabah 09:00'da çalışır; değişiklik varsa dosyayı commit eder
+  ve (GitHub'da `FIREBASE_SERVICE_ACCOUNT` secret'ı tanımlıysa) araç fiyatlarını Firestore'a yazar.
+  Secret: Firebase Console > Project settings > Service accounts > yeni özel anahtar → JSON'un tamamı repo Settings > Secrets > Actions.
+- Listede bulunamayan araçların (motosiklet, ticari, Honda/Yamaha) fiyatı önceki ayki gibi kalır; rapor edilir.
+- Fiyat geçmişi: kaydedilmiş aylar gerçek, kayıttan önceki aylar simülasyondur (aylar geçtikçe simülasyon dışarı kayar).

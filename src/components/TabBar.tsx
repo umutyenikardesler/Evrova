@@ -112,7 +112,7 @@ export default function TabBar({ blurTarget }: { blurTarget?: React.RefObject<Vi
                 const on = nav.tab === tab;
                 return (
                   <Tap key={tab} onPress={() => nav.go(tab)} accessibilityLabel={t(label)} style={{ flex: 1, height: BUBBLE_H, alignItems: 'center', justifyContent: 'center' }}>
-                    <Icon name={icon} size={22} color={on ? colors.lime : colors.muted} />
+                    <Icon name={icon} size={22} color={on ? colors.lime : colors.muted} solid={on} detailColor="#FFFFFF" />
                   </Tap>
                 );
               })}

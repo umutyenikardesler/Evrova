@@ -9,12 +9,13 @@ import { useNav } from '../../navigation/NavContext';
 import { colors } from '../../theme/colors';
 import { changeColor } from '../../utils/color';
 import { formatPct, pctChange } from '../../utils/format';
+import { monthTitle } from '../../utils/months';
 import { nameParts } from '../../utils/name';
 import HomeHeader from './HomeHeader';
 import QuickTiles from './QuickTiles';
 
 export default function HomeScreen() {
-  const { t, lang, vehicles, profile, price, notifications } = useApp();
+  const { t, lang, vehicles, listMonth, profile, price, notifications } = useApp();
   const nav = useNav();
   const watched = (profile?.watch ?? [])
     .map((id) => vehicles.find((v) => v.id === id))
@@ -29,7 +30,7 @@ export default function HomeScreen() {
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: 8 }}>
           <AppText weight="semibold" size={13} color={colors.muted}>{t('home.prices')}</AppText>
           <View style={{ backgroundColor: 'rgba(110,224,154,0.12)', paddingVertical: 4, paddingHorizontal: 10, borderRadius: 999 }}>
-            <AppText weight="semibold" size={12} color={colors.down}>{t('home.month')}</AppText>
+            <AppText weight="semibold" size={12} color={colors.down}>{monthTitle(lang, listMonth)}</AppText>
           </View>
         </View>
         <AppText weight="extrabold" size={30} style={{ letterSpacing: -0.6, marginTop: 4 }}>{t('home.discover')}</AppText>

@@ -3,7 +3,7 @@ import { getLocales } from 'expo-localization';
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { NEWS } from '../data/news';
 import { localNotifications } from '../data/notifications';
-import { VEHICLES } from '../data/vehicles';
+import { LIST_MONTH, VEHICLES } from '../data/vehicles';
 import { resetPassword, signIn, signOut, signUp, subscribeAuth, type AuthUser } from '../firebase/auth';
 import { saveUser, watchNews, watchNotifications, watchUser, watchVehicles } from '../firebase/firestore';
 import { translate, type Lang, type TKey } from '../i18n';
@@ -46,6 +46,8 @@ interface AppState {
   logout: () => Promise<void>;
 
   vehicles: Vehicle[];
+  /** Fiyat listesinin ayı ("YYYY-MM"): verideki en yeni liste */
+  listMonth: string;
   news: NewsItem[];
   notifications: AppNotification[];
 
@@ -181,7 +183,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       },
       sendReset: resetPassword,
       logout: signOut,
-      vehicles, news, notifications,
+      vehicles, listMonth: vehicles.find((v) => v.listMonth)?.listMonth ?? LIST_MONTH, news, notifications,
       isWatched: (id) => !!p?.watch.includes(id),
       toggleWatch: (id) => {
         if (!p) return;

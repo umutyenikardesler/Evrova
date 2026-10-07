@@ -23,7 +23,9 @@ function watchCollection<T>(name: string, onData: (items: T[]) => void, orderFie
   );
 }
 
-export const watchVehicles = (cb: (v: Vehicle[]) => void) => watchCollection<Vehicle>('vehicles', cb);
+// listMonth'u olmayan eski kayıtlar Eylül 2026 listesinden kalmadır (taban ay).
+export const watchVehicles = (cb: (v: Vehicle[]) => void) =>
+  watchCollection<Vehicle>('vehicles', (list) => cb(list.map((v) => ({ ...v, listMonth: v.listMonth ?? '2026-09' }))));
 export const watchNews = (cb: (n: NewsItem[]) => void) => watchCollection<NewsItem>('news', cb);
 export const watchNotifications = (cb: (n: AppNotification[]) => void) =>
   watchCollection<AppNotification>('notifications', cb, 'createdAt');

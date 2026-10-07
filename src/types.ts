@@ -21,6 +21,8 @@ export interface Vehicle {
   batteryKwh?: number;
   /** 12 aylık liste fiyatı (Eki 2025 → Eyl 2026), TL */
   prices: number[];
+  /** Serinin son ayı ("YYYY-MM"); yoksa uygulamadaki en yeni liste ayı kullanılır */
+  listMonth?: string;
   specs: Spec[];
 }
 

@@ -43,12 +43,3 @@ export function relativeTime(ts: number, t: T): string {
   const weeks = Math.floor(days / 7);
   return weeks === 1 ? t('time.week') : t('time.weeks', { n: weeks });
 }
-
-export const MONTHS = {
-  tr: ['Eki', 'Kas', 'Ara', 'Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl'],
-  en: ['Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
-};
-export const MONTHS_LONG = {
-  tr: ['Ekim 2025', 'Kasım 2025', 'Aralık 2025', 'Ocak 2026', 'Şubat 2026', 'Mart 2026', 'Nisan 2026', 'Mayıs 2026', 'Haziran 2026', 'Temmuz 2026', 'Ağustos 2026', 'Eylül 2026'],
-  en: ['October 2025', 'November 2025', 'December 2025', 'January 2026', 'February 2026', 'March 2026', 'April 2026', 'May 2026', 'June 2026', 'July 2026', 'August 2026', 'September 2026'],
-};
