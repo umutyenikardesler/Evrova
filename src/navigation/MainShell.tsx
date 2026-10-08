@@ -41,7 +41,7 @@ export default function MainShell() {
   const { width } = useWindowDimensions();
   const blurTarget = useRef<View>(null); // Android: menünün bulanıklaştıracağı içerik
   // Ekran değişince kaydırma başa döner (key değişir); aynı sekmede geri gidilirse o ekranın eski konumu geri yüklenir.
-  const screenKey = `${nav.tab}:${nav.detailId ?? ''}:${nav.newsId ?? ''}:${nav.vehicleType}:${nav.vehicleBrand ?? ''}:${nav.vehicleModel ?? ''}`;
+  const screenKey = `${nav.tab}:${nav.detailId ?? ''}:${nav.newsId ?? ''}:${nav.vehicleType}:${nav.vehicleBrand ?? ''}:${nav.vehicleModel ?? ''}:${nav.newsCat}:${nav.newsPage}`;
   const scrollRef = useRef<ScrollView>(null);
   const offsets = useRef<Record<string, number>>({});
   const pendingY = useRef(0);

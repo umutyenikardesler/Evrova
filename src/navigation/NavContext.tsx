@@ -14,6 +14,9 @@ interface NavState {
   vehicleType: 'all' | VehicleType;
   vehicleBrand: string | null;
   vehicleModel: string | null;
+  /** Haberler sayfasında seçili kategori ('all' = Tümü) ve sayfa numarası. */
+  newsCat: string;
+  newsPage: number;
 }
 
 interface Nav extends NavState {
@@ -28,6 +31,8 @@ interface Nav extends NavState {
   setVehicleType: (t: 'all' | VehicleType) => void;
   setVehicleBrand: (b: string | null) => void;
   setVehicleModel: (m: string | null) => void;
+  setNewsCat: (c: string) => void;
+  setNewsPage: (p: number) => void;
   /** Bir üst seviyeye döner (detay → paketler → modeller → markalar; makale → haberler; bildirimler → ana sayfa). Geri gidilecek seviye yoksa false. */
   goBack: () => boolean;
   /** Geri gidilecek bir üst seviye var mı? */
@@ -49,7 +54,7 @@ function parentOf(p: NavState): NavState | null {
 const depthOf = (p: NavState) =>
   (p.detailId ? 1 : 0) + (p.newsId ? 1 : 0) + (p.tab === 'vehicles' ? (p.vehicleBrand ? 1 : 0) + (p.vehicleModel ? 1 : 0) : 0) + (p.tab === 'notif' || p.tab === 'tax' ? 1 : 0);
 
-const initial: NavState = { tab: 'home', detailId: null, newsId: null, priceSel: 'togg-t10x-std', monthSel: 11, vehicleType: 'all', vehicleBrand: null, vehicleModel: null };
+const initial: NavState = { tab: 'home', detailId: null, newsId: null, priceSel: 'togg-t10x-std', monthSel: 11, vehicleType: 'all', vehicleBrand: null, vehicleModel: null, newsCat: 'all', newsPage: 1 };
 const Ctx = createContext<Nav | null>(null);
 
 export const useNav = (): Nav => {
@@ -111,6 +116,8 @@ export function NavProvider({ enabled, children }: { enabled: boolean; children:
       setVehicleType: (t) => setS((p) => ({ ...p, vehicleType: t, vehicleBrand: null, vehicleModel: null })),
       setVehicleBrand: (b) => setS((p) => ({ ...p, vehicleBrand: b, vehicleModel: null })),
       setVehicleModel: (m) => setS((p) => ({ ...p, vehicleModel: m })),
+      setNewsCat: (c) => setS((p) => ({ ...p, newsCat: c, newsPage: 1 })),
+      setNewsPage: (n) => setS((p) => ({ ...p, newsPage: n })),
       goBack, canGoBack: parentOf(s) !== null, depth: depthOf(s),
     }),
     [s, go, openNews, openPrices, goBack],

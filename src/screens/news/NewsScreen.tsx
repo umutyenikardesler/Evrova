@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View } from 'react-native';
 import AppText from '../../components/AppText';
 import { ChipScroller } from '../../components/Chips';
+import Pagination from '../../components/Pagination';
 import { Eyebrow, Page, ScreenTitle } from '../../components/Layout';
 import Tap from '../../components/Tap';
 import { NEWS_CATS } from '../../data/news';
@@ -11,13 +12,20 @@ import { colors } from '../../theme/colors';
 import type { NewsItem } from '../../types';
 import NewsPhoto from './NewsPhoto';
 
+/** Sayfa başına haber: Tümü'nde 10, kategorilerde 7. */
+const PAGE_SIZE = { all: 10, cat: 7 };
+
 export default function NewsScreen() {
   const { t, lang, news } = useApp();
   const nav = useNav();
-  const [cat, setCat] = useState('all');
+  const cat = nav.newsCat;
 
   const catLabel = (id: string) => NEWS_CATS.find((c) => c.id === id)?.label[lang] ?? id;
-  const list = news.filter((n) => cat === 'all' || n.cat === cat).sort((a, b) => b.published.localeCompare(a.published));
+  const all = news.filter((n) => cat === 'all' || n.cat === cat).sort((a, b) => b.published.localeCompare(a.published));
+  const size = cat === 'all' ? PAGE_SIZE.all : PAGE_SIZE.cat;
+  const pages = Math.max(1, Math.ceil(all.length / size));
+  const page = Math.min(nav.newsPage, pages);
+  const list = all.slice((page - 1) * size, page * size);
   const [lead, ...rest] = list;
 
   const meta = (n: NewsItem) => `${n.date[lang]} · ${n.readMin} ${lang === 'tr' ? 'dk' : 'min'}`;
@@ -28,7 +36,7 @@ export default function NewsScreen() {
       <ChipScroller
         fade
         items={[{ id: 'all', label: t('common.all') }, ...NEWS_CATS.map((c) => ({ id: c.id, label: c.label[lang] }))].map((c) => ({
-          key: c.id, label: c.label, active: cat === c.id, onPress: () => setCat(c.id),
+          key: c.id, label: c.label, active: cat === c.id, onPress: () => nav.setNewsCat(c.id),
         }))}
       />
 
@@ -57,6 +65,8 @@ export default function NewsScreen() {
           </View>
         </Tap>
       ))}
+
+      <Pagination page={page} total={pages} onChange={nav.setNewsPage} />
     </Page>
   );
 }
