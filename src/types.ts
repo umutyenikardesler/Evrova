@@ -37,6 +37,8 @@ export interface NewsItem {
   published: string;
   /** Haberin özetlendiği kaynak sayfa. */
   source?: { name: string; url: string };
+  /** Haberin kendi görseli (uzak URL + atıf); gömülü görsel yoksa kullanılır. */
+  photo?: { url: string; author: string; license: string; page: string };
   body: { tr: string[]; en: string[] };
 }
 

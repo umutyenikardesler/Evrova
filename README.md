@@ -147,9 +147,14 @@ Fiyat listeleri her ayın ilk haftasında yayınlanır.
 | `npm run logos` | Marka logolarını üretir |
 | `npm run icons` | Uygulama ikonlarını üretir |
 | `node scripts/fetch-vehicle-images.mjs [marka]` | Araç fotoğraflarını Wikimedia Commons'tan indirir, eşlemeyi üretir |
-| `node scripts/fetch-news-images.mjs` | Haber görsellerini indirir (`PICKS` listesine göre) |
+| `npm run news:build` | Haber görsellerini indirir ve `src/data/newsData.ts`'i üretir (kaynak: `data/news-items.json`) |
+| `node scripts/news-add.mjs <dosya.json>` | Yeni haberleri doğrular, ekler, görsellerini indirir (`--dry` yalnızca doğrular, `--due` 36 saat doldu mu?) |
+| `npm run seed:news` | Yalnızca haberleri Firestore'a yazar; yeni haber varsa en yenisi için 1 bildirim oluşturur |
+| `node scripts/commons-search.mjs "sorgu"` | Commons'ta serbest lisanslı görsel arar |
 
-**Yeni haber eklemek:** `src/data/news.ts` içine kaydı ekle, görselini `scripts/fetch-news-images.mjs` içindeki `PICKS` listesine ekleyip betiği çalıştır, sonra `npm run seed`.
+**Haberler (otomatik):** Zamanlanmış Claude görevi `evrova-news-scan` her 6 saatte tetiklenir; son taramadan **36 saat** geçtiyse (`data/news-state.json`) kategorilere (Batarya, Şarj, Motosiklet, Yazılım, Ticari) göre güncel haberleri tarar, kaynağı açıp doğrular, kendi cümleleriyle TR/EN yazar, Commons'tan uygun görsel seçer ve `news-add.mjs` ile ekler; ardından `npm run seed:news` ile Firestore'a yazar. Böylece yeni haberler uygulama güncellemesi gerekmeden görünür (yeni haberlerin görseli kendi Commons bağlantısından yüklenir). Haberler `data/news-items.json` dosyasında tutulur; 120 günden eskiler listeden çıkar. Görev commit/push yapmaz.
+
+**Haberi elle eklemek:** `data/news-items.json` içine kaydı ekle (`images`: Commons dosya adları), `npm run news:build`, sonra `npm run seed:news`.
 
 **Yeni araç/paket eklemek:** `src/data/vehicles.ts` içine satırı ekle, `node scripts/fetch-vehicle-images.mjs <marka>` ile fotoğrafını al.
 

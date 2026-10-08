@@ -5,7 +5,7 @@ import { BackButton } from '../../components/Buttons';
 import { Pill } from '../../components/Chips';
 import { Page } from '../../components/Layout';
 import Tap from '../../components/Tap';
-import { newsImage } from '../../data/newsImages';
+import { newsPhoto } from '../../utils/newsPhoto';
 import NewsPhoto from './NewsPhoto';
 import { useApp } from '../../context/AppContext';
 import { NEWS_CATS } from '../../data/news';
@@ -18,7 +18,7 @@ export default function ArticleScreen({ id }: { id: string }) {
   const a = news.find((n) => n.id === id);
   if (!a) return null;
   const cat = NEWS_CATS.find((c) => c.id === a.cat)?.label[lang] ?? a.cat;
-  const img = newsImage(a);
+  const img = newsPhoto(a);
   const read = `${a.readMin} ${lang === 'tr' ? 'dk' : 'min'}`;
 
   return (

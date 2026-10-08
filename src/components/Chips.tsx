@@ -1,5 +1,6 @@
 import React from 'react';
 import { ScrollView, View } from 'react-native';
+import { swipeLockProps } from '../navigation/swipeLock';
 import { colors } from '../theme/colors';
 import AppText from './AppText';
 import Tap from './Tap';
@@ -14,7 +15,7 @@ export interface ChipItem {
 /** Yatay kaydırılabilir chip satırı (sayfa kenarlarına taşan). */
 export function ChipScroller({ items, fade = false }: { items: ChipItem[]; fade?: boolean }) {
   return (
-    <View style={{ marginHorizontal: -18 }}>
+    <View style={{ marginHorizontal: -18 }} {...swipeLockProps}>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: 18, gap: 8 }}>
         {items.map((c) => (
           <Tap key={c.key} onPress={c.onPress}

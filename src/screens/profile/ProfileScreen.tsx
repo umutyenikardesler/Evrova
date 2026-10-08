@@ -39,10 +39,12 @@ function SettingRow({ title, sub, first, children, onPress }: {
 }
 
 export default function ProfileScreen() {
-  const { t, lang, currency, rates, profile, logout, toggleNotif, toggleCompact } = useApp();
+  const { t, lang, currency, rates, profile, vehicles, logout, toggleNotif, toggleCompact } = useApp();
   const nav = useNav();
-  const watchCount = profile?.watch.length ?? 0;
-  const alarmCount = (profile?.watch ?? []).filter((id) => profile?.alarms[id]).length;
+  // Kataloğdan kalkmış (eski) araçlar sayılmaz.
+  const watchedIds = (profile?.watch ?? []).filter((id) => vehicles.some((v) => v.id === id));
+  const watchCount = watchedIds.length;
+  const alarmCount = watchedIds.filter((id) => profile?.alarms[id]).length;
 
   return (
     <Page>

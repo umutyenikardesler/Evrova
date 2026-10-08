@@ -5,6 +5,7 @@ import { PhotoPlaceholder } from '../../components/Layout';
 import Tap from '../../components/Tap';
 import { useApp } from '../../context/AppContext';
 import type { VehicleImage } from '../../data/vehicleImages';
+import { swipeLockProps } from '../../navigation/swipeLock';
 import { colors } from '../../theme/colors';
 
 const HEIGHT = 200;
@@ -24,7 +25,7 @@ export default function DetailPhoto({ images }: { images: VehicleImage[] }) {
 
   return (
     <View style={{ gap: 8 }}>
-      <View onLayout={(e) => setW(e.nativeEvent.layout.width)}
+      <View onLayout={(e) => setW(e.nativeEvent.layout.width)} {...swipeLockProps}
         style={{ height: HEIGHT, borderRadius: 22, overflow: 'hidden', backgroundColor: colors.card }}>
         {w > 0 && (
           <ScrollView ref={scroller} horizontal pagingEnabled showsHorizontalScrollIndicator={false}

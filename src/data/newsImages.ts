@@ -2,6 +2,10 @@
 // NEWS_GALLERY: haberin tüm görselleri (kapak ilk sırada), NEWS_CAT_IMAGES: kategori yedeği. Lisans/atıf: assets/news/credits.json
 export interface NewsImage { src: number; author: string; license: string; page: string; title: string }
 export const NEWS_GALLERY: Record<string, NewsImage[]> = {
+ "n16": [{ src: require('../../assets/news/software/2026-10-07/n16.jpg'), author: "Emir GEÇİR", license: "CC0", page: "https://commons.wikimedia.org/wiki/File:Togg_T10X_Interior.jpg", title: "Togg T10X Interior.jpg" }],
+ "n17": [{ src: require('../../assets/news/charging/2026-10-08/n17.jpg'), author: "NJo", license: "CC BY-SA 3.0", page: "https://commons.wikimedia.org/wiki/File:Electric_car_wireless_parking_charge_closeup.jpg", title: "Electric car wireless parking charge closeup.jpg" }],
+ "n18": [{ src: require('../../assets/news/commercial/2026-10-05/n18.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:Ford_E-Transit_Custom_(2023)_DSC_9255.jpg", title: "Ford E-Transit Custom (2023) DSC 9255.jpg" }],
+ "n19": [{ src: require('../../assets/news/battery/2026-10-01/n19.jpg'), author: "Wlb5V", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:2024_Chevrolet_Silverado_EV_RST.jpg", title: "2024 Chevrolet Silverado EV RST.jpg" }],
  "n1": [{ src: require('../../assets/news/software/2026-10-05/n1.jpg'), author: "Marcxosm", license: "CC0", page: "https://commons.wikimedia.org/wiki/File:Tesla_supercharger_station%2C_Livorno%2C_2026%2C_02.jpg", title: "Tesla supercharger station, Livorno, 2026, 02.jpg" }],
  "n2": [{ src: require('../../assets/news/moto/2026-10-05/n2.jpg'), author: "Rainmaker47", license: "CC BY-SA 3.0", page: "https://commons.wikimedia.org/wiki/File:Yamaha_Electric_Motorcycle.JPG", title: "Yamaha Electric Motorcycle.JPG" }],
  "n3": [{ src: require('../../assets/news/battery/2026-10-03/n3.jpg'), author: "Keiichi Yasu", license: "CC BY-SA 2.0", page: "https://commons.wikimedia.org/wiki/File:Gotion_Japan_Building.jpg", title: "Gotion Japan Building.jpg" }],
@@ -19,11 +23,11 @@ export const NEWS_GALLERY: Record<string, NewsImage[]> = {
  "n15": [{ src: require('../../assets/news/commercial/2026-06-13/n15.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:KGM_Musso_EV_Auto_Zuerich_2025_DSC_3556.jpg", title: "KGM Musso EV Auto Zuerich 2025 DSC 3556.jpg" }],
 };
 export const NEWS_CAT_IMAGES: Record<string, NewsImage> = {
- "software": { src: require('../../assets/news/software/2026-10-05/n1.jpg'), author: "Marcxosm", license: "CC0", page: "https://commons.wikimedia.org/wiki/File:Tesla_supercharger_station%2C_Livorno%2C_2026%2C_02.jpg", title: "Tesla supercharger station, Livorno, 2026, 02.jpg" },
+ "software": { src: require('../../assets/news/software/2026-10-07/n16.jpg'), author: "Emir GEÇİR", license: "CC0", page: "https://commons.wikimedia.org/wiki/File:Togg_T10X_Interior.jpg", title: "Togg T10X Interior.jpg" },
+ "charging": { src: require('../../assets/news/charging/2026-10-08/n17.jpg'), author: "NJo", license: "CC BY-SA 3.0", page: "https://commons.wikimedia.org/wiki/File:Electric_car_wireless_parking_charge_closeup.jpg", title: "Electric car wireless parking charge closeup.jpg" },
+ "commercial": { src: require('../../assets/news/commercial/2026-10-05/n18.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:Ford_E-Transit_Custom_(2023)_DSC_9255.jpg", title: "Ford E-Transit Custom (2023) DSC 9255.jpg" },
+ "battery": { src: require('../../assets/news/battery/2026-10-01/n19.jpg'), author: "Wlb5V", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:2024_Chevrolet_Silverado_EV_RST.jpg", title: "2024 Chevrolet Silverado EV RST.jpg" },
  "moto": { src: require('../../assets/news/moto/2026-10-05/n2.jpg'), author: "Rainmaker47", license: "CC BY-SA 3.0", page: "https://commons.wikimedia.org/wiki/File:Yamaha_Electric_Motorcycle.JPG", title: "Yamaha Electric Motorcycle.JPG" },
- "battery": { src: require('../../assets/news/battery/2026-10-03/n3.jpg'), author: "Keiichi Yasu", license: "CC BY-SA 2.0", page: "https://commons.wikimedia.org/wiki/File:Gotion_Japan_Building.jpg", title: "Gotion Japan Building.jpg" },
- "charging": { src: require('../../assets/news/charging/2026-09-25/n8.jpg'), author: "David Hawgood", license: "CC BY-SA 2.0", page: "https://commons.wikimedia.org/wiki/File:Cullompton_Services_M5_with_Ionity_ev_charging_points_-_geograph.org.uk_-_8044049.jpg", title: "Cullompton Services M5 with Ionity ev charging points - geograph.org.uk - 8044049.jpg" },
- "commercial": { src: require('../../assets/news/commercial/2026-09-21/n12.jpg'), author: "MarcelX42", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:Ford_F-LINE_E_IAA_Transportation_2026_(DSC0718).jpg", title: "Ford F-LINE E IAA Transportation 2026 (DSC0718).jpg" },
 };
 /** Haberin görselleri (kapak ilk); habere özel görsel yoksa kategorinin görseli; o da yoksa boş liste. */
 export const newsImages = (n: { id: string; cat: string }): NewsImage[] =>

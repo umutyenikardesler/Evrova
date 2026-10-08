@@ -15,6 +15,7 @@ import VehicleDetailScreen from '../screens/vehicles/VehicleDetailScreen';
 import VehiclesScreen from '../screens/vehicles/VehiclesScreen';
 import { colors } from '../theme/colors';
 import { useNav, type Tab } from './NavContext';
+import { isSwipeLocked } from './swipeLock';
 
 /** Alt menüdeki sıra; kaydırma ve geçiş yönü buna göre belirlenir. */
 const ORDER: Tab[] = ['home', 'vehicles', 'news', 'prices', 'profile'];
@@ -78,8 +79,9 @@ export default function MainShell() {
   const pan = useMemo(
     () =>
       PanResponder.create({
-        onMoveShouldSetPanResponder: (_, g) => Math.abs(g.dx) > 24 && Math.abs(g.dx) > Math.abs(g.dy) * 2,
+        onMoveShouldSetPanResponder: (_, g) => !isSwipeLocked() && Math.abs(g.dx) > 24 && Math.abs(g.dx) > Math.abs(g.dy) * 2,
         onPanResponderRelease: (_, g) => {
+          if (isSwipeLocked()) return;
           const n = navRef.current;
           const i = ORDER.indexOf(n.tab);
           if (g.dx > 60) {

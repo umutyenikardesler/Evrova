@@ -40,7 +40,10 @@
     "seed": "node scripts/seed.mjs",
     "logos": "node scripts/build-logos.mjs",
     "icons": "node scripts/build-icons.mjs",
-    "prices": "node scripts/update-prices.mjs"
+    "prices": "node scripts/update-prices.mjs",
+    "seed:news": "node scripts/seed.mjs --news-only",
+    "news:build": "node scripts/fetch-news-images.mjs && node scripts/news-build.mjs",
+    "news:due": "node scripts/news-add.mjs --due"
   },
   "private": true
 }

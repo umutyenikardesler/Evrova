@@ -5,8 +5,7 @@
 //   assets/news/credits.json                                  -> lisans/atıf
 //   src/data/newsImages.ts                                    -> uygulamanın kullandığı eşleme (otomatik üretilir)
 //
-// Yeni haber eklenince PICKS'e { id, cat, date, titles } satırı eklenir
-// (date: yayın tarihi, titles: Commons dosya adları; ilki kapak) ve betik çalıştırılır.
+// Haber eklemek için data/news-items.json içindeki kayda "images": [Commons dosya adları] yazılır (ilki kapak); betik klasörü açıp indirir.
 // Habere özel görsel yoksa uygulama aynı kategorideki ilk görseli kullanır.
 //
 //   node scripts/fetch-news-images.mjs           -> eksik olanları indirir
@@ -24,24 +23,10 @@ const OUT = 'src/data/newsImages.ts';
 const force = process.argv.includes('--force');
 const buildOnly = process.argv.includes('--build');
 
-/** Haber id'si -> kategori, yayın tarihi ve Commons dosya adları. */
-const PICKS = [
-  { id: 'n1', cat: 'software', date: '2026-10-05', titles: ["Tesla supercharger station, Livorno, 2026, 02.jpg"] }, // Tesla Supercharger (acil durum sürüşü)
-  { id: 'n2', cat: 'moto', date: '2026-10-05', titles: ["Yamaha Electric Motorcycle.JPG"] }, // Yamaha elektrikli motosiklet (YE-01 haberi)
-  { id: 'n3', cat: 'battery', date: '2026-10-03', titles: ["Gotion Japan Building.jpg"] }, // Gotion binası
-  { id: 'n4', cat: 'moto', date: '2026-10-02', titles: ["Ultraviolette X-47 Desert King 2026.jpg"] }, // Ultraviolette X-47
-  { id: 'n5', cat: 'battery', date: '2026-09-29', titles: ["CATL Lifepo4 302Ah.jpg"] }, // CATL batarya hücresi (Çin batarya planı)
-  { id: 'n6', cat: 'software', date: '2026-09-28', titles: ["Tesla Autopilot Engaged in Model X.jpg"] }, // Tesla sürüş destek ekranı (AB FSD oylaması)
-  { id: 'n7', cat: 'battery', date: '2026-09-25', titles: ["Mercedes-Benz Vision EQXX 001.jpg"] }, // Mercedes Vision EQXX (ProLogium testi)
-  { id: 'n8', cat: 'charging', date: '2026-09-25', titles: ['Cullompton Services M5 with Ionity ev charging points - geograph.org.uk - 8044049.jpg'] }, // otoyol dinlenme tesisi şarj noktaları (depolama destekli şarj düzenlemesi)
-  { id: 'n9', cat: 'charging', date: '2026-09-24', titles: ["Moscow, Zeekr 001 orange, Sept 2026 01.jpg"] }, // Zeekr 001 (Geely 2,25 MW şarj)
-  { id: 'n10', cat: 'software', date: '2026-09-22', titles: ["Tesla Full Self-Driving computer.jpg"] }, // Tesla FSD bilgisayarı (Çekya onayı)
-  { id: 'n11', cat: 'charging', date: '2026-09-21', titles: ["Ionity electric vehicle charging station at Raststätte Altenburger Land Nord.jpg"] }, // Otoyol şarj istasyonu (ağustos şarj verileri)
-  { id: 'n12', cat: 'commercial', date: '2026-09-21', titles: ["Ford F-LINE E IAA Transportation 2026 (DSC0718).jpg"] }, // Ford Trucks F-LINE E
-  { id: 'n13', cat: 'moto', date: '2026-09-18', titles: ["Royal Enfield - EICMA 2024.jpg"] }, // Royal Enfield standı (Flying Flea C6)
-  { id: 'n14', cat: 'commercial', date: '2026-09-15', titles: ['IAA Transportation 2026, Hanover (20260914-P1097510).jpg'] }, // IAA Transportation 2026
-  { id: 'n15', cat: 'commercial', date: '2026-06-13', titles: ["KGM Musso EV Auto Zuerich 2025 DSC 3556.jpg"] }, // KGM Musso EV (en çok satan elektrikli hafif ticari)
-];
+/** Haber id'si -> kategori, yayın tarihi ve Commons dosya adları: data/news-items.json'dan okunur (tek kaynak). */
+const PICKS = JSON.parse(readFileSync('data/news-items.json', 'utf8'))
+  .filter((n) => n.images?.length)
+  .map((n) => ({ id: n.id, cat: n.cat, date: n.published, titles: n.images }));
 
 /** Haberin dosyaları: ilki <id>.jpg, sonrakiler <id>-2.jpg ... */
 const filesOf = (p) =>
