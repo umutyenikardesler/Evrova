@@ -1,5 +1,88 @@
 [
   {
+    "id": "n20",
+    "cat": "charging",
+    "published": "2026-10-10",
+    "readMin": 2,
+    "source": {
+      "name": "Türkiye Gazetesi",
+      "url": "https://turkiyegazetesi.com.tr/t-otomobil/yoldan-sarj-olan-elektrikli-arac-teknolojisi-ilk-hedef-kamyonlar-1821766"
+    },
+    "images": [
+      "Kimitsu-PA-tateyama-expressway-downline.jpg"
+    ],
+    "title": {
+      "tr": "Honda yolda giderken şarj eden kablosuz teknolojiyi geliştirdi: ilk hedef ticari araçlar",
+      "en": "Honda develops wireless charging for moving EVs, starting with commercial vehicles"
+    },
+    "body": {
+      "tr": [
+        "Honda R&D, Taisei Corporation ve Taisei Rotec ile birlikte hareket halindeki elektrikli araçlara kablosuz güç aktarımı için temel teknolojiyi geliştirdi. Sistemde yol yüzeyine gömülü üniteler, aracın altındaki alıcıya manyetik bağlantıyla enerji iletiyor; araç fişe takılmadan şarj oluyor.",
+        "İlk hedef lojistik ve taşımacılık. Büyük ticari araçlar için ileri aşamalarda 150 kW’a kadar kablosuz aktarım değerlendirilecek; binek araçlar ise daha uzun vadeli bir ihtimal. Yol yapısının toplam ağırlığı yaklaşık 20 ton olan araçlara dayanması gerekiyor ve 2026 sonundan itibaren yeni bir test yolunda dayanıklılık, enerji aktarımı ve elektromanyetik alan sızıntısı önlemleri denenecek.",
+        "Halka açık yol denemelerinin, Japonya’da Chiba’daki Tateyama Otoyolu’nda 1 Nisan 2027’de başlayan mali yılda başlaması planlanıyor. Amaç, araçların şarj noktalarında durma sıklığını azaltmak; yakın vadede klasik şarj istasyonlarının yerini almak değil."
+      ],
+      "en": [
+        "Honda R&D, together with Taisei Corporation and Taisei Rotec, has developed core technology for wireless power transfer to electric vehicles while they are moving. Units embedded in the road surface send power to a receiver under the vehicle through a magnetic connection, so the car gains energy without plugging in.",
+        "Logistics and transport are the first target. Wireless transfer of up to 150 kW will be evaluated in later stages for large commercial vehicles, while passenger cars are a longer-term possibility. The road structure must withstand vehicles weighing about 20 tonnes in total, and from late 2026 a new test road will assess endurance, energy transfer and measures against electromagnetic field leakage.",
+        "Public-road demonstrations are planned on Japan’s Tateyama Expressway in Chiba in the fiscal year starting 1 April 2027. The aim is to reduce how often vehicles must stop at charging points, not to replace conventional charging stations any time soon."
+      ]
+    }
+  },
+  {
+    "id": "n21",
+    "cat": "moto",
+    "published": "2026-10-10",
+    "readMin": 2,
+    "source": {
+      "name": "LOG",
+      "url": "https://log.com.tr/brabustan-yalnizca-10-adet-uretilecek-elektrikli-motosiklet"
+    },
+    "images": [
+      "DAB Motors EICMA 2025.jpg"
+    ],
+    "title": {
+      "tr": "Brabus’tan yalnızca 10 adet üretilecek elektrikli motosiklet: Urban E Fragment Edition",
+      "en": "Brabus Urban E Fragment Edition: an electric motorcycle limited to 10 units"
+    },
+    "body": {
+      "tr": [
+        "Brabus, DAB Motors ve Hiroshi Fujiwara’nın markası Fragment Design iş birliğiyle Urban E Fragment Edition’ı tanıttı. Model, Brabus’un mevcut Urban E motosikletini temel alıyor ve yalnızca 10 adet üretilecek; fiyatı yaklaşık 50 bin dolar.",
+        "Motosiklet 37 hp güç ve 470 Nm tork üretiyor, gücü zincir yerine kayışla arka tekere aktarıyor. Azami hızı 120 km/s, ideal koşullarda menzili yaklaşık 150 km. Üç sürüş modu ve Brembo ABS frenler sunuyor; batarya özellikleri haberde belirtilmiyor."
+      ],
+      "en": [
+        "Brabus has unveiled the Urban E Fragment Edition, a collaboration with DAB Motors and Hiroshi Fujiwara’s brand Fragment Design. It is based on Brabus’s existing Urban E and only 10 units will be built, at roughly $50,000 each.",
+        "The motorcycle produces 37 hp and 470 Nm of torque and drives the rear wheel by belt instead of chain. Top speed is 120 km/h and range is about 150 km in ideal conditions. It offers three riding modes and Brembo ABS brakes; the report does not give battery specifications."
+      ]
+    }
+  },
+  {
+    "id": "n22",
+    "cat": "software",
+    "published": "2026-10-08",
+    "readMin": 2,
+    "source": {
+      "name": "Tesla Oracle",
+      "url": "https://www.teslaoracle.com/2026/10/08/tesla-begins-the-fsd-v14-3-11-2026-33-5-update-rollout-first-impression-videos-release-notes/"
+    },
+    "images": [
+      "Tesla Model Y 2025 interior.jpg"
+    ],
+    "title": {
+      "tr": "Tesla FSD v14.3.11 dağıtımı başladı: otomatik çarpışma kaçınma ve yeni yapay zekâ derleyicisi",
+      "en": "Tesla starts rolling out FSD v14.3.11 with automatic collision evasion and a new AI compiler"
+    },
+    "body": {
+      "tr": [
+        "Tesla, 7 Ekim’de 2026.33.5 yazılımıyla FSD v14.3.11 sürümünü dağıtmaya başladı. İlk dalga, deneyimli kullanıcılardan oluşan Erken Erişim Grubu’na gitti; TeslaFi ve Tessie verilerine göre sürüm filonun %1’inden azında. v14.3.11 yalnızca HW4 (AI4) araçlara özel; aynı yazılımda HW3 araçlar için FSD v14.3 Lite de dağıtılıyor.",
+        "Sürüm notları v14.3.9 ile aynı: manuel sürüşte bile yaklaşan bir önden çarpışmada ya da sürücünün yola dikkat etmediği durumlarda devreye girebilen Otomatik Çarpışma Kaçınma, geliştirilmiş görüntü kodlayıcı, MLIR tabanlı yeniden yazılmış bir yapay zekâ derleyicisi (haber bunu yaklaşık %20 daha hızlı tepkiyle ilişkilendiriyor), iyileştirilmiş park ve 8 mph’ye çıkarılan Akıllı Çağırma hız sınırı."
+      ],
+      "en": [
+        "Tesla began rolling out FSD v14.3.11 on firmware 2026.33.5 on 7 October. The first wave went to the Early Access Group of experienced owners and, according to TeslaFi and Tessie data, the build is on less than 1% of the fleet. v14.3.11 is specific to HW4 (AI4) vehicles, while FSD v14.3 Lite on the same firmware is rolling out to HW3 cars.",
+        "The release notes match v14.3.9: Automatic Collision Evasion, which can engage even during manual driving when a frontal collision is imminent or the driver is not watching the road; an upgraded vision encoder; a rewritten MLIR-based AI compiler (the report links it to about 20% faster reaction time); improved parking; and a higher Actually Smart Summon speed limit of 8 mph."
+      ]
+    }
+  },
+  {
     "id": "n16",
     "cat": "software",
     "published": "2026-10-07",

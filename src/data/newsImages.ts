@@ -2,6 +2,9 @@
 // NEWS_GALLERY: haberin tüm görselleri (kapak ilk sırada), NEWS_CAT_IMAGES: kategori yedeği. Lisans/atıf: assets/news/credits.json
 export interface NewsImage { src: number; author: string; license: string; page: string; title: string }
 export const NEWS_GALLERY: Record<string, NewsImage[]> = {
+ "n20": [{ src: require('../../assets/news/charging/2026-10-10/n20.jpg'), author: "Xpon", license: "Public domain", page: "https://commons.wikimedia.org/wiki/File:Kimitsu-PA-tateyama-expressway-downline.jpg", title: "Kimitsu-PA-tateyama-expressway-downline.jpg" }],
+ "n21": [{ src: require('../../assets/news/moto/2026-10-10/n21.jpg'), author: "MotorideSA", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:DAB_Motors_EICMA_2025.jpg", title: "DAB Motors EICMA 2025.jpg" }],
+ "n22": [{ src: require('../../assets/news/software/2026-10-08/n22.jpg'), author: "Ethan Llamas", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:Tesla_Model_Y_2025_interior.jpg", title: "Tesla Model Y 2025 interior.jpg" }],
  "n16": [{ src: require('../../assets/news/software/2026-10-07/n16.jpg'), author: "Emir GEÇİR", license: "CC0", page: "https://commons.wikimedia.org/wiki/File:Togg_T10X_Interior.jpg", title: "Togg T10X Interior.jpg" }],
  "n17": [{ src: require('../../assets/news/charging/2026-10-08/n17.jpg'), author: "NJo", license: "CC BY-SA 3.0", page: "https://commons.wikimedia.org/wiki/File:Electric_car_wireless_parking_charge_closeup.jpg", title: "Electric car wireless parking charge closeup.jpg" }],
  "n18": [{ src: require('../../assets/news/commercial/2026-10-05/n18.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:Ford_E-Transit_Custom_(2023)_DSC_9255.jpg", title: "Ford E-Transit Custom (2023) DSC 9255.jpg" }],
@@ -23,11 +26,11 @@ export const NEWS_GALLERY: Record<string, NewsImage[]> = {
  "n15": [{ src: require('../../assets/news/commercial/2026-06-13/n15.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:KGM_Musso_EV_Auto_Zuerich_2025_DSC_3556.jpg", title: "KGM Musso EV Auto Zuerich 2025 DSC 3556.jpg" }],
 };
 export const NEWS_CAT_IMAGES: Record<string, NewsImage> = {
- "software": { src: require('../../assets/news/software/2026-10-07/n16.jpg'), author: "Emir GEÇİR", license: "CC0", page: "https://commons.wikimedia.org/wiki/File:Togg_T10X_Interior.jpg", title: "Togg T10X Interior.jpg" },
- "charging": { src: require('../../assets/news/charging/2026-10-08/n17.jpg'), author: "NJo", license: "CC BY-SA 3.0", page: "https://commons.wikimedia.org/wiki/File:Electric_car_wireless_parking_charge_closeup.jpg", title: "Electric car wireless parking charge closeup.jpg" },
+ "charging": { src: require('../../assets/news/charging/2026-10-10/n20.jpg'), author: "Xpon", license: "Public domain", page: "https://commons.wikimedia.org/wiki/File:Kimitsu-PA-tateyama-expressway-downline.jpg", title: "Kimitsu-PA-tateyama-expressway-downline.jpg" },
+ "moto": { src: require('../../assets/news/moto/2026-10-10/n21.jpg'), author: "MotorideSA", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:DAB_Motors_EICMA_2025.jpg", title: "DAB Motors EICMA 2025.jpg" },
+ "software": { src: require('../../assets/news/software/2026-10-08/n22.jpg'), author: "Ethan Llamas", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:Tesla_Model_Y_2025_interior.jpg", title: "Tesla Model Y 2025 interior.jpg" },
  "commercial": { src: require('../../assets/news/commercial/2026-10-05/n18.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:Ford_E-Transit_Custom_(2023)_DSC_9255.jpg", title: "Ford E-Transit Custom (2023) DSC 9255.jpg" },
  "battery": { src: require('../../assets/news/battery/2026-10-01/n19.jpg'), author: "Wlb5V", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:2024_Chevrolet_Silverado_EV_RST.jpg", title: "2024 Chevrolet Silverado EV RST.jpg" },
- "moto": { src: require('../../assets/news/moto/2026-10-05/n2.jpg'), author: "Rainmaker47", license: "CC BY-SA 3.0", page: "https://commons.wikimedia.org/wiki/File:Yamaha_Electric_Motorcycle.JPG", title: "Yamaha Electric Motorcycle.JPG" },
 };
 /** Haberin görselleri (kapak ilk); habere özel görsel yoksa kategorinin görseli; o da yoksa boş liste. */
 export const newsImages = (n: { id: string; cat: string }): NewsImage[] =>
