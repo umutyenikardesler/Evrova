@@ -83,12 +83,6 @@
     "license": "CC BY-SA 4.0",
     "page": "https://commons.wikimedia.org/wiki/File:IAA_Transportation_2026%2C_Hanover_(20260914-P1097510).jpg"
   },
-  "assets/news/commercial/2026-06-13/n15.jpg": {
-    "title": "KGM Musso EV Auto Zuerich 2025 DSC 3556.jpg",
-    "author": "Alexander Migl",
-    "license": "CC BY-SA 4.0",
-    "page": "https://commons.wikimedia.org/wiki/File:KGM_Musso_EV_Auto_Zuerich_2025_DSC_3556.jpg"
-  },
   "assets/news/software/2026-10-07/n16.jpg": {
     "title": "Togg T10X Interior.jpg",
     "author": "Emir GEÇİR",
@@ -130,5 +124,35 @@
     "author": "Ethan Llamas",
     "license": "CC BY-SA 4.0",
     "page": "https://commons.wikimedia.org/wiki/File:Tesla_Model_Y_2025_interior.jpg"
+  },
+  "assets/news/battery/2026-10-15/n23.jpg": {
+    "title": "BMW iX3, IAA Summit 2025, Munich (20250908-P1049823).jpg",
+    "author": "Matti Blume",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:BMW_iX3%2C_IAA_Summit_2025%2C_Munich_(20250908-P1049823).jpg"
+  },
+  "assets/news/charging/2026-10-17/n24.jpg": {
+    "title": "Chargefox EV charging station at Airport West, Victoria.jpg",
+    "author": "Chuq",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Chargefox_EV_charging_station_at_Airport_West%2C_Victoria.jpg"
+  },
+  "assets/news/moto/2026-10-14/n25.jpg": {
+    "title": "Zero DS 2011.jpg",
+    "author": "Muc10",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Zero_DS_2011.jpg"
+  },
+  "assets/news/software/2026-10-13/n26.jpg": {
+    "title": "Denza Z9 GT IAA 2025 DSC 2124.jpg",
+    "author": "Alexander-93",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Denza_Z9_GT_IAA_2025_DSC_2124.jpg"
+  },
+  "assets/news/commercial/2026-10-16/n27.jpg": {
+    "title": "MAN eTGX 20.544 4x2 LLS-U EB IAA Transportation 2024 (DSC04570).jpg",
+    "author": "MarcelX42",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:MAN_eTGX_20.544_4x2_LLS-U_EB_IAA_Transportation_2024_(DSC04570).jpg"
   }
 }

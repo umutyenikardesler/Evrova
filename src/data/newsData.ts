@@ -3,6 +3,186 @@ import type { NewsItem } from '../types.ts';
 
 export const NEWS_DATA: NewsItem[] = [
   {
+    "id": "n24",
+    "cat": "charging",
+    "published": "2026-10-17",
+    "readMin": 2,
+    "source": {
+      "name": "electrive.com",
+      "url": "https://www.electrive.com/2026/10/17/wallbox-installs-120-ev-chargers-at-montreal-airport/"
+    },
+    "title": {
+      "tr": "Montréal Havalimanı'na 120 şarj noktası kuruldu",
+      "en": "Montréal airport gets 120 new EV charging points"
+    },
+    "body": {
+      "tr": [
+        "Kanada'nın Montréal Metropolitan Havalimanı'nda (YHU) çalışanlar, operasyon personeli ve ziyaretçiler için 120 yeni elektrikli araç şarj noktası devreye alındı. Projede donanımı İspanyol üretici Wallbox sağladı; şarj cihazları Pulsar Pro model AC üniteleri. Ağ yönetimi ve ödeme altyapısını Foresta'nın platformu üstleniyor, projeyi EDP électrique koordine etti.",
+        "Havalimanında yeni bir terminal binasının tamamlanmasının ardından 48 şarj noktasının daha eklenmesi planlanıyor; bu durumda toplam sayı 168'e çıkacak. Şarj cihazları, mevcut elektrik kapasitesini gruplar halinde paylaştıran bir güç paylaşımı sistemiyle çalışıyor, böylece her ünitenin aynı anda tam güçte çekiş yapması önleniyor.",
+        "Açıklamada şarj cihazlarının bireysel güç değerleri paylaşılmadı ve projenin tamamlanma tarihi belirtilmedi. Benzer bir örnek olarak 2025'te Münih Havalimanı'nda 275 şarj noktası ve çatıya kurulu 3 MW'lık güneş paneli sistemi devreye alınmıştı."
+      ],
+      "en": [
+        "Montréal Metropolitan Airport (YHU) in Canada has switched on 120 new EV charging points for employees, operations staff and visitors. Spanish manufacturer Wallbox supplied the hardware, using its Pulsar Pro AC units, while Foresta's platform handles network management and payments and EDP électrique coordinated the project.",
+        "A further 48 charging points are planned once a new terminal building is finished, bringing the eventual total to 168; no completion date has been given. The chargers use a power-sharing system that distributes available electrical capacity across groups of units rather than letting each one draw maximum power at once.",
+        "Individual power ratings for the chargers were not disclosed, nor was a project completion date. In a comparable project, Munich Airport switched on 275 charging points in 2025 alongside a 3 MW rooftop solar installation."
+      ]
+    },
+    "photo": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chargefox_EV_charging_station_at_Airport_West%2C_Victoria.jpg?width=960",
+      "author": "Chuq",
+      "license": "CC BY-SA 4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Chargefox_EV_charging_station_at_Airport_West%2C_Victoria.jpg"
+    },
+    "date": {
+      "tr": "17 Eki",
+      "en": "Oct 17"
+    }
+  },
+  {
+    "id": "n27",
+    "cat": "commercial",
+    "published": "2026-10-16",
+    "readMin": 2,
+    "source": {
+      "name": "electrive.com",
+      "url": "https://www.electrive.com/2026/10/16/20-electric-trucks-from-germany-for-belgian-logistics-firm-h-essers/"
+    },
+    "title": {
+      "tr": "Belçikalı lojistik firması H.Essers filosuna 20 yeni elektrikli kamyon ekledi",
+      "en": "Belgian logistics firm H.Essers adds 20 new electric trucks to its fleet"
+    },
+    "body": {
+      "tr": [
+        "Genk merkezli Belçikalı lojistik şirketi H.Essers, filosuna Almanya menşeli iki üreticiden 20 yeni tam elektrikli kamyon kattı: 10 adet MAN eTGX ve 10 adet Mercedes-Benz eActros. Bu alımla şirketin elektrikli kamyon sayısı 31'e çıktı. Mercedes modellerinin menzili 525-575 km, MAN modellerinin menzili ise 400-450 km olarak bildirildi; her iki model de uygun koşullarda DC hızlı şarjla yaklaşık 90 dakikada şarj edilebiliyor.",
+        "Yaklaşık 1.420 kamyonluk filosuyla H.Essers, 2030 yılına kadar kendi taşımacılık filosundaki sera gazı emisyonlarını yüzde 42 azaltmayı hedefliyor. Şirket, filonun yaklaşık yüzde 15'ini, yani 200 kadar aracı, 2030'a kadar elektrikliye çevirmeyi planlıyor. Yeni kamyonlar öncelikli olarak şirketin Belçika'daki tesislerinden sefer yapacak.",
+        "Alım, geçen yıl üç farklı üreticiden altı elektrikli kamyonla yürütülen bir pilot uygulamanın ardından geldi. H.Essers, Genk ve Bergen op Zoom tesislerindeki şarj kapasitesini 2,7 MW'a çıkarırken, filoyu başka ülkelere ve iş kollarına yaymak için çalışmalarını sürdürüyor."
+      ],
+      "en": [
+        "Belgian logistics company H.Essers, based in Genk, has added 20 new battery-electric trucks to its fleet from two German manufacturers: 10 MAN eTGX units and 10 Mercedes-Benz eActros units. The purchase brings the company's electric truck count to 31. The Mercedes models are rated for 525-575 km of range and the MAN models for 400-450 km; both support DC fast charging, reaching a full charge in about 90 minutes under optimal conditions.",
+        "With a fleet of around 1,420 trucks, H.Essers aims to cut greenhouse gas emissions from its own transport fleet by 42% by 2030. The company plans to electrify about 15% of its fleet, roughly 200 vehicles, by that date. The new trucks will operate mainly out of its Belgian locations.",
+        "The purchase follows a pilot program run last year with six electric trucks from three manufacturers in daily operations. H.Essers is also raising charging capacity at its Genk and Bergen op Zoom sites to 2.7 MW while it studies how to extend electrification to other countries and business areas."
+      ]
+    },
+    "photo": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/MAN_eTGX_20.544_4x2_LLS-U_EB_IAA_Transportation_2024_(DSC04570).jpg?width=960",
+      "author": "MarcelX42",
+      "license": "CC BY-SA 4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:MAN_eTGX_20.544_4x2_LLS-U_EB_IAA_Transportation_2024_(DSC04570).jpg"
+    },
+    "date": {
+      "tr": "16 Eki",
+      "en": "Oct 16"
+    }
+  },
+  {
+    "id": "n23",
+    "cat": "battery",
+    "published": "2026-10-15",
+    "readMin": 2,
+    "source": {
+      "name": "electrive.com",
+      "url": "https://www.electrive.com/2026/10/15/bmw-launches-sixth-gen-battery-production-in-shenyang/"
+    },
+    "title": {
+      "tr": "BMW, Çin'de altıncı nesil batarya üretimine başladı",
+      "en": "BMW begins sixth-generation battery production in China"
+    },
+    "body": {
+      "tr": [
+        "BMW, Neue Klasse modelleri için geliştirdiği altıncı nesil yüksek voltaj bataryalarının seri üretimine Çin'in Shenyang kentinde başladı. Üretim, BMW Brilliance Automotive ortak girişimi bünyesindeki tesiste yapılıyor ve şirketin Debrecen (Macaristan) ile Irlbach-Straßkirchen'deki (Almanya) fabrikalarının ardından bu batarya ağının üçüncü üretim noktası oldu.",
+        "Yeni hücreler, 4,6 cm çapında ve 9,5 cm ile 12 cm yükseklik seçenekleriyle üretilen büyük silindirik formda. BMW, önceki nesile kıyasla enerji yoğunluğunun yüzde 20'den fazla arttığını, şarj hızı ve menzilin ise yüzde 30'a kadar iyileştiğini açıkladı. Hücreler, modül kullanılmadan doğrudan paket gövdesine yerleştiriliyor; bu da ağırlık ve hacimden tasarruf sağlıyor.",
+        "Shenyang'daki tesisin elektrikli araç üretimine dönüştürülmesi için 2024'te yaklaşık 2,5 milyar avroluk bir yatırım kararı alınmıştı. Yeni bataryaları ilk kullanacak model, üretimine kısa süre önce başlanan uzun dansaj mesafeli iX3 oldu; ilk teslimatların kasım ayında başlaması, daha büyük hacimlerin ise 2027'ye sarkması bekleniyor."
+      ],
+      "en": [
+        "BMW has started series production of its sixth-generation high-voltage batteries for the Neue Klasse models at a plant in Shenyang, China. Production runs through the BMW Brilliance Automotive joint venture, making it the third site in BMW's battery network after Debrecen, Hungary and Irlbach-Straßkirchen, Germany.",
+        "The new cells are large cylindrical units, 4.6 cm in diameter, built in two heights of 9.5 cm and 12 cm. BMW says energy density is up more than 20% over the previous generation, while charging speed and range have improved by as much as 30%. The cells sit directly in the pack housing without modules, saving weight and space.",
+        "Converting the Shenyang site for EV production followed a roughly €2.5 billion investment agreed in 2024. The first model to use the new batteries is the long-wheelbase iX3, whose production has just begun there; first deliveries are expected in November, with larger volumes following in 2027."
+      ]
+    },
+    "photo": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/BMW_iX3%2C_IAA_Summit_2025%2C_Munich_(20250908-P1049823).jpg?width=960",
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:BMW_iX3%2C_IAA_Summit_2025%2C_Munich_(20250908-P1049823).jpg"
+    },
+    "date": {
+      "tr": "15 Eki",
+      "en": "Oct 15"
+    }
+  },
+  {
+    "id": "n25",
+    "cat": "moto",
+    "published": "2026-10-14",
+    "readMin": 2,
+    "source": {
+      "name": "electrive.com",
+      "url": "https://www.electrive.com/2026/10/14/electric-motorcycle-breaks-world-record-with-436-5-kms-without-stopping/"
+    },
+    "title": {
+      "tr": "Elektrikli motosiklet tek şarjla 436,5 km katederek dünya rekoru kırdı",
+      "en": "Electric motorcycle sets world record with 436.5 km on a single charge"
+    },
+    "body": {
+      "tr": [
+        "Zero Motorcycles'ın seri üretim modeli Zero DS, Belçikalı sürücü Jelle Verstaen'in kullanımında tek şarjla 436,5 kilometre kat ederek elektrikli motosikletlerde yeni bir dünya rekoru kırdı. Motosiklet, standart 15,6 kWh'lik bataryasına ek olarak ayrıca satılan 3,6 kWh'lik Power Tank aksesuarıyla toplam 19,2 kWh kapasiteye çıkarıldı; bunun dışında araçta fabrika çıkışı dışında bir değişiklik yapılmadı.",
+        "Rotayı Fransız-İtalyan Alp bölgesinden başlayıp dağ geçitleri ve kırsal yollardan geçerek Akdeniz kıyısına kadar uzanan güzergâh oluşturdu. Son 100 kilometrede şiddetli bir fırtınaya ve yoğun yağmura yakalanan Verstaen, batarya tamamen bitene kadar sürüşe devam etti.",
+        "Aynı etkinlikte yarışan Zero SR/S ve DSR/X modelleri de sırasıyla 350 ve 384 kilometreyle önceki rekoru geride bıraktı ancak DS'in menzilini aşamadı. Önceki rekor, Verge Motorcycles'ın TS Pro modeliyle bir önceki yıl kat edilen 311 kilometreydi; yeni rekor bu mesafeyi yaklaşık 126 kilometre, yüzde 40'tan fazla bir farkla geçti."
+      ],
+      "en": [
+        "Zero Motorcycles' production DS model set a new world record for electric motorcycles, covering 436.5 km on a single charge with Belgian rider Jelle Verstaen at the controls. Beyond the standard 15.6 kWh battery, the bike used the separately sold 3.6 kWh Power Tank accessory to reach a total of 19.2 kWh; no other changes were made beyond the factory specification.",
+        "The route started in the French-Italian Alpine region, wound through mountain passes and country roads, and finished at the Mediterranean coast. Verstaen rode into a severe storm with heavy rain over the final 100 km and kept going until the battery was depleted.",
+        "Two other Zero models ridden the same day, the SR/S and the DSR/X, also beat the previous record, covering 350 km and 384 km respectively, but fell short of the DS's distance. The earlier record of 311 km was set the previous year by Verge Motorcycles' TS Pro; the new mark beat it by roughly 126 km, an improvement of more than 40%."
+      ]
+    },
+    "photo": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Zero_DS_2011.jpg?width=960",
+      "author": "Muc10",
+      "license": "CC BY-SA 3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Zero_DS_2011.jpg"
+    },
+    "date": {
+      "tr": "14 Eki",
+      "en": "Oct 14"
+    }
+  },
+  {
+    "id": "n26",
+    "cat": "software",
+    "published": "2026-10-13",
+    "readMin": 2,
+    "source": {
+      "name": "carnewschina.com",
+      "url": "https://carnewschina.com/2026/10/13/denza-z9-gt-to-become-first-byd-car-with-gods-eye-autonomous-navigation-in-europe/"
+    },
+    "title": {
+      "tr": "BYD'nin Denza Z9 GT'si, 'God's Eye' şehir içi sürüş desteğini Avrupa'ya taşıyacak ilk model olacak",
+      "en": "BYD's Denza Z9 GT to become first model to bring 'God's Eye' city driving assist to Europe"
+    },
+    "body": {
+      "tr": [
+        "BYD, Paris Otomobil Fuarı 2026'da Denza markalı Z9 GT modelinin, şirketin 'God's Eye' şehir içi navigasyon sürüş asistanı (CNOA) özelliğini Avrupa'ya getirecek ilk araç olacağını duyurdu. Sistem, sürücü gözetimi altında aracın adresten adrese şehir içi sürüşü yönetmesine izin veriyor; BYD bunu seviye 2 bir sürüş destek sistemi olarak tanımlıyor, yani sürücünün her an yolu takip edip direksiyona hazır olması gerekiyor.",
+        "BYD Küresel Başkan Yardımcısı Stella Li, teknolojinin trafik sıkışıklığından kalabalık kavşaklara kadar şehir içi sürüşü daha az stresli hale getirmeyi amaçladığını belirtti. Şirket, CNOA özelliğinin Avrupa'da 2027 yılı içinde kullanıma sunulmasını planlıyor; Z9 GT'nin ardından özelliğin diğer BYD modellerine de yayılması bekleniyor.",
+        "Çin'de satılan versiyonda sistem, BYD'nin kendi geliştirdiği ve yaklaşık 700 TOPS işlem gücüne sahip 4 nanometre Xuanji A3 yongasıyla çalışan God's Eye 5.0 yazılımını; lidar, milimetre dalga radarları, ultrasonik sensörler ve kameralardan oluşan bir sensör paketini kullanıyor. BYD, Avrupa'ya gelecek versiyonun aynı donanımı kullanıp kullanmayacağını henüz açıklamadı."
+      ],
+      "en": [
+        "At the Paris Motor Show 2026, BYD announced that the Denza-branded Z9 GT will be the first car to bring its 'God's Eye' City Navigation Driving Assistant (CNOA) to Europe. The system lets the car handle city driving from address to address under driver supervision; BYD classifies it as a Level 2 system, meaning the driver must keep monitoring the road and stay ready to take over.",
+        "BYD Executive Vice President Stella Li said the technology is meant to make city driving less stressful, from traffic jams to busy intersections and roundabouts. The company plans to roll out CNOA in Europe sometime in 2027, with the feature expected to spread to other BYD models after the Z9 GT.",
+        "In the China market version, the system runs on BYD's in-house God's Eye 5.0 software, powered by the company's own 4nm Xuanji A3 chip with about 700 TOPS of processing power, alongside a sensor suite of lidar, millimeter-wave radar, ultrasonic sensors and cameras. BYD has not said whether the European version will use the same hardware."
+      ]
+    },
+    "photo": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Denza_Z9_GT_IAA_2025_DSC_2124.jpg?width=960",
+      "author": "Alexander-93",
+      "license": "CC BY-SA 4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Denza_Z9_GT_IAA_2025_DSC_2124.jpg"
+    },
+    "date": {
+      "tr": "13 Eki",
+      "en": "Oct 13"
+    }
+  },
+  {
     "id": "n20",
     "cat": "charging",
     "published": "2026-10-10",
@@ -720,40 +900,6 @@ export const NEWS_DATA: NewsItem[] = [
     "date": {
       "tr": "15 Eyl",
       "en": "Sep 15"
-    }
-  },
-  {
-    "id": "n15",
-    "cat": "commercial",
-    "published": "2026-06-13",
-    "readMin": 3,
-    "source": {
-      "name": "Türkiye Gazetesi",
-      "url": "https://www.turkiyegazetesi.com.tr/ekonomi/elektrikli-hafif-ticari-arac-satislari-25-katina-cikti-1796782"
-    },
-    "title": {
-      "tr": "Elektrikli hafif ticari satışları yılın ilk beş ayında %146 arttı",
-      "en": "Electric light commercial vehicle sales rose 146% in the first five months"
-    },
-    "body": {
-      "tr": [
-        "Türkiye hafif ticari araç pazarında Ocak–Mayıs 2026’da elektrikli model satışları %146,1 artarak 1.174 adede çıktı (geçen yıl aynı dönemde 477). Yine de elektrikli araçlar toplam 96.882 adetlik pazarın yalnızca %1,2’sini oluşturuyor.",
-        "Segmentin en çok satanı 605 adetle KG Mobility Musso EV oldu; onu 223 adetle Ford Custom izledi. Analistler, tercihlerdeki bu hızlı kaymanın önümüzdeki dönemde daha güçlü bir büyümeye işaret ettiğini belirtiyor."
-      ],
-      "en": [
-        "In Türkiye’s light commercial vehicle market, electric sales rose 146.1% to 1,174 units in January–May 2026 (477 a year earlier). Even so, electric models are only 1.2% of the 96,882-unit market.",
-        "The segment’s best seller was the KG Mobility Musso EV with 605 units, followed by the Ford Custom with 223. Analysts say the fast shift in preferences points to stronger growth ahead."
-      ]
-    },
-    "photo": {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/KGM_Musso_EV_Auto_Zuerich_2025_DSC_3556.jpg?width=960",
-      "author": "Alexander Migl",
-      "license": "CC BY-SA 4.0",
-      "page": "https://commons.wikimedia.org/wiki/File:KGM_Musso_EV_Auto_Zuerich_2025_DSC_3556.jpg"
-    },
-    "date": {
-      "tr": "13 Haz",
-      "en": "Jun 13"
     }
   }
 ];
