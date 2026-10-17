@@ -178,6 +178,7 @@ const CARS: Vehicle[] = [
     ['INSTER', 'Advance 84,5 kW', 1845000, { kw: 84.5 }],
     ['INSTER Cross', 'Advance 84,5 kW', 1840000, { kw: 84.5 }],
     ['KONA Electric', 'Advance 115 kW', 2450000, { kwh: 65.4, range: 454, kw: 115 }],
+    ['IONIQ 3', 'Select Standart Menzil 107,8 kW (Ekim)', 1799000, { kwh: 42.2, range: 343, kw: 107.8 }],
     ['IONIQ 5', 'Dynamic Vision Roof 125 kW 4x2', 3150000, { kw: 125 }],
     ['IONIQ 5', 'Advance 160 kW', 3490000, { kw: 160 }],
     ['IONIQ 5 N', 'Advance 448 kW 4x4', 6205000, { kw: 448 }],

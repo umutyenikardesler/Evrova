@@ -1,6 +1,10 @@
 {
   "_doc": "Marka resmi sitelerinden elle doğrulanan liste fiyatları. update-prices.mjs bunları aggregator verisinin üzerine yazar. Anahtar: ay -> araç id -> TL.",
   "2026-10": {
+    "hyundai-ioniq-3-select-standart-menzil-107-8-kw-ekim": {
+      "price": 1799000,
+      "src": "hyundai.com/tr/tr/satis/fiyat-listesi.html (17.10.2026, Select Standart Menzil 107,8 kW — 08-31.10.2026 kampanya azami fiyatı; diğer trimler (Elite, Prime, N Line, Uzun Menzil) sayfada fiyatsız)"
+    },
     "mercedes-benz-eqa-250plus-night-edition": {
       "price": 4612000,
       "src": "fiyat.mercedes-benz.com.tr (01.10.2026)"
@@ -40,6 +44,58 @@
     "tesla-model-y-performance-dort-ceker": {
       "price": 4966500,
       "src": "Tesla TR resmi liste (tesla.com 403; gzt.com + webtekno.com 02.10.2026 ile çapraz doğrulandı)"
-    }
+    },
+    "togg-t10x-std": { "price": 1909048, "src": "togg.com.tr/en/price-list (17.10.2026)" },
+    "togg-t10x-v1-rwd-uzun-menzil": { "price": 2219668, "src": "togg.com.tr/en/price-list (17.10.2026)" },
+    "togg-t10x-v2-rwd-uzun-menzil": { "price": 2411000, "src": "togg.com.tr/en/price-list (17.10.2026)" },
+    "togg-t10x-v2-4more-obsidiyen": { "price": 3218137, "src": "togg.com.tr/en/price-list (17.10.2026)" },
+    "togg-t10f-v1-rwd-standart-menzil": { "price": 1884980, "src": "togg.com.tr/en/t10f-price-list (17.10.2026)" },
+    "togg-t10f-v1-rwd-uzun-menzil": { "price": 2195600, "src": "togg.com.tr/en/t10f-price-list (17.10.2026)" },
+    "togg-t10f-v2-rwd-uzun-menzil": { "price": 2370930, "src": "togg.com.tr/en/t10f-price-list (17.10.2026)" },
+    "togg-t10f-v2-4more": { "price": 3217937, "src": "togg.com.tr/en/t10f-price-list (17.10.2026)" },
+    "renault-megane-e-tech-ev60-220hp": { "price": 2386000, "src": "renault.com.tr/elektrikli-araclar/megane-e-tech-elektrikli (17.10.2026)" },
+    "renault-scenic-e-tech-ev87-220hp-esprit-alpine": { "price": 3490000, "src": "renault.com.tr/elektrikli-araclar/scenic-e-tech-elektrikli (17.10.2026)" },
+    "peugeot-e-208-gt-100-kw": { "price": 2080000, "src": "kampanya.peugeot.com.tr/fiyat-listesi (17.10.2026)" },
+    "peugeot-e-2008-allure-115-kw": { "price": 2245000, "src": "kampanya.peugeot.com.tr/fiyat-listesi (17.10.2026)" },
+    "peugeot-e-2008-gt-115-kw": { "price": 2400000, "src": "kampanya.peugeot.com.tr/fiyat-listesi (17.10.2026)" },
+    "peugeot-e-3008-allure-157-kw": { "price": 3384500, "src": "kampanya.peugeot.com.tr/fiyat-listesi (17.10.2026)" },
+    "peugeot-e-3008-gt-157-kw": { "price": 3585000, "src": "kampanya.peugeot.com.tr/fiyat-listesi (17.10.2026)" },
+    "peugeot-e-5008-allure-157-kw": { "price": 3573500, "src": "kampanya.peugeot.com.tr/fiyat-listesi (17.10.2026)" },
+    "peugeot-e-5008-gt-157-kw": { "price": 3717000, "src": "kampanya.peugeot.com.tr/fiyat-listesi (17.10.2026)" },
+    "citroen-e-c3-83-kw-plus": { "price": 1645000, "src": "talep.citroen.com.tr/fiyat-listesi/arac/yeni-ec3 (17.10.2026)" },
+    "citroen-e-c3-83-kw-max": { "price": 1725000, "src": "talep.citroen.com.tr/fiyat-listesi/arac/yeni-ec3 (17.10.2026)" },
+    "citroen-e-c3-aircross-83-kw-max-standart-menzil": { "price": 1875000, "src": "talep.citroen.com.tr/fiyat-listesi/arac/e-c3-aircross (17.10.2026)" },
+    "citroen-e-c3-aircross-83-kw-collection-uzun-menzil": { "price": 1990000, "src": "talep.citroen.com.tr/fiyat-listesi/arac/e-c3-aircross (17.10.2026)" },
+    "citroen-e-c3-aircross-83-kw-max-uzun-menzil": { "price": 2020000, "src": "talep.citroen.com.tr/fiyat-listesi/arac/e-c3-aircross (17.10.2026)" },
+    "citroen-e-c4-115-kw-max": { "price": 2375000, "src": "talep.citroen.com.tr/fiyat-listesi/arac/e-c4 (17.10.2026)" },
+    "citroen-e-c4-x-115-kw-max": { "price": 2340000, "src": "talep.citroen.com.tr/fiyat-listesi/arac/e-c4x (17.10.2026)" },
+    "citroen-e-c5-aircross-157-kw-plus": { "price": 2430000, "src": "talep.citroen.com.tr/fiyat-listesi/arac/yeni-e-c5-aircross (17.10.2026)" },
+    "opel-corsa-e-100-kw-gs": { "price": 1890000, "src": "fiyatlisteleri.opel.com.tr/arac/corsa-e (17.10.2026)" },
+    "opel-frontera-elektrik-100-kw-gs": { "price": 1895000, "src": "fiyatlisteleri.opel.com.tr/arac/frontera-elektrik (17.10.2026)" },
+    "opel-frontera-elektrik-100-kw-gs-uzun-menzil": { "price": 2010000, "src": "fiyatlisteleri.opel.com.tr/arac/frontera-elektrik (17.10.2026)" },
+    "opel-grandland-elektrik-157-kw-edition": { "price": 3200000, "src": "fiyatlisteleri.opel.com.tr/arac/yeni-grandland-elektrik (17.10.2026)" },
+    "opel-grandland-elektrik-157-kw-gs": { "price": 4220000, "src": "fiyatlisteleri.opel.com.tr/arac/yeni-grandland-elektrik (17.10.2026)" },
+    "kia-ev2-cool-107-8-kw": { "price": 1769000, "src": "kia.com/tr/modeller/ev2/fiyat-listesi.html (17.10.2026, tavsiye fiyat; kampanyalı 1.699.000)" },
+    "kia-ev2-elegance-107-8-kw": { "price": 1969000, "src": "kia.com/tr/modeller/ev2/fiyat-listesi.html (17.10.2026, tavsiye fiyat; kampanyalı 1.899.000)" },
+    "kia-ev2-elegance-99-5-kw-uzun-menzil": { "price": 2179000, "src": "kia.com/tr/modeller/ev2/fiyat-listesi.html (17.10.2026, tavsiye fiyat; kampanyalı 2.079.000)" },
+    "kia-ev3-cool-150-kw-uzun-menzil": { "price": 2450000, "src": "kia.com/tr/modeller/ev3/fiyat-listesi.html (17.10.2026, 15.10.2026'dan itibaren geçerli)" },
+    "kia-ev3-elegance-comfort-150-kw": { "price": 2485000, "src": "kia.com/tr/modeller/ev3/fiyat-listesi.html (17.10.2026, 15.10.2026'dan itibaren geçerli)" },
+    "kia-ev3-elegance-150-kw-uzun-menzil": { "price": 3199000, "src": "kia.com/tr/modeller/ev3/fiyat-listesi.html (17.10.2026, 15.10.2026'dan itibaren geçerli) — ÖNCEKİ 2.485.000'den +%28,7, KONTROL ÖNERİLİR" },
+    "kia-ev3-prestige-150-kw": { "price": 3199000, "src": "kia.com/tr/modeller/ev3/fiyat-listesi.html (17.10.2026, 15.10.2026'dan itibaren geçerli) — ÖNCEKİ 2.485.000'den +%28,7, KONTROL ÖNERİLİR" },
+    "kia-ev3-gt-line-150-kw-uzun-menzil": { "price": 3790000, "src": "kia.com/tr/modeller/ev3/fiyat-listesi.html (17.10.2026, 15.10.2026'dan itibaren geçerli)" },
+    "kia-niro-ev-elegance-150-kw": { "price": 2299000, "src": "kia.com/tr/modeller/niro-ev/fiyat-listesi.html (17.10.2026, tavsiye fiyat; kampanyalı 2.199.000)" },
+    "kia-ev6-elegance-standart-menzil-125-kw-4x2": { "price": 3790000, "src": "kia.com/tr/modeller/ev6/fiyat-listesi.html (17.10.2026, 01.10.2026'dan itibaren geçerli)" },
+    "kia-ev9-prestige-149-kw-7-koltuk": { "price": 6540000, "src": "kia.com/tr/modeller/ev9/fiyat-listesi.html (17.10.2026, tavsiye fiyat; kampanyalı 6.340.000)" },
+    "kia-ev9-gt-line-283-kw-4x4-6-koltuk": { "price": 7870000, "src": "kia.com/tr/modeller/ev9/fiyat-listesi.html (17.10.2026, tavsiye fiyat; kampanyalı 7.670.000)" },
+    "kia-ev9-gt-line-283-kw-4x4-7-koltuk": { "price": 7870000, "src": "kia.com/tr/modeller/ev9/fiyat-listesi.html (17.10.2026, tavsiye fiyat; kampanyalı 7.670.000)" },
+    "bmw-ix1-edrive20-sport-line": { "price": 4304800, "src": "borusanoto.bmw.com.tr/fiyat-listesi (07.10.2026 azami fiyat listesi)" },
+    "bmw-ix1-edrive20-x-line": { "price": 4531200, "src": "borusanoto.bmw.com.tr/fiyat-listesi (07.10.2026 azami fiyat listesi)" },
+    "bmw-ix1-edrive20-m-sport": { "price": 4701100, "src": "borusanoto.bmw.com.tr/fiyat-listesi (07.10.2026 azami fiyat listesi)" },
+    "bmw-ix2-edrive20-m-sport": { "price": 4747900, "src": "borusanoto.bmw.com.tr/fiyat-listesi (07.10.2026 azami fiyat listesi)" },
+    "bmw-ix3-50-xdrive-m-sport": { "price": 6819500, "src": "borusanoto.bmw.com.tr/fiyat-listesi (07.10.2026 azami fiyat listesi)" },
+    "bmw-i4-edrive40-m-sport": { "price": 6230400, "src": "bmw.com.tr bayi fiyat listesi (24.09.2026)" },
+    "bmw-i4-edrive40-edition-m-sport": { "price": 6861100, "src": "bmw.com.tr bayi fiyat listesi (24.09.2026)" },
+    "bmw-ix-m70-xdrive": { "price": 11504200, "src": "bmw.com.tr bayi fiyat listesi (24.09.2026)" },
+    "bmw-i7-m70-xdrive": { "price": 16000000, "src": "bmw.com.tr bayi fiyat listesi (24.09.2026)" }
   }
 }
