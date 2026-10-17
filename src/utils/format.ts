@@ -23,6 +23,9 @@ export function formatPrice(tl: number, lang: Lang, compact: boolean, currency: 
   return wrap(group(n, lang));
 }
 
+/** Aracın güncel (son liste ayı) fiyatı. */
+export const currentPrice = (v: { prices: number[] }) => v.prices[v.prices.length - 1];
+
 export const pctChange = (a: number, b: number) => ((b - a) / a) * 100;
 
 export function formatPct(x: number, lang: Lang): string {

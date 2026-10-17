@@ -48,7 +48,7 @@ const en: Dict = {
     note3: 'MTV is even lower for older cars; all age groups are listed at gib.gov.tr.',
   },
   vehicles: { search: 'Search brand or model', noResult: 'No results', clear: 'Clear', modelCount: '{n} models', versionCount: '{n} trims', title: 'Vehicles', watch: 'Track', rangeLine: '{range} range · {battery}', rangeOnly: '{range} range', batteryOnly: '{battery}' },
-  detail: { photoBy: 'Photo: {author} · {license}', listPrice: '{month} list price', per12: '{pct} / 12 mo', history: 'View monthly price history', track: 'Track its price' },
+  detail: { photoBy: 'Photo: {author} · {license}', listPrice: '{month} list price', per12: '{pct} / 12 mo', perN: '{pct} / {n} mo', newModel: 'New model', history: 'View monthly price history', track: 'Track its price' },
   prices: {
     title: 'Price tracking', emptyTitle: 'Your watchlist is empty',
     emptyText: 'Pick a model from the Vehicles page to see its monthly price changes.', browse: 'Browse vehicles',

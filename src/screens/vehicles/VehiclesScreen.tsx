@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import AppText from '../../components/AppText';
 import { BackButton } from '../../components/Buttons';
 import { ChipRow } from '../../components/Chips';
+import StickyBlock from '../../components/StickyBlock';
 import { Page, ScreenTitle } from '../../components/Layout';
 import Tap from '../../components/Tap';
 import TextField from '../../components/TextField';
@@ -11,6 +12,7 @@ import { useApp } from '../../context/AppContext';
 import { useNav } from '../../navigation/NavContext';
 import type { VehicleType } from '../../types';
 import { brandOf, brandsOf, modelOf, modelsOf, trimOf } from '../../utils/brand';
+import { currentPrice } from '../../utils/format';
 import { modelImage } from '../../utils/vehicleImage';
 import BrandRow from './BrandRow';
 import VehicleCard from './VehicleCard';
@@ -36,7 +38,7 @@ export default function VehiclesScreen() {
   const ofType = vehicles.filter((v) => type === 'all' || v.type === type);
   const ofBrand = brand ? ofType.filter((v) => brandOf(v) === brand) : [];
   // Paketler en düşük fiyattan en yükseğe sıralanır.
-  const versions = model ? ofBrand.filter((v) => modelOf(v) === model).sort((x, y) => x.prices[11] - y.prices[11]) : [];
+  const versions = model ? ofBrand.filter((v) => modelOf(v) === model).sort((x, y) => currentPrice(x) - currentPrice(y)) : [];
 
   const title = model ? `${brand} ${model}` : brand;
   const onBack = model ? () => nav.setVehicleModel(null) : () => nav.setVehicleBrand(null);
@@ -73,6 +75,7 @@ export default function VehiclesScreen() {
       ) : (
         <>
           <ScreenTitle>{t('vehicles.title')}</ScreenTitle>
+          <StickyBlock>
           <ChipRow
             items={FILTERS.map((f) => ({
               key: f,
@@ -89,6 +92,7 @@ export default function VehiclesScreen() {
               </Tap>
             )}
           </View>
+          </StickyBlock>
         </>
       )}
 

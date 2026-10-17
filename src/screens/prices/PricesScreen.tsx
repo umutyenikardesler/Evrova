@@ -15,7 +15,6 @@ import MonthBars from './MonthBars';
 
 export default function PricesScreen() {
   const { t, lang, vehicles, listMonth, profile, price } = useApp();
-  const months = monthLabels(lang, listMonth);
   const nav = useNav();
   const watched = (profile?.watch ?? [])
     .map((id) => vehicles.find((v) => v.id === id))
@@ -38,7 +37,8 @@ export default function PricesScreen() {
   }
 
   const P = sel.prices;
-  const m = nav.monthSel;
+  const months = monthLabels(lang, listMonth, P.length);
+  const m = Math.min(nav.monthSel, P.length - 1); // yeni modellerde yalnızca fiyatlandığı aylar var
   const ch = m > 0 ? pctChange(P[m - 1], P[m]) : null;
 
   return (
@@ -67,13 +67,13 @@ export default function PricesScreen() {
           <Head style={{ width: 120, textAlign: 'right' }}>{t('prices.colPrice')}</Head>
           <Head style={{ width: 72, textAlign: 'right' }}>{t('prices.colChange')}</Head>
         </View>
-        {[11, 10, 9, 8, 7, 6].map((i) => {
-          const c = pctChange(P[i - 1], P[i]);
+        {Array.from({ length: Math.min(6, P.length) }, (_, k) => P.length - 1 - k).map((i) => {
+          const c = i > 0 ? pctChange(P[i - 1], P[i]) : null;
           return (
             <View key={i} style={{ flexDirection: 'row', paddingVertical: 11, borderTopWidth: 1, borderTopColor: colors.line }}>
               <AppText size={14} style={{ flex: 1 }}>{months.long[i]}</AppText>
               <AppText weight="bold" size={14} style={{ width: 120, textAlign: 'right' }}>{price(P[i])}</AppText>
-              <AppText weight="bold" size={14} color={changeColor(c)} style={{ width: 72, textAlign: 'right' }}>{formatPct(c, lang)}</AppText>
+              <AppText weight="bold" size={14} color={c === null ? colors.muted : changeColor(c)} style={{ width: 72, textAlign: 'right' }}>{c === null ? '—' : formatPct(c, lang)}</AppText>
             </View>
           );
         })}

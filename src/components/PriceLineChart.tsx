@@ -16,6 +16,7 @@ type Props = {
 /** 12 aylık fiyat serisi için alan + çizgi grafiği; dokununca/sürükleyince ay seçilir. */
 export default function PriceLineChart({ prices, selected = null, onSelect }: Props) {
   const [width, setWidth] = useState(0);
+  if (prices.length < 2) return null; // tek aylık (yeni) modelde çizgi yok
   const min = Math.min(...prices), max = Math.max(...prices);
   const n = prices.length;
   const xOf = (i: number) => PAD + (i * (W - 2 * PAD)) / (n - 1);

@@ -119,7 +119,7 @@ const dhLeft = matchRows(dhRows, cands);
 matchRows(heRows, cands.filter((c) => !matched.has(c.v.id)));
 
 // ---- Fiyat değişimi kontrolü ------------------------------------------------
-const prevPrice = (id) => VEHICLES.find((v) => v.id === id).prices[11];
+const prevPrice = (id) => VEHICLES.find((v) => v.id === id).prices.at(-1);
 const next = {};
 const changes = [], suspicious = [];
 for (const [id, m] of matched) {

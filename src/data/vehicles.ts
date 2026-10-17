@@ -48,6 +48,13 @@ function priceSeries(id: string, basePrice: number): number[] {
   });
 }
 
+/** Yeni model: seriyi ilk fiyatlandığı aydan itibaren kırpar (en az 1 ay). */
+function sinceSlice(series: number[], since?: string): number[] {
+  if (!since) return series;
+  const n = Math.min(12, Math.max(1, monthIndex(LIST_MONTH) - monthIndex(since) + 1));
+  return series.slice(12 - n);
+}
+
 /** Deterministik sözde-rastgele: aynı id her zaman aynı seriyi üretir. */
 function history(id: string, current: number): number[] {
   let seed = 0;
@@ -87,6 +94,8 @@ interface Extra {
   range?: number; // WLTP km
   kwh?: number;
   kw?: number;
+  /** Yeni tanıtılan model: ilk fiyatlandığı ay (YYYY-MM). Önceki aylar gösterilmez (simülasyon da üretilmez). */
+  since?: string;
   specs?: Spec[];
 }
 type Row = [model: string, trim: string, price: number, extra?: Extra];
@@ -102,7 +111,7 @@ function build(type: VehicleType, brand: string, rows: Row[]): Vehicle[] {
     specs.push(...(x.specs ?? []));
     return {
       id, type, brand, model, trim, name, tagline: { tr: trim || model, en: toEn(trim || model) },
-      rangeKm: x.range, batteryKwh: x.kwh, prices: priceSeries(id, price), listMonth: LIST_MONTH, specs,
+      rangeKm: x.range, batteryKwh: x.kwh, prices: sinceSlice(priceSeries(id, price), x.since), since: x.since, listMonth: LIST_MONTH, specs,
     };
   });
 }
@@ -178,7 +187,10 @@ const CARS: Vehicle[] = [
     ['INSTER', 'Advance 84,5 kW', 1845000, { kw: 84.5 }],
     ['INSTER Cross', 'Advance 84,5 kW', 1840000, { kw: 84.5 }],
     ['KONA Electric', 'Advance 115 kW', 2450000, { kwh: 65.4, range: 454, kw: 115 }],
-    ['IONIQ 3', 'Select Standart Menzil 107,8 kW (Ekim)', 1799000, { kwh: 42.2, range: 343, kw: 107.8 }],
+    ['IONIQ 3', 'Select Standart Menzil 107,8 kW (Ekim)', 1799000, { kwh: 42.2, range: 343, kw: 107.8, since: '2026-10' }],
+    ['IONIQ 3', 'Trend Uzun Menzil', 2099000, { kwh: 61, range: 482, since: '2026-10' }],
+    ['IONIQ 3', 'Prime Uzun Menzil', 2249000, { kwh: 61, range: 476, since: '2026-10' }],
+    ['IONIQ 3', 'N Line EVO Uzun Menzil', 3220000, { kwh: 61, range: 435, since: '2026-10' }],
     ['IONIQ 5', 'Dynamic Vision Roof 125 kW 4x2', 3150000, { kw: 125 }],
     ['IONIQ 5', 'Advance 160 kW', 3490000, { kw: 160 }],
     ['IONIQ 5 N', 'Advance 448 kW 4x4', 6205000, { kw: 448 }],

@@ -9,14 +9,15 @@ import { monthLabels } from '../../utils/months';
 /** 12 aylık dokunulabilir sütun grafiği. */
 export default function MonthBars({ prices, selected, onSelect }: { prices: number[]; selected: number; onSelect: (i: number) => void }) {
   const { lang, listMonth } = useApp();
-  const months = monthLabels(lang, listMonth).short;
+  const months = monthLabels(lang, listMonth, prices.length).short;
   const min = Math.min(...prices) * 0.96;
   const max = Math.max(...prices);
+  const span = max - min || 1;
   return (
     <View style={{ flexDirection: 'row', alignItems: 'flex-end', gap: 5, height: 130 }}>
       {prices.map((p, i) => {
         const on = i === selected;
-        const pct = 18 + ((p - min) / (max - min)) * 82;
+        const pct = 18 + ((p - min) / span) * 82;
         return (
           <Tap key={i} onPress={() => onSelect(i)} accessibilityLabel={months[i]}
             style={{ flex: 1, height: '100%', justifyContent: 'flex-end', alignItems: 'center', gap: 6 }}>

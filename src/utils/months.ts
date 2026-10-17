@@ -34,14 +34,14 @@ export const monthLong = (lang: Lang, ym: YearMonth) => `${monthName(lang, ym)} 
 export const monthTitle = (lang: Lang, ym: YearMonth) =>
   lang === 'tr' ? monthLong(lang, ym) : `${SHORT.en[parse(ym).m]} ${parse(ym).y}`;
 
-/** Fiyat serisinin (12 ay) etiketleri: son ay `listMonth`. short: Eki, long: Ekim 2025 */
-export function monthLabels(lang: Lang, listMonth: YearMonth) {
-  const list = Array.from({ length: 12 }, (_, i) => shiftMonth(listMonth, i - 11));
+/** Fiyat serisinin (son n ay, varsayılan 12) etiketleri: son ay `listMonth`. short: Eki, long: Ekim 2025 */
+export function monthLabels(lang: Lang, listMonth: YearMonth, n = 12) {
+  const list = Array.from({ length: n }, (_, i) => shiftMonth(listMonth, i - (n - 1)));
   return {
     short: list.map((ym) => SHORT[lang][parse(ym).m]),
     long: list.map((ym) => monthLong(lang, ym)),
     first: monthTitle(lang, list[0]),
-    last: monthTitle(lang, list[11]),
+    last: monthTitle(lang, list[n - 1]),
   };
 }
 

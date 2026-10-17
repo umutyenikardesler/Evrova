@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import AppText from '../../components/AppText';
 import { ChipScroller } from '../../components/Chips';
 import Pagination from '../../components/Pagination';
+import StickyBlock from '../../components/StickyBlock';
 import { Eyebrow, Page, ScreenTitle } from '../../components/Layout';
 import Tap from '../../components/Tap';
 import { NEWS_CATS } from '../../data/news';
@@ -33,12 +34,14 @@ export default function NewsScreen() {
   return (
     <Page>
       <ScreenTitle>{t('news.title')}</ScreenTitle>
+      <StickyBlock>
       <ChipScroller
         fade
         items={[{ id: 'all', label: t('common.all') }, ...NEWS_CATS.map((c) => ({ id: c.id, label: c.label[lang] }))].map((c) => ({
           key: c.id, label: c.label, active: cat === c.id, onPress: () => nav.setNewsCat(c.id),
         }))}
       />
+      </StickyBlock>
 
       {lead && (
         <Tap onPress={() => nav.openNews(lead.id)} pressedBg={colors.card2}

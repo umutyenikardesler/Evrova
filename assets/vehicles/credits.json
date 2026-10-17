@@ -2887,5 +2887,104 @@
  },
  "MG|Marvel R@done": {
   "none": true
+ },
+ "Hyundai|IONIQ 3": {
+  "file": "hyundai/ioniq-3/model.jpg",
+  "title": "Hyundai Ioniq 3 N Line Sindelfingen 2026 IMG 8249.jpg",
+  "author": "Alexander Migl",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hyundai_Ioniq_3_N_Line_Sindelfingen_2026_IMG_8249.jpg"
+ },
+ "Hyundai|IONIQ 3|Select Standart Menzil 107,8 kW (Ekim)": {
+  "file": "hyundai/ioniq-3/select-standart-menzil-107-8-kw-ekim/cover.jpg",
+  "title": "2026 Hyundai Ioniq 3 N Line (Europe) front view 01.png",
+  "author": "AutoGids",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:2026_Hyundai_Ioniq_3_N_Line_(Europe)_front_view_01.png"
+ },
+ "Hyundai|IONIQ 3@1": {
+  "file": "hyundai/ioniq-3/gallery/1.jpg",
+  "title": "Hyundai Ioniq 3 N Line Sindelfingen 2026 IMG 8253.jpg",
+  "author": "Alexander Migl",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hyundai_Ioniq_3_N_Line_Sindelfingen_2026_IMG_8253.jpg"
+ },
+ "Hyundai|IONIQ 3@2": {
+  "file": "hyundai/ioniq-3/gallery/2.jpg",
+  "title": "Hyundai Ioniq 3 N Line Sindelfingen 2026 IMG 8255.jpg",
+  "author": "Alexander Migl",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hyundai_Ioniq_3_N_Line_Sindelfingen_2026_IMG_8255.jpg"
+ },
+ "Hyundai|IONIQ 3@3": {
+  "file": "hyundai/ioniq-3/gallery/3.jpg",
+  "title": "Hyundai Ioniq 3 N Line Sindelfingen 2026 IMG 8257.jpg",
+  "author": "Alexander Migl",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hyundai_Ioniq_3_N_Line_Sindelfingen_2026_IMG_8257.jpg"
+ },
+ "Hyundai|IONIQ 3@done": {
+  "none": true
+ },
+ "Hyundai|IONIQ 3|Trend Uzun Menzil": {
+  "file": "hyundai/ioniq-3/trend-uzun-menzil/cover.jpg",
+  "title": "2026 Hyundai Ioniq 3 N Line (Europe) front view 02.png",
+  "author": "AutoGids",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:2026_Hyundai_Ioniq_3_N_Line_(Europe)_front_view_02.png"
+ },
+ "Hyundai|IONIQ 3|Prime Uzun Menzil": {
+  "file": "hyundai/ioniq-3/prime-uzun-menzil/cover.jpg",
+  "title": "Hyundai Ioniq 3 N Line Sindelfingen 2026 IMG 8253.jpg",
+  "author": "Alexander Migl",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hyundai_Ioniq_3_N_Line_Sindelfingen_2026_IMG_8253.jpg"
+ },
+ "Hyundai|IONIQ 3|N Line EVO Uzun Menzil": {
+  "file": "hyundai/ioniq-3/n-line-evo-uzun-menzil/cover.jpg",
+  "title": "Hyundai Ioniq 3 N Line Sindelfingen 2026 IMG 8249.jpg",
+  "author": "Alexander Migl",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hyundai_Ioniq_3_N_Line_Sindelfingen_2026_IMG_8249.jpg"
+ },
+ "Hyundai|IONIQ 3|N Line EVO Uzun Menzil@1": {
+  "file": "hyundai/ioniq-3/n-line-evo-uzun-menzil/1.jpg",
+  "title": "Hyundai Ioniq 3 N Line Sindelfingen 2026 IMG 8257.jpg",
+  "author": "Alexander Migl",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hyundai_Ioniq_3_N_Line_Sindelfingen_2026_IMG_8257.jpg"
+ },
+ "Hyundai|IONIQ 3|N Line EVO Uzun Menzil@done": {
+  "none": true
+ },
+ "Hyundai|IONIQ 3|Prime Uzun Menzil@1": {
+  "file": "hyundai/ioniq-3/prime-uzun-menzil/1.jpg",
+  "title": "Hyundai Ioniq 3 N Line Sindelfingen 2026 IMG 8255.jpg",
+  "author": "Alexander Migl",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hyundai_Ioniq_3_N_Line_Sindelfingen_2026_IMG_8255.jpg"
+ },
+ "Hyundai|IONIQ 3|Prime Uzun Menzil@done": {
+  "none": true
+ },
+ "Hyundai|IONIQ 3|Select Standart Menzil 107,8 kW (Ekim)@1": {
+  "file": "hyundai/ioniq-3/select-standart-menzil-107-8-kw-ekim/1.jpg",
+  "title": "2026 Hyundai Ioniq 3 N Line (Europe) interior.png",
+  "author": "AutoGids",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:2026_Hyundai_Ioniq_3_N_Line_(Europe)_interior.png"
+ },
+ "Hyundai|IONIQ 3|Select Standart Menzil 107,8 kW (Ekim)@done": {
+  "none": true
+ },
+ "Hyundai|IONIQ 3|Trend Uzun Menzil@1": {
+  "file": "hyundai/ioniq-3/trend-uzun-menzil/1.jpg",
+  "title": "2026 Hyundai Ioniq 3 N Line (Europe) rear view.png",
+  "author": "AutoGids",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:2026_Hyundai_Ioniq_3_N_Line_(Europe)_rear_view.png"
+ },
+ "Hyundai|IONIQ 3|Trend Uzun Menzil@done": {
+  "none": true
  }
 }

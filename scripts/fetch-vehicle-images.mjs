@@ -64,6 +64,7 @@ const BLOCK = {
 
 /** Elle seçilen Commons dosyaları (otomatik arama yanlış/eski nesil bulduğunda). Anahtar: "Marka|Model" */
 const MANUAL = {
+  'Hyundai|IONIQ 3': 'Hyundai Ioniq 3 N Line Sindelfingen 2026 IMG 8249.jpg',
   'MG|Marvel R': 'MG Marvel R 1X7A0397.jpg',
   'Citroën|ë-C3 Aircross': 'Citroën ë-C3 Aircross DSC 8364.jpg',
   'Citroën|ë-C4': 'Citroën ë-C4 Feel (III) – f 14042024.jpg',
@@ -72,6 +73,11 @@ const MANUAL = {
 
 /** Elle seçilen paket fotoğrafı. Anahtar: "Marka|Model|Paket" */
 const MANUAL_TRIM = {
+  // IONIQ 3: Commons'ta yalnızca N Line fotoğrafları var (8 adet); her pakete farklı 2 fotoğraf düşecek şekilde dağıtıldı.
+  'Hyundai|IONIQ 3|N Line EVO Uzun Menzil': 'Hyundai Ioniq 3 N Line Sindelfingen 2026 IMG 8249.jpg',
+  'Hyundai|IONIQ 3|Prime Uzun Menzil': 'Hyundai Ioniq 3 N Line Sindelfingen 2026 IMG 8253.jpg',
+  'Hyundai|IONIQ 3|Select Standart Menzil 107,8 kW (Ekim)': '2026 Hyundai Ioniq 3 N Line (Europe) front view 01.png',
+  'Hyundai|IONIQ 3|Trend Uzun Menzil': '2026 Hyundai Ioniq 3 N Line (Europe) front view 02.png',
   'MG|MG4|Comfort': '2024 MG 4 51KWH EV RWD front.jpg',
   'MG|MG4|Luxury': '2023 MG 4 Trophy Long Range in Holborn Blue (Front).jpg',
   'MG|MG4|XPOWER': 'MG4 EV XPower Automesse Ludwigsburg 2023 1X7A0027.jpg',
@@ -86,6 +92,10 @@ const MANUAL_TRIM = {
  * Paket galerisi varsa o paketin detayında model galerisi yerine o kullanılır.
  */
 const MANUAL_GALLERY = {
+  'Hyundai|IONIQ 3|N Line EVO Uzun Menzil': ['Hyundai Ioniq 3 N Line Sindelfingen 2026 IMG 8257.jpg'],
+  'Hyundai|IONIQ 3|Prime Uzun Menzil': ['Hyundai Ioniq 3 N Line Sindelfingen 2026 IMG 8255.jpg'],
+  'Hyundai|IONIQ 3|Select Standart Menzil 107,8 kW (Ekim)': ['2026 Hyundai Ioniq 3 N Line (Europe) interior.png'],
+  'Hyundai|IONIQ 3|Trend Uzun Menzil': ['2026 Hyundai Ioniq 3 N Line (Europe) rear view.png'],
   'MG|Marvel R': ['MG Marvel R Automesse Ludwigsburg 2022 1X7A5916.jpg', 'MG Marvel R Automesse Ludwigsburg 2022 1X7A5930.jpg', 'MG Marvel R 1X7A0401.jpg'],
   'MG|MG4|Comfort': ['2024 MG 4 51KWH EV RWD rear.jpg'],
   'MG|MG4|Luxury': ['2023 MG 4 Trophy Long Range in Holborn Blue (Rear).jpg', '2023 MG 4 Trophy Long Range in Holborn Blue (Interior).jpg'],

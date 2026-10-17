@@ -22,9 +22,10 @@ export default function VehicleDetailScreen({ id }: { id: string }) {
   if (!v) return null;
 
   const watched = isWatched(v.id);
-  const yoy = pctChange(v.prices[0], v.prices[11]);
-  const labels = monthLabels(lang, v.listMonth ?? listMonth);
-  const shown = sel ?? 11;
+  const n = v.prices.length; // yeni modellerde 12'den az (yalnızca fiyatlandığı aylar)
+  const yoy = n > 1 ? pctChange(v.prices[0], v.prices[n - 1]) : null;
+  const labels = monthLabels(lang, v.listMonth ?? listMonth, n);
+  const shown = Math.min(sel ?? n - 1, n - 1);
   const prev = sel !== null && sel > 0 ? pctChange(v.prices[sel - 1], v.prices[sel]) : null;
 
   return (
@@ -59,19 +60,25 @@ export default function VehicleDetailScreen({ id }: { id: string }) {
         </AppText>
         <View style={{ flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
           <AppText weight="extrabold" size={26}>{price(v.prices[shown])}</AppText>
-          {sel === null || prev !== null ? (
-            <AppText weight="bold" size={13} color={changeColor(prev ?? yoy)}>
-              {sel === null ? t('detail.per12', { pct: formatPct(yoy, lang) }) : t('prices.vsPrev', { pct: formatPct(prev!, lang) })}
+          {n === 1 ? (
+            <AppText weight="bold" size={13} color={colors.lime}>{t('detail.newModel')}</AppText>
+          ) : sel === null || prev !== null ? (
+            <AppText weight="bold" size={13} color={changeColor(prev ?? yoy!)}>
+              {sel === null ? t(n === 12 ? 'detail.per12' : 'detail.perN', { pct: formatPct(yoy!, lang), n }) : t('prices.vsPrev', { pct: formatPct(prev!, lang) })}
             </AppText>
           ) : (
             <AppText weight="bold" size={13} color={colors.muted}>{t('prices.start')}</AppText>
           )}
         </View>
-        <PriceLineChart prices={v.prices} selected={sel} onSelect={setSel} />
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-          <AppText size={11} color={colors.muted}>{labels.first}</AppText>
-          <AppText size={11} color={colors.muted}>{labels.last}</AppText>
-        </View>
+        {n > 1 && (
+          <>
+            <PriceLineChart prices={v.prices} selected={sel} onSelect={setSel} />
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+              <AppText size={11} color={colors.muted}>{labels.first}</AppText>
+              <AppText size={11} color={colors.muted}>{labels.last}</AppText>
+            </View>
+          </>
+        )}
       </Card>
 
       <PrimaryButton

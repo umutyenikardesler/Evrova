@@ -119,6 +119,11 @@ export const VEHICLE_IMAGES: Record<string, VehicleImage> = {
  "MG|MG4|Luxury": { src: require('../../assets/vehicles/mg/mg4/luxury/cover.jpg'), author: "MoCars", license: "CC0", page: "https://commons.wikimedia.org/wiki/File:2023_MG_4_Trophy_Long_Range_in_Holborn_Blue_(Front).jpg", title: "2023 MG 4 Trophy Long Range in Holborn Blue (Front).jpg" },
  "MG|MG4|XPOWER": { src: require('../../assets/vehicles/mg/mg4/xpower/cover.jpg'), author: "Alexander-93", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:MG4_EV_XPower_Automesse_Ludwigsburg_2023_1X7A0027.jpg", title: "MG4 EV XPower Automesse Ludwigsburg 2023 1X7A0027.jpg" },
  "MG|Marvel R": { src: require('../../assets/vehicles/mg/marvel-r/model.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:MG_Marvel_R_1X7A0397.jpg", title: "MG Marvel R 1X7A0397.jpg" },
+ "Hyundai|IONIQ 3": { src: require('../../assets/vehicles/hyundai/ioniq-3/model.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:Hyundai_Ioniq_3_N_Line_Sindelfingen_2026_IMG_8249.jpg", title: "Hyundai Ioniq 3 N Line Sindelfingen 2026 IMG 8249.jpg" },
+ "Hyundai|IONIQ 3|Select Standart Menzil 107,8 kW (Ekim)": { src: require('../../assets/vehicles/hyundai/ioniq-3/select-standart-menzil-107-8-kw-ekim/cover.jpg'), author: "AutoGids", license: "CC BY 3.0", page: "https://commons.wikimedia.org/wiki/File:2026_Hyundai_Ioniq_3_N_Line_(Europe)_front_view_01.png", title: "2026 Hyundai Ioniq 3 N Line (Europe) front view 01.png" },
+ "Hyundai|IONIQ 3|Trend Uzun Menzil": { src: require('../../assets/vehicles/hyundai/ioniq-3/trend-uzun-menzil/cover.jpg'), author: "AutoGids", license: "CC BY 3.0", page: "https://commons.wikimedia.org/wiki/File:2026_Hyundai_Ioniq_3_N_Line_(Europe)_front_view_02.png", title: "2026 Hyundai Ioniq 3 N Line (Europe) front view 02.png" },
+ "Hyundai|IONIQ 3|Prime Uzun Menzil": { src: require('../../assets/vehicles/hyundai/ioniq-3/prime-uzun-menzil/cover.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:Hyundai_Ioniq_3_N_Line_Sindelfingen_2026_IMG_8253.jpg", title: "Hyundai Ioniq 3 N Line Sindelfingen 2026 IMG 8253.jpg" },
+ "Hyundai|IONIQ 3|N Line EVO Uzun Menzil": { src: require('../../assets/vehicles/hyundai/ioniq-3/n-line-evo-uzun-menzil/cover.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:Hyundai_Ioniq_3_N_Line_Sindelfingen_2026_IMG_8249.jpg", title: "Hyundai Ioniq 3 N Line Sindelfingen 2026 IMG 8249.jpg" },
 };
 
 /** Detay sayfası slider'ı için ek fotoğraflar (arka, iç mekân, yan...). Anahtar: "Marka|Model" */
@@ -523,5 +528,22 @@ export const VEHICLE_GALLERY: Record<string, VehicleImage[]> = {
   { src: require('../../assets/vehicles/mg/marvel-r/gallery/1.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:MG_Marvel_R_Automesse_Ludwigsburg_2022_1X7A5916.jpg", title: "MG Marvel R Automesse Ludwigsburg 2022 1X7A5916.jpg" },
   { src: require('../../assets/vehicles/mg/marvel-r/gallery/2.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:MG_Marvel_R_Automesse_Ludwigsburg_2022_1X7A5930.jpg", title: "MG Marvel R Automesse Ludwigsburg 2022 1X7A5930.jpg" },
   { src: require('../../assets/vehicles/mg/marvel-r/gallery/3.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:MG_Marvel_R_1X7A0401.jpg", title: "MG Marvel R 1X7A0401.jpg" },
+ ],
+ "Hyundai|IONIQ 3": [
+  { src: require('../../assets/vehicles/hyundai/ioniq-3/gallery/1.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:Hyundai_Ioniq_3_N_Line_Sindelfingen_2026_IMG_8253.jpg", title: "Hyundai Ioniq 3 N Line Sindelfingen 2026 IMG 8253.jpg" },
+  { src: require('../../assets/vehicles/hyundai/ioniq-3/gallery/2.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:Hyundai_Ioniq_3_N_Line_Sindelfingen_2026_IMG_8255.jpg", title: "Hyundai Ioniq 3 N Line Sindelfingen 2026 IMG 8255.jpg" },
+  { src: require('../../assets/vehicles/hyundai/ioniq-3/gallery/3.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:Hyundai_Ioniq_3_N_Line_Sindelfingen_2026_IMG_8257.jpg", title: "Hyundai Ioniq 3 N Line Sindelfingen 2026 IMG 8257.jpg" },
+ ],
+ "Hyundai|IONIQ 3|N Line EVO Uzun Menzil": [
+  { src: require('../../assets/vehicles/hyundai/ioniq-3/n-line-evo-uzun-menzil/1.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:Hyundai_Ioniq_3_N_Line_Sindelfingen_2026_IMG_8257.jpg", title: "Hyundai Ioniq 3 N Line Sindelfingen 2026 IMG 8257.jpg" },
+ ],
+ "Hyundai|IONIQ 3|Prime Uzun Menzil": [
+  { src: require('../../assets/vehicles/hyundai/ioniq-3/prime-uzun-menzil/1.jpg'), author: "Alexander Migl", license: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:Hyundai_Ioniq_3_N_Line_Sindelfingen_2026_IMG_8255.jpg", title: "Hyundai Ioniq 3 N Line Sindelfingen 2026 IMG 8255.jpg" },
+ ],
+ "Hyundai|IONIQ 3|Select Standart Menzil 107,8 kW (Ekim)": [
+  { src: require('../../assets/vehicles/hyundai/ioniq-3/select-standart-menzil-107-8-kw-ekim/1.jpg'), author: "AutoGids", license: "CC BY 3.0", page: "https://commons.wikimedia.org/wiki/File:2026_Hyundai_Ioniq_3_N_Line_(Europe)_interior.png", title: "2026 Hyundai Ioniq 3 N Line (Europe) interior.png" },
+ ],
+ "Hyundai|IONIQ 3|Trend Uzun Menzil": [
+  { src: require('../../assets/vehicles/hyundai/ioniq-3/trend-uzun-menzil/1.jpg'), author: "AutoGids", license: "CC BY 3.0", page: "https://commons.wikimedia.org/wiki/File:2026_Hyundai_Ioniq_3_N_Line_(Europe)_rear_view.png", title: "2026 Hyundai Ioniq 3 N Line (Europe) rear view.png" },
  ],
 };

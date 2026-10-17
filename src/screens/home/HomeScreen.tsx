@@ -8,7 +8,7 @@ import { useApp } from '../../context/AppContext';
 import { useNav } from '../../navigation/NavContext';
 import { colors } from '../../theme/colors';
 import { changeColor } from '../../utils/color';
-import { formatPct, pctChange } from '../../utils/format';
+import { currentPrice, formatPct, pctChange } from '../../utils/format';
 import { monthTitle } from '../../utils/months';
 import { nameParts } from '../../utils/name';
 import HomeHeader from './HomeHeader';
@@ -48,7 +48,8 @@ export default function HomeScreen() {
         {watched.length > 0 ? (
           <Card style={{ paddingVertical: 4, paddingHorizontal: 16 }}>
             {watched.map((v, i) => {
-              const ch = pctChange(v.prices[10], v.prices[11]);
+              const n = v.prices.length;
+              const ch = n > 1 ? pctChange(v.prices[n - 2], v.prices[n - 1]) : null;
               return (
                 <Tap key={v.id} onPress={() => nav.openPrices(v.id)}
                   style={{ flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 13, borderBottomWidth: i < watched.length - 1 ? 1 : 0, borderBottomColor: colors.line }}>
@@ -57,8 +58,8 @@ export default function HomeScreen() {
                     <AppText size={12} color={colors.muted}>{t(`types.${v.type}`)}</AppText>
                   </View>
                   <View style={{ alignItems: 'flex-end' }}>
-                    <AppText weight="bold" size={15}>{price(v.prices[11])}</AppText>
-                    <AppText weight="bold" size={12} color={changeColor(ch)}>{t('home.thisMonth', { pct: formatPct(ch, lang) })}</AppText>
+                    <AppText weight="bold" size={15}>{price(currentPrice(v))}</AppText>
+                    <AppText weight="bold" size={12} color={ch === null ? colors.lime : changeColor(ch)}>{ch === null ? t('detail.newModel') : t('home.thisMonth', { pct: formatPct(ch, lang) })}</AppText>
                   </View>
                 </Tap>
               );

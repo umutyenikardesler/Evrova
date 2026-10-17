@@ -11,7 +11,7 @@ const ago = (hours: number) => Date.now() - hours * H;
 const lastChange = (id: string) => {
   const v = VEHICLES.find((x) => x.id === id);
   const p = v?.prices ?? [1, 1];
-  return { name: v?.name ?? id, pct: ((p[p.length - 1] - p[p.length - 2]) / p[p.length - 2]) * 100 };
+  return { name: v?.name ?? id, pct: p.length > 1 ? ((p[p.length - 1] - p[p.length - 2]) / p[p.length - 2]) * 100 : 0 };
 };
 const fmt = (x: number, lang: 'tr' | 'en') => Math.abs(x).toFixed(1).replace('.', lang === 'tr' ? ',' : '.');
 

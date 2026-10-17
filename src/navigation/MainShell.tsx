@@ -15,6 +15,7 @@ import VehicleDetailScreen from '../screens/vehicles/VehicleDetailScreen';
 import VehiclesScreen from '../screens/vehicles/VehiclesScreen';
 import { colors } from '../theme/colors';
 import { useNav, type Tab } from './NavContext';
+import { ScrollYContext } from './ScrollContext';
 import { isSwipeLocked } from './swipeLock';
 
 /** Alt menüdeki sıra; kaydırma ve geçiş yönü buna göre belirlenir. */
@@ -43,7 +44,18 @@ export default function MainShell() {
   // Ekran değişince kaydırma başa döner (key değişir); aynı sekmede geri gidilirse o ekranın eski konumu geri yüklenir.
   const screenKey = `${nav.tab}:${nav.detailId ?? ''}:${nav.newsId ?? ''}:${nav.vehicleType}:${nav.vehicleBrand ?? ''}:${nav.vehicleModel ?? ''}:${nav.newsCat}:${nav.newsPage}`;
   const scrollRef = useRef<ScrollView>(null);
+  const scrollY = useRef(new Animated.Value(0)).current;
+  useEffect(() => { scrollY.setValue(0); }, [screenKey, scrollY]);
+  const onScroll = useMemo(
+    () => Animated.event([{ nativeEvent: { contentOffset: { y: scrollY } } }], {
+      useNativeDriver: true,
+      listener: (e: { nativeEvent: { contentOffset: { y: number } } }) => { offsets.current[screenKeyRef.current] = e.nativeEvent.contentOffset.y; },
+    }),
+    [scrollY],
+  );
   const offsets = useRef<Record<string, number>>({});
+  const screenKeyRef = useRef(screenKey);
+  screenKeyRef.current = screenKey;
   const pendingY = useRef(0);
   const last = useRef({ key: screenKey, tab: nav.tab, depth: nav.depth });
   if (last.current.key !== screenKey) {
@@ -97,12 +109,14 @@ export default function MainShell() {
       {/* İçerik menünün arkasından akar; menü cam efektiyle bunu bulanık gösterir */}
       <GlassTarget ref={blurTarget} style={{ flex: 1 }}>
         <Animated.View style={{ flex: 1, transform: [{ translateX: slide }] }} {...pan.panHandlers}>
-          <ScrollView key={screenKey} ref={scrollRef} style={{ flex: 1 }} scrollEventThrottle={32}
-            onScroll={(e) => { offsets.current[screenKey] = e.nativeEvent.contentOffset.y; }}
+          <Animated.ScrollView key={screenKey} ref={scrollRef} style={{ flex: 1 }} scrollEventThrottle={16}
+            onScroll={onScroll}
             onContentSizeChange={() => { if (pendingY.current > 0) { scrollRef.current?.scrollTo({ y: pendingY.current, animated: false }); pendingY.current = 0; } }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled"
             contentContainerStyle={{ paddingBottom: TAB_BAR_SPACE + Math.max(insets.bottom, 12) }}>
-            <CurrentScreen />
-          </ScrollView>
+            <ScrollYContext.Provider value={scrollY}>
+              <CurrentScreen />
+            </ScrollYContext.Provider>
+          </Animated.ScrollView>
         </Animated.View>
       </GlassTarget>
       <Toast />

@@ -20,7 +20,10 @@ export interface Vehicle {
   rangeKm?: number;
   batteryKwh?: number;
   /** 12 aylık liste fiyatı (Eki 2025 → Eyl 2026), TL */
+  /** Aylık liste fiyatları (eskiden yeniye, son = listMonth). Yeni tanıtılan modellerde yalnızca fiyatlandığı aylar bulunur (1..12 ay). */
   prices: number[];
+  /** İlk fiyatlandığı ay (YYYY-MM); yeni modellerde grafik bu aydan başlar. */
+  since?: string;
   /** Serinin son ayı ("YYYY-MM"); yoksa uygulamadaki en yeni liste ayı kullanılır */
   listMonth?: string;
   specs: Spec[];

@@ -46,7 +46,7 @@ const tr = {
     note3: 'Daha eski araçlar için MTV daha da düşüktür; tüm yaş grupları gib.gov.tr adresinde yer alır.',
   },
   vehicles: { search: 'Marka veya model ara', noResult: 'Sonuç bulunamadı', clear: 'Temizle', modelCount: '{n} model', versionCount: '{n} paket', title: 'Araçlar', watch: 'Takibe al', rangeLine: '{range} menzil · {battery}', rangeOnly: '{range} menzil', batteryOnly: '{battery}' },
-  detail: { photoBy: 'Fotoğraf: {author} · {license}', listPrice: '{month} liste fiyatı', per12: '{pct} / 12 ay', history: 'Aylık fiyat geçmişini gör', track: 'Fiyatını takibe al' },
+  detail: { photoBy: 'Fotoğraf: {author} · {license}', listPrice: '{month} liste fiyatı', per12: '{pct} / 12 ay', perN: '{pct} / {n} ay', newModel: 'Yeni model', history: 'Aylık fiyat geçmişini gör', track: 'Fiyatını takibe al' },
   prices: {
     title: 'Fiyat takibi', emptyTitle: 'Takip listen boş',
     emptyText: 'Aylık fiyat değişimini görmek için Araçlar sayfasından bir model seç.', browse: 'Araçlara göz at',
