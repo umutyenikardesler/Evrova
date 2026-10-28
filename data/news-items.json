@@ -1,5 +1,150 @@
 [
   {
+    "id": "n28",
+    "cat": "battery",
+    "published": "2026-10-12",
+    "readMin": 2,
+    "source": {
+      "name": "electrive.com",
+      "url": "https://electrive.com/2026/10/12/acc-announces-five-million-battery-cells-made-in-france"
+    },
+    "images": [
+      "Peugeot e-3008 Automesse Ludwigsburg 2024 IMG 1537.jpg"
+    ],
+    "title": {
+      "tr": "ACC, Fransa'da üretilen beşmilyonuncu batarya hücresini duyurdu",
+      "en": "ACC announces its five-millionth battery cell 'Made in France'"
+    },
+    "body": {
+      "tr": [
+        "ACC (Stellantis, Mercedes-Benz ve TotalEnergies iştiraki Saft'ın ortak girişimi), Fransa'nın kuzeyindeki Douvrin'deki fabrikasında beşmilyonuncu hücreyi ürettiğini Paris Otomobil Fuarı'nda açıkladı. Şirket, Douvrin'deki mevcut üretim kapasitesinin yaklaşık 40 bin aracı donatmaya yeteceğini belirtti.",
+        "Tesisin 12,9 GWh kapasiteli ikinci üretim bloğu 2027'de devreye girecek ve Mercedes-Benz'in elektrikli modelleri için batarya üretecek; bu adımla kapasite 26 GWh'a yaklaşacak. Nihai planda üç üretim bloğuyla toplam yaklaşık 40 GWh hedefleniyor. ACC CEO'su Allan Swan, bu rakamı bir dönüm noktası olarak nitelendirip Avrupa'nın gelişmiş batarya teknolojisini ölçekte sanayileştirebileceğini söyledi; AB'nin taslak Sanayi Hızlandırıcı Yasası'nın hızla uygulanmasını istedi.",
+        "ACC'nin hücre ve modülleri şu an Peugeot E-3008 ve E-5008, Jeep Compass, Lancia Gamma, DS N°7 ve N°8, Citroën C5 Aircross ile Opel Grandland dahil sekiz Stellantis modelinde kullanılıyor. Şirket arka planda sorunlarla da boğuşuyor: hücre ve modül üretiminde yüksek hata oranları sürüyor, Stellantis'in Sochaux ve Rennes fabrikaları ekim sonunda batarya kıtlığına bağlı olarak geçici üretim durdurdu ve bazı uzun menzilli modellerin teslimatları 2027'nin ilk çeyreğine sarkmış durumda. Şirketin Almanya ve İtalya'da planladığı hücre fabrikaları ise rafa kaldırılmıştı; Douvrin, ACC'nin tek seri üretim tesisi olarak kaldı."
+      ],
+      "en": [
+        "ACC, the battery joint venture of Stellantis, Mercedes-Benz and Saft (a TotalEnergies subsidiary), announced at the Paris Motor Show that it has produced its five-millionth cell at its Douvrin plant in northern France. The company says current output there is enough to equip nearly 40,000 vehicles.",
+        "The plant's second production block, with 12.9 GWh of capacity, is due to start in 2027 and will supply batteries for Mercedes-Benz EVs, pushing total capacity to almost 26 GWh; the final plan envisions three blocks totalling around 40 GWh. CEO Allan Swan called the milestone proof Europe can industrialize advanced battery technology at scale, and urged quick adoption of the EU's draft Industrial Accelerator Act to give European cell makers a level playing field.",
+        "ACC cells and modules are now fitted in eight Stellantis models, including the Peugeot E-3008 and E-5008, Jeep Compass, Lancia Gamma, DS N°7 and N°8, Citroën C5 Aircross and Opel Grandland. The company is still working through earlier troubles, though: defect rates in cell and module production remain elevated, Stellantis plants in Sochaux and Rennes are pausing output in late October over battery shortages, and deliveries of some long-range models have slipped into early 2027. ACC's planned cell plants in Germany and Italy were scrapped, leaving Douvrin as its only series-production site."
+      ]
+    }
+  },
+  {
+    "id": "n29",
+    "cat": "charging",
+    "published": "2026-10-23",
+    "readMin": 2,
+    "source": {
+      "name": "electrive.com",
+      "url": "https://www.electrive.com/2026/10/23/chery-launches-megawatt-charging-system-for-passenger-evs/"
+    },
+    "images": [
+      "Electrify America DC fast charging station hub.jpg"
+    ],
+    "title": {
+      "tr": "Chery, binek elektrikli araçlar için megavat şarj sistemini tanıttı",
+      "en": "Chery unveils megawatt charging system for passenger EVs"
+    },
+    "body": {
+      "tr": [
+        "Çin'in devlet kontrolündeki otomotiv üreticisi Chery, \"Volt-Dragon\" adını verdiği ve 1,44 megavat tepe güce ulaşan bir hızlı şarj sistemiyle megavat şarj yarışına katıldı. Şirket, bu sistemle bir bataryanın yüzde 10'dan yüzde 97'ye şarj edilmesinin 6 dakika 50 saniye sürdüğünü açıkladı. Sistem, şirketin kendi düzenlediği Küresel İnovasyon Konferansı'nda, CheryMind adlı yapay zekâ dil modeliyle birlikte tanıtıldı.",
+        "Çinli sektör kaynaklarına göre CheryMind'ın ileride robotaksi filoları, L4 seviyesi sürüş destek sistemleri ve Volt-Dragon şarj altyapısıyla entegre çalışması planlanıyor; ancak bu entegrasyonun pratikte nasıl işleyeceği henüz açıklanmadı. Chery, hangi modellerin yeni sistemle uyumlu olacağını henüz duyurmadı; sektör gözlemcileri bu hızda şarj için aracın 800 veya 1000 voltluk bir mimariye sahip olması gerektiğine işaret ediyor.",
+        "Chery, rekabette BYD, Huawei ve Geely'nin önden gittiğini kabul ediyor: BYD'nin Flash Charging sistemi yüzde 10'dan yüzde 98'e şarjı 6 dakika 27 saniyede tamamlıyor ve ağustos sonunda 10 bin istasyona ulaşmıştı; BYD yıl sonuna kadar bu sayıyı 20 bine çıkarmayı hedefliyor. Huawei ve Geely'nin kendi sistemleri ise aynı aralık için 8-9 dakika öngörüyor. Chery, ilk aşamada on şehirde istasyon açacağını, yıl sonuna kadar daha ayrıntılı bir genişleme planı duyuracağını ve 2029'a kadar dünya çapında 20 binden fazla, araçtan şebekeye (V2G) enerji aktarımı yapabilen Volt-Dragon istasyonu kurmayı hedeflediğini belirtti; sistemde ileride robotik kol ile otomatik şarj özelliği de sunulacak."
+      ],
+      "en": [
+        "Chinese state-backed automaker Chery has joined the megawatt-charging race with a system it calls \"Volt-Dragon,\" rated at a 1.44 MW peak output. The company says it can take a battery from 10% to 97% in 6 minutes 50 seconds. It unveiled the charger at its own Global Innovation Conference, alongside a new in-house AI language model, CheryMind.",
+        "Chinese industry reports say CheryMind is meant to eventually link up with future robotaxi fleets, Chery's L4 driver-assistance systems and the Volt-Dragon charging network, though how that integration would actually work hasn't been explained. Chery hasn't named any compatible models yet; analysts note a charger this fast would require an 800-volt or 1000-volt vehicle platform.",
+        "Chery is entering a field where BYD, Huawei and Geely already operate megawatt chargers. BYD's Flash Charging goes from 10% to 98% in 6 minutes 27 seconds and had reached 10,000 stations by the end of August, with 20,000 targeted by year-end; Huawei and Geely quote 8-9 minutes for a similar range. Chery says its initial rollout covers ten cities, with a fuller expansion plan due before the end of 2026, and that it's aiming for more than 20,000 Volt-Dragon stations worldwide by 2029, eventually supporting vehicle-to-grid power feedback and robotic-arm automated charging."
+      ]
+    }
+  },
+  {
+    "id": "n30",
+    "cat": "moto",
+    "published": "2026-10-21",
+    "readMin": 2,
+    "source": {
+      "name": "electrek.co",
+      "url": "https://electrek.co/2026/10/21/livewire-set-to-show-off-several-new-electric-motorcycles-next-month/"
+    },
+    "images": [
+      "BMW Electric Motorrad - EICMA 2024.jpg"
+    ],
+    "title": {
+      "tr": "LiveWire, EICMA'da şimdiye kadarki en büyük elektrikli motosiklet serisini sergileyecek",
+      "en": "LiveWire to showcase its biggest electric motorcycle lineup yet at EICMA"
+    },
+    "body": {
+      "tr": [
+        "Çoğunluk hissesi Harley-Davidson'a ait elektrikli motosiklet üreticisi LiveWire, 5-8 Kasım'da Milano'da düzenlenecek EICMA fuarında şimdiye kadarki en kapsamlı elektrikli iki tekerlekli serisini sergileyeceğini duyurdu. Stant; STACYC marka elektrikli denge bisikletlerini, hafif S4 Honcho ailesini ve daha performans odaklı DUST serisini bir arada gösterecek.",
+        "Fuarın en büyük sürprizi, ailenin ilk kez halka tanıtılacak yeni üyesi S4 Honcho Skate olacak; şirket şimdilik modelin 2027'de geleceğini doğrulamakla yetiniyor, ön teknik bilgiler ise fuardan önce 2 Kasım'da paylaşılacak. Üretime hazır S4 Honcho Street ise Avrupa'daki tanıtımını EICMA'da yapacak ve fuarın ardından hemen Avrupa'da satışa çıkacak; ABD lansmanının ekim ayı sonunda gerçekleşmesi planlanıyor.",
+        "LiveWire'ın bu yıl bünyesine kattığı Dust Moto'nun DUST Hightail modelinin üretime yakın bir versiyonu da fuarda sergilenecek; model 2027'de piyasaya sürülmeyi hedefliyor. Aynı aileden yeni DUST Spur de 2027 için planlanıyor; bu iki model için kesin fiyat ve teknik bilgiler 2027'nin ilk çeyreğinde açıklanacak. Şirket, STACYC'ten DUST'a uzanan bu ürün basamaklarıyla farklı yaş, deneyim ve bütçe seviyelerindeki sürücülere hitap etmeyi hedefliyor."
+      ],
+      "en": [
+        "LiveWire, the electric motorcycle maker majority-owned by Harley-Davidson, says it will bring its biggest electric two-wheeler lineup yet to EICMA, the Milan motorcycle show running November 5-8. The booth will span STACYC electric balance bikes, the lightweight S4 Honcho family and the more performance-oriented DUST models.",
+        "The biggest surprise is the S4 Honcho Skate, making its first public appearance; LiveWire has confirmed only that it's an expansion of the Honcho line due in 2027, with preliminary specs to follow on November 2, ahead of the show. The production-ready S4 Honcho Street will make its European debut at EICMA and go on sale in Europe right after the show, with its US launch planned for the end of October.",
+        "Also on display will be a near-production version of the DUST Hightail, built on assets LiveWire acquired from Dust Moto earlier this year and targeting a 2027 launch. A new DUST Spur is planned for the same year, with final specs and pricing for both DUST models expected in the first quarter of 2027. The company frames the growing ladder — from STACYC balance bikes to Honcho to DUST — as a way to reach riders across different ages, skill levels and budgets."
+      ]
+    }
+  },
+  {
+    "id": "n31",
+    "cat": "software",
+    "published": "2026-10-19",
+    "readMin": 2,
+    "source": {
+      "name": "Robotics & Automation News",
+      "url": "https://roboticsandautomationnews.com/2026/10/19/mercedes-benz-and-nvidia-deepen-partnership-on-automated-driving/106015/"
+    },
+    "images": [
+      "Mercedes-Benz W222 Urban Automated Driving at IAA 2019 IMG 0407.jpg"
+    ],
+    "title": {
+      "tr": "Mercedes-Benz ve NVIDIA, otonom sürüş ortaklığını genişletiyor",
+      "en": "Mercedes-Benz and Nvidia expand their partnership on automated driving"
+    },
+    "body": {
+      "tr": [
+        "Mercedes-Benz ile NVIDIA, bir sonraki nesil otonom sürüş sistemlerini geliştirmek için stratejik iş birliklerini genişlettiklerini açıkladı. Ortaklık, Mercedes'in araç mühendisliği ve güvenlik birikimini -MB.OS işletim sistemi dahil- NVIDIA'nın hesaplama ve yapay zekâ teknolojileriyle birleştiriyor.",
+        "İş birliği, NVIDIA'nın araç içi hesaplama ve sensör mimarisi Hyperion üzerine inşa ediliyor; MB.OS bu altyapıyla yeni sürüş fonksiyonlarını ve kablosuz güncellemeleri destekleyecek. Yapay zekâ muhakeme yetenekleriyle donatılan NVIDIA Alpamayo yazılım yığını, şehir içi noktadan noktaya sürüş desteği, aktif güvenlik ve otomatik park etmeyi kapsıyor; NVIDIA Halos ise Mercedes'in güvenlik temelinin üzerine yedeklilik ve ek koruma katmanları ekliyor. Şirketler bu teknolojilerin bugünkü sürücü destek sistemlerinin yanı sıra, \"robolimuzin\" uygulamalarını da içeren gelecekteki SAE Seviye 4 geliştirmelerine temel oluşturacağını belirtti; ancak somut bir takvim veya model adı paylaşılmadı.",
+        "Mercedes-Benz Grup Yönetim Kurulu üyesi ve Geliştirme-Tedarik Teknoloji Sorumlusu Jörg Burzer, NVIDIA'yı otonom sürüşteki en önemli stratejik ortakları olarak tanımlayarak iki şirketin batı dünyasında ilk şehir içi noktadan noktaya sürüş destek sistemini birlikte geliştirdiğini hatırlattı. NVIDIA Otomotiv Başkan Yardımcısı Ali Kani ise hızlandırılmış hesaplamanın araçlara karmaşık trafik durumlarını anlama ve değerlendirme yeteneği kazandırdığını, Hyperion platformu üzerinde çalışarak otonom sürüşü gündelik bir gerçekliğe dönüştürmeyi hedefledıklerini söyledi. Ortaklık, sürüş yazılımının dışında Mercedes'in MO360 dijital üretim ekosisteminde simülasyon ve yapay zekâ destekli uygulamalar için de kullanılıyor."
+      ],
+      "en": [
+        "Mercedes-Benz and NVIDIA have expanded their strategic partnership to develop the next generation of automated driving systems. The collaboration pairs Mercedes' automotive engineering and safety know-how — including its MB.OS operating system — with NVIDIA's accelerated computing and AI technology.",
+        "The work builds on NVIDIA's Hyperion in-vehicle computing and sensor platform, with MB.OS running new driving functions and over-the-air updates on top of it. NVIDIA's Alpamayo software stack, which adds AI reasoning, covers point-to-point urban driving assistance, active safety and automated parking, while a separate safety layer called NVIDIA Halos adds redundancy and guardrails on top of Mercedes' own safety foundation. The companies say these pieces will underpin both today's driver-assistance features and future SAE Level 4 development, including robo-limousines, though no firm timeline or model names were given.",
+        "Jörg Burzer, a Mercedes-Benz Group board member overseeing development and procurement, called NVIDIA the company's most important strategic partner in automated driving and noted the two jointly built the first urban point-to-point driving assistance system in the Western world. NVIDIA's VP of automotive, Ali Kani, said accelerated computing gives vehicles the intelligence to reason through complex driving situations, and that building on Hyperion is meant to make autonomous driving an everyday reality. Beyond driving software, the partnership also extends to Mercedes' MO360 digital production ecosystem, where NVIDIA technology supports simulation and AI-based manufacturing applications."
+      ]
+    }
+  },
+  {
+    "id": "n32",
+    "cat": "commercial",
+    "published": "2026-10-26",
+    "readMin": 2,
+    "source": {
+      "name": "The Driven",
+      "url": "https://thedriven.io/2026/10/26/look-no-cabin-chinese-truck-maker-xcmg-unveils-autonomous-electric-logistics-truck-for-industrial-parks/"
+    },
+    "images": [
+      "XCMG Hanvan E7 001.jpg"
+    ],
+    "title": {
+      "tr": "XCMG, kabinsiz otonom elektrikli lojistik kamyonunu tanıttı",
+      "en": "XCMG unveils a cabin-less autonomous electric logistics truck"
+    },
+    "body": {
+      "tr": [
+        "Çinli devlet kontrolündeki inşaat ve ağır makine üreticisi XCMG, sanayi bölgeleri içi lojistik için tasarlanmış, tamamen otonom ve kabinsiz bir elektrikli çekici tanıttı: SDA411. Prototip ayın başında şirketin LinkedIn hesabında paylaşılmış, ardından daha ayrıntılı görüntülerle kamuoyuna sunulmuştu. Araç, stilize edilmiş bir uçak çekme traktörüne benzeyen, sürücü kabini bulunmayan bir platform üzerine kurulu.",
+        "SDA411, L4 seviyesinde bir otonom sürüş sistemiyle çalışıyor; şirkete göre araç 360 derecelik bir algı sistemiyle rota belirleme, engelden kaçınma, görev yürütme ve park etme işlemlerini yoğun ve karma trafik ortamlarında sürekli biçimde gerçekleştirebiliyor. XCMG, aracı \"insansız sanayi bölgesi lojistiği\" için konumlandırıyor; paylaşılan tanıtım videosu, neredeyse boş bir lojistik sahasında gerçekleştirilen, oldukça kurgusal görünen bir otonom sürüş gösterisi içeriyor.",
+        "Şirket menzil, yük kapasitesi, batarya büyüklüğü veya fiyat gibi teknik detayları şimdilik paylaşmadı; bu nedenle otonom sistemin gerçek dünya koşullarında ne kadar güvenilir çalışacağı da belirsizliğini koruyor. XCMG, zaten çeşitli elektrikli iş makineleri ve ticari araçlar satıyor; şirket geçtiğimiz günlerde Avustralyalı madencilik devi Fortescue'ya elektrikli tekerlekli yükleyici, dozer, su tankeri ve greyder filosu teslim etmişti. Bu tür sürücüsüz lojistik araçlarının yaygınlaşması, sanayi bölgelerinde mevcut sürücülük istihdamını da tehdit edebilir."
+      ],
+      "en": [
+        "Chinese state-owned construction and heavy-machinery maker XCMG has unveiled a fully autonomous, cabin-less electric truck tractor built for logistics inside industrial parks: the SDA411. The prototype first appeared on the company's LinkedIn account earlier this month before being shown in more detail. Styled somewhat like an airport pushback tractor, it's a driverless platform with no cab at all.",
+        "The SDA411 runs on an L4 autonomous driving system that XCMG says uses 360-degree perception to handle navigation, obstacle avoidance, task execution and parking continuously in mixed, high-traffic environments. XCMG is positioning it for \"unmanned industrial park logistics,\" and the promotional video shows what looks like a fairly staged autonomous run through a nearly empty logistics yard.",
+        "The company hasn't released range, payload, battery size or pricing, leaving open how the autonomy would actually hold up under real conditions. XCMG already sells a range of electric construction equipment and commercial vehicles; it recently delivered a fleet of electric wheel loaders, dozers, water carts and graders to Australian mining company Fortescue. Wider adoption of driverless logistics vehicles like this one would also raise questions about jobs for human drivers in industrial parks."
+      ]
+    }
+  },
+  {
     "id": "n23",
     "cat": "battery",
     "published": "2026-10-15",
