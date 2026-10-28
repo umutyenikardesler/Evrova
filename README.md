@@ -44,7 +44,17 @@ Batarya, Şarj, Motosiklet, Yazılım ve Ticari kategorilerinde (her birinde en 
 - **MTV tablosu:** motor gücü × araç yaşı (girdiğin güce denk gelen satır vurgulanır).
 - Değerler 2026 içindir ve bilgi amaçlıdır; kesin değerler için gib.gov.tr. Veri: `src/data/taxes.ts`.
 
-### Bildirimler
+### Apple / Google ile giriş
+
+Native modül gerektirir; Expo Go'da çalışmaz, development build şarttır (web'de ve demo modunda "yakında" uyarısı gösterilir).
+
+- **Apple:** `expo-apple-authentication` (yalnızca iOS). Firebase Console > Authentication > Sign-in method'da **Apple** sağlayıcısını aç; `app.config.js` `usesAppleSignIn` ve eklentiyi zaten ayarlar. Apple Developer hesabında App ID için "Sign in with Apple" yeteneği açık olmalı.
+- **Google:** `@react-native-google-signin/google-signin`. Firebase'de **Google** sağlayıcısını aç, Google Cloud'da OAuth client ID'leri oluştur ve ortam değişkenlerini doldur:
+  - `EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID` (zorunlu, Firebase'in web client ID'si), `EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID` (iOS)
+  - `GOOGLE_IOS_URL_SCHEME` = iOS client ID'nin ters hali (`com.googleusercontent.apps.…`); build sırasında `app.config.js` okur
+  - Android için SHA-1 parmak izi Firebase'e eklenmeli. Paket adı değişen `.dev` sürümü için ayrı client gerekebilir.
+
+## Bildirimler
 Fiyat değişimi, yeni haber ve sistem bildirimleri; okundu işaretleme. Gerçek cihazda push bildirimi (Expo + Firebase Cloud Functions).
 
 ### Profil

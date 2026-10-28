@@ -31,8 +31,8 @@ export default function LoginForm({ f }: { f: AuthForm }) {
         <AppText size={12} color={colors.muted}>{t('auth.or')}</AppText>
         <View style={{ flex: 1, height: 1, backgroundColor: colors.line }} />
       </View>
-      <SocialButton kind="apple" label={t('auth.apple')} onPress={f.social} />
-      <SocialButton kind="google" label={t('auth.google')} onPress={f.social} />
+      <SocialButton kind="apple" label={t('auth.apple')} onPress={() => f.social('apple')} />
+      <SocialButton kind="google" label={t('auth.google')} onPress={() => f.social('google')} />
       <View style={{ flexDirection: 'row', justifyContent: 'center', gap: 4, marginTop: 2 }}>
         <AppText size={13} color={colors.muted}>{t('auth.noAccount')}</AppText>
         <LinkButton label={t('auth.signup')} onPress={() => f.switchMode('signup')} weight="bold" />

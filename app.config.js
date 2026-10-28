@@ -11,7 +11,15 @@ module.exports = ({ config }) => ({
   ...config,
   name: isDev ? 'Evrova-Dev' : 'Evrova',
   scheme: isDev ? 'evrova-dev' : 'evrova',
-  ios: { ...config.ios, bundleIdentifier: `com.tumurelsedrakiney.evrova${suffix}` },
+  ios: { ...config.ios, bundleIdentifier: `com.tumurelsedrakiney.evrova${suffix}`, usesAppleSignIn: true },
+  plugins: [
+    ...(config.plugins ?? []),
+    'expo-apple-authentication',
+    // Google girişi: iOS client ID'nin ters hali (com.googleusercontent.apps.…); tanımlı değilse eklenmez.
+    ...(process.env.GOOGLE_IOS_URL_SCHEME
+      ? [['@react-native-google-signin/google-signin', { iosUrlScheme: process.env.GOOGLE_IOS_URL_SCHEME }]]
+      : []),
+  ],
   android: {
     ...config.android,
     package: `com.tumurelsedrakiney.evrova${suffix}`,

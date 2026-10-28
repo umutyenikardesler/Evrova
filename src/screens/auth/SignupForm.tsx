@@ -46,8 +46,8 @@ export default function SignupForm({ f }: { f: AuthForm }) {
       <AppText weight="semibold" size={12} color={colors.up} style={{ minHeight: 16 }}>{f.error}</AppText>
       <PrimaryButton label={f.loading ? t('auth.creating') : t('auth.signup')} onPress={f.submitSignup} />
       <View style={{ flexDirection: 'row', gap: 10 }}>
-        <SocialButton kind="apple" label="Apple" height={46} fontSize={14} onPress={f.social} style={{ flex: 1 }} />
-        <SocialButton kind="google" label="Google" height={46} fontSize={14} onPress={f.social} style={{ flex: 1 }} />
+        <SocialButton kind="apple" label="Apple" height={46} fontSize={14} onPress={() => f.social('apple')} style={{ flex: 1 }} />
+        <SocialButton kind="google" label="Google" height={46} fontSize={14} onPress={() => f.social('google')} style={{ flex: 1 }} />
       </View>
       <View style={{ flexDirection: 'row', justifyContent: 'center', gap: 4 }}>
         <AppText size={13} color={colors.muted}>{t('auth.haveAccount')}</AppText>

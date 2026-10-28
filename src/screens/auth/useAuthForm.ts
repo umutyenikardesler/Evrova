@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { authErrorKey } from '../../firebase/auth';
+import { SOCIAL_UNAVAILABLE, type SocialKind } from '../../firebase/social';
 import { useApp } from '../../context/AppContext';
 
 export type AuthMode = 'login' | 'signup';
@@ -9,7 +10,7 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 /** Giriş / kayıt formunun durumu ve doğrulaması. */
 export function useAuthForm() {
-  const { t, login, register, sendReset, showToast } = useApp();
+  const { t, login, loginSocial, register, sendReset, showToast } = useApp();
   const [mode, setMode] = useState<AuthMode>('login');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -76,7 +77,18 @@ export function useAuthForm() {
     terms, toggleTerms: () => { setTerms((v) => !v); clear(); },
     error, errField, loading,
     submitLogin, submitSignup, forgot,
-    social: () => showToast(t('auth.socialSoon')),
+    social: async (kind: SocialKind) => {
+      if (loading) return;
+      clear();
+      setLoading(true);
+      try {
+        if (!(await loginSocial(kind))) setLoading(false); // iptal
+      } catch (e) {
+        setLoading(false);
+        if ((e as { code?: string })?.code === SOCIAL_UNAVAILABLE) showToast(t('auth.socialSoon'));
+        else fail(t(authErrorKey(e)), null);
+      }
+    },
   };
 }
 
