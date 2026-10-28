@@ -5,6 +5,7 @@ import { NEWS } from '../data/news';
 import { localNotifications } from '../data/notifications';
 import { LIST_MONTH, VEHICLES } from '../data/vehicles';
 import { resetPassword, signIn, signOut, signUp, subscribeAuth, type AuthUser } from '../firebase/auth';
+import { signInWithSocial, type SocialKind } from '../firebase/social';
 import { saveUser, watchNews, watchNotifications, watchUser, watchVehicles } from '../firebase/firestore';
 import { translate, type Lang, type TKey } from '../i18n';
 import { ensurePermission, getPushTokens } from '../services/notifications';
@@ -40,6 +41,8 @@ interface AppState {
   user: AuthUser | null;
   profile: UserProfile | null;
   login: (email: string, password: string) => Promise<void>;
+  /** Apple/Google ile giriş; kullanıcı iptal ederse false. */
+  loginSocial: (kind: SocialKind) => Promise<boolean>;
   register: (firstName: string, lastName: string, email: string, password: string) => Promise<void>;
   updateName: (firstName: string, lastName: string) => void;
   sendReset: (email: string) => Promise<void>;
@@ -87,7 +90,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [toast, setToast] = useState<string | null>(null);
   const toastTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const langRef = useRef(lang);
-  langRef.current = lang;
+  useEffect(() => { langRef.current = lang; }, [lang]);
 
   const t = useCallback<AppState['t']>((key, vars) => translate(lang, key, vars), [lang]);
 
@@ -176,6 +179,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       lang, t, setLang,
       authReady, user, profile,
       login: signIn,
+      loginSocial: signInWithSocial,
       register: (f, l, email, pw) => signUp(`${capitalizeName(f)} ${capitalizeName(l)}`, email, pw),
       updateName: (f, l) => {
         const firstName = capitalizeName(f), lastName = capitalizeName(l);

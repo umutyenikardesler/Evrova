@@ -1,5 +1,5 @@
 import { LinearGradient } from 'expo-linear-gradient';
-import React, { useEffect, useMemo, useRef } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Animated, Easing, StyleSheet, useWindowDimensions, View } from 'react-native';
 import Svg, { Defs, Ellipse, Path, RadialGradient, Rect, Stop } from 'react-native-svg';
 
@@ -8,7 +8,7 @@ const CELL = 44;
 
 /** Sonsuz döngülü Animated.Value (0 → to). */
 function useLoop(to: number, duration: number, delay = 0, easing = Easing.linear) {
-  const v = useRef(new Animated.Value(0)).current;
+  const v = useState(() => new Animated.Value(0))[0];
   useEffect(() => {
     const a = Animated.loop(Animated.sequence([
       Animated.delay(delay),
@@ -58,8 +58,8 @@ export default function LoginBackground() {
   const gridW = width * 2.4;
 
   const scroll = useLoop(CELL, 800);
-  const bob = useRef(new Animated.Value(0)).current;
-  const pulse = useRef(new Animated.Value(0.55)).current;
+  const bob = useState(() => new Animated.Value(0))[0];
+  const pulse = useState(() => new Animated.Value(0.55))[0];
   useEffect(() => {
     const b = Animated.loop(Animated.sequence([
       Animated.timing(bob, { toValue: -3, duration: 550, easing: Easing.inOut(Easing.ease), useNativeDriver: true }),

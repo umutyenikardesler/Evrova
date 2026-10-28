@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Animated, Easing, PanResponder, ScrollView, useWindowDimensions, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { GlassTarget } from '../components/Glass';
@@ -20,6 +20,9 @@ import { isSwipeLocked } from './swipeLock';
 
 /** Alt menüdeki sıra; kaydırma ve geçiş yönü buna göre belirlenir. */
 const ORDER: Tab[] = ['home', 'vehicles', 'news', 'prices', 'profile'];
+
+/** Olay işleyicilerinin (kaydırma, yatay çekme) okuduğu güncel değerler; ekranda tek MainShell bulunur. */
+const live = { key: '', nav: null as ReturnType<typeof useNav> | null, offsets: {} as Record<string, number> };
 
 function CurrentScreen() {
   const nav = useNav();
@@ -44,30 +47,27 @@ export default function MainShell() {
   // Ekran değişince kaydırma başa döner (key değişir); aynı sekmede geri gidilirse o ekranın eski konumu geri yüklenir.
   const screenKey = `${nav.tab}:${nav.detailId ?? ''}:${nav.newsId ?? ''}:${nav.vehicleType}:${nav.vehicleBrand ?? ''}:${nav.vehicleModel ?? ''}:${nav.newsCat}:${nav.newsPage}`;
   const scrollRef = useRef<ScrollView>(null);
-  const scrollY = useRef(new Animated.Value(0)).current;
+  const [scrollY] = useState(() => new Animated.Value(0));
   useEffect(() => { scrollY.setValue(0); }, [screenKey, scrollY]);
-  const onScroll = useMemo(
-    () => Animated.event([{ nativeEvent: { contentOffset: { y: scrollY } } }], {
-      useNativeDriver: true,
-      listener: (e: { nativeEvent: { contentOffset: { y: number } } }) => { offsets.current[screenKeyRef.current] = e.nativeEvent.contentOffset.y; },
-    }),
-    [scrollY],
-  );
-  const offsets = useRef<Record<string, number>>({});
-  const screenKeyRef = useRef(screenKey);
-  screenKeyRef.current = screenKey;
+  const [onScroll] = useState(() => Animated.event([{ nativeEvent: { contentOffset: { y: scrollY } } }], {
+    useNativeDriver: true,
+    listener: (e: { nativeEvent: { contentOffset: { y: number } } }) => { live.offsets[live.key] = e.nativeEvent.contentOffset.y; },
+  }));
   const pendingY = useRef(0);
   const last = useRef({ key: screenKey, tab: nav.tab, depth: nav.depth });
-  if (last.current.key !== screenKey) {
+  // Ekran değiştiğinde (yeni ScrollView içerik ölçülmeden önce) hedef kaydırma konumunu belirle.
+  useLayoutEffect(() => {
+    live.key = screenKey;
+    if (last.current.key === screenKey) return;
     const back = last.current.tab === nav.tab && nav.depth < last.current.depth;
-    pendingY.current = back ? offsets.current[screenKey] ?? 0 : 0;
-    if (!back) delete offsets.current[screenKey];
+    pendingY.current = back ? live.offsets[screenKey] ?? 0 : 0;
+    if (!back) delete live.offsets[screenKey];
     last.current = { key: screenKey, tab: nav.tab, depth: nav.depth };
-  }
+  }, [screenKey, nav.tab, nav.depth]);
 
   // Geçiş animasyonu: sekme değişince sekme sırasına göre, aynı sekmede derinlik değişince (ileri/geri)
   // yeni ekran sağdan/soldan kayarak girer.
-  const slide = useRef(new Animated.Value(0)).current;
+  const [slide] = useState(() => new Animated.Value(0));
   const prev = useRef({ tab: nav.tab, depth: nav.depth });
   useEffect(() => {
     const p = prev.current;
@@ -86,23 +86,19 @@ export default function MainShell() {
   // Yatay kaydırma:
   //  - sağa çek: önce bir üst seviyeye geri (detay → paketler → modeller → markalar), üst seviye yoksa önceki sekme
   //  - sola çek: sonraki sekme (yalnızca en üst seviyede)
-  const navRef = useRef(nav);
-  navRef.current = nav;
-  const pan = useMemo(
-    () =>
-      PanResponder.create({
-        onMoveShouldSetPanResponder: (_, g) => !isSwipeLocked() && Math.abs(g.dx) > 24 && Math.abs(g.dx) > Math.abs(g.dy) * 2,
-        onPanResponderRelease: (_, g) => {
-          if (isSwipeLocked()) return;
-          const n = navRef.current;
-          const i = ORDER.indexOf(n.tab);
-          if (g.dx > 60) {
-            if (!n.goBack() && i > 0) n.go(ORDER[i - 1]);
-          } else if (g.dx < -60 && !n.canGoBack && i >= 0 && i < ORDER.length - 1) n.go(ORDER[i + 1]);
-        },
-      }),
-    [],
-  );
+  useEffect(() => { live.nav = nav; }, [nav]);
+  const [pan] = useState(() => PanResponder.create({
+    onMoveShouldSetPanResponder: (_, g) => !isSwipeLocked() && Math.abs(g.dx) > 24 && Math.abs(g.dx) > Math.abs(g.dy) * 2,
+    onPanResponderRelease: (_, g) => {
+      if (isSwipeLocked()) return;
+      const n = live.nav;
+      if (!n) return;
+      const i = ORDER.indexOf(n.tab);
+      if (g.dx > 60) {
+        if (!n.goBack() && i > 0) n.go(ORDER[i - 1]);
+      } else if (g.dx < -60 && !n.canGoBack && i >= 0 && i < ORDER.length - 1) n.go(ORDER[i + 1]);
+    },
+  }));
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top }}>

@@ -66,16 +66,18 @@ export const useNav = (): Nav => {
 export function NavProvider({ enabled, children }: { enabled: boolean; children: React.ReactNode }) {
   const [s, setS] = useState<NavState>(initial);
   const sRef = useRef(s);
-  sRef.current = s;
+  useEffect(() => { sRef.current = s; }, [s]);
 
   const go = useCallback<Nav['go']>((tab, extra) => setS((p) => ({ ...p, tab, detailId: null, newsId: null, ...extra })), []);
   const openNews = useCallback((id: string) => setS((p) => ({ ...p, tab: 'news', newsId: id, detailId: null })), []);
   const openPrices = useCallback((id: string) => go('prices', { priceSel: id, monthSel: 11 }), [go]);
 
   // Çıkış yapınca / giriş yapınca başlangıç ekranına dön
-  useEffect(() => {
+  const [prevEnabled, setPrevEnabled] = useState(enabled);
+  if (prevEnabled !== enabled) {
+    setPrevEnabled(enabled);
     setS(initial);
-  }, [enabled]);
+  }
 
   const goBack = useCallback(() => {
     const parent = parentOf(sRef.current);

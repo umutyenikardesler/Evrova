@@ -45,10 +45,10 @@ export default function TabBar({ blurTarget }: { blurTarget?: React.RefObject<Vi
   const index = TABS.findIndex((x) => x.tab === nav.tab);
 
   // Balon: x (kayma), stretch (uzama 0→1→0), dist (uzama miktarı), visible (bildirimler gibi sekme dışı ekranlarda gizli)
-  const x = useRef(new Animated.Value(0)).current;
-  const stretch = useRef(new Animated.Value(0)).current;
-  const dist = useRef(new Animated.Value(0.4)).current;
-  const visible = useRef(new Animated.Value(index >= 0 ? 1 : 0)).current;
+  const x = useState(() => new Animated.Value(0))[0];
+  const stretch = useState(() => new Animated.Value(0))[0];
+  const dist = useState(() => new Animated.Value(0.4))[0];
+  const visible = useState(() => new Animated.Value(index >= 0 ? 1 : 0))[0];
   const prev = useRef({ index, slot: 0 });
 
   useEffect(() => {

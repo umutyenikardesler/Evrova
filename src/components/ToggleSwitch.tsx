@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Animated, Pressable } from 'react-native';
 import { colors } from '../theme/colors';
 
 export default function ToggleSwitch({ value, onToggle, label }: { value: boolean; onToggle: () => void; label: string }) {
-  const x = useRef(new Animated.Value(value ? 1 : 0)).current;
+  const x = useState(() => new Animated.Value(value ? 1 : 0))[0];
   useEffect(() => {
     Animated.timing(x, { toValue: value ? 1 : 0, duration: 200, useNativeDriver: false }).start();
   }, [value, x]);
