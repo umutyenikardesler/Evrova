@@ -10,7 +10,10 @@ import { colors } from '../theme/colors';
 export default function StickyBlock({ children, gap = 16 }: { children: React.ReactNode; gap?: number }) {
   const scrollY = useScrollY();
   const [y, setY] = useState(0);
-  const shift = scrollY?.interpolate({ inputRange: [0, y, y + 1], outputRange: [0, 0, 1], extrapolateLeft: 'clamp' });
+  // Sayfanın en üstündeki blokta layout.y negatif olabilir (negatif marginTop). Aralık kesinlikle artan olmalı:
+  // eşit iki nokta native interpolasyonda scrollY = 0 iken sıfıra bölme yapıp bloğu ekran dışına atar.
+  const top = Math.max(y, 0.01);
+  const shift = scrollY?.interpolate({ inputRange: [0, top, top + 1], outputRange: [0, 0, 1], extrapolateLeft: 'clamp' });
   return (
     <Animated.View
       onLayout={(e) => setY(e.nativeEvent.layout.y)}
