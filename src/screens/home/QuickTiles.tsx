@@ -22,12 +22,12 @@ function Tile({ icon, title, sub, onPress }: { icon: IconName; title: string; su
 
 /** Ana sayfadaki 2x2 kısayol kartları. */
 export default function QuickTiles() {
-  const { t, showToast } = useApp();
+  const { t } = useApp();
   const nav = useNav();
   return (
     <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between', rowGap: 12 }}>
       <Tile icon="trending" title={t('home.priceTracking')} sub={t('home.priceTrackingSub')} onPress={() => nav.go('prices')} />
-      <Tile icon="zap" title={t('home.charging')} sub={t('home.chargingSub')} onPress={() => showToast(t('home.chargingSoon'))} />
+      <Tile icon="zap" title={t('home.charging')} sub={t('home.chargingSub')} onPress={() => nav.go('charging')} />
       <Tile icon="news" title={t('home.news')} sub={t('home.newsSub')} onPress={() => nav.go('news')} />
       <Tile icon="scale" title={t('home.tax')} sub={t('home.taxSub')} onPress={() => nav.go('tax')} />
     </View>

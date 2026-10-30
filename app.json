@@ -46,6 +46,12 @@
           "icon": "./assets/android-icon-monochrome.png",
           "color": "#B9F227"
         }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Yakınındaki şarj noktalarını göstermek için konumuna erişim gerekiyor."
+        }
       ]
     ],
     "extra": {

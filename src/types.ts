@@ -29,6 +29,28 @@ export interface Vehicle {
   specs: Spec[];
 }
 
+/** Şarj istasyonu (OpenStreetMap kaynaklı; bkz. scripts/fetch-chargers.mjs). */
+export interface Charger {
+  id: string;
+  name: string;
+  operator: string;
+  lat: number;
+  lon: number;
+  /** Soket tipine göre yuva sayısı. */
+  sockets: { ccs?: number; chademo?: number; type2?: number; type1?: number; tesla?: number };
+  /** Hızlı (DC) şarj var mı. */
+  dc: boolean;
+  /** Bilinen en yüksek çıkış gücü (kW). */
+  kw?: number;
+  /** İl. */
+  city?: string;
+  /** İlçe. */
+  district?: string;
+  fee?: boolean;
+  /** OSM opening_hours değeri. */
+  hours?: string;
+}
+
 export interface NewsItem {
   id: string;
   cat: string;

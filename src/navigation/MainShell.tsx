@@ -11,6 +11,7 @@ import ArticleScreen from '../screens/news/ArticleScreen';
 import NotificationsScreen from '../screens/notifications/NotificationsScreen';
 import PricesScreen from '../screens/prices/PricesScreen';
 import ProfileScreen from '../screens/profile/ProfileScreen';
+import ChargingScreen from '../screens/charging/ChargingScreen';
 import TaxScreen from '../screens/tax/TaxScreen';
 import VehicleDetailScreen from '../screens/vehicles/VehicleDetailScreen';
 import VehiclesScreen from '../screens/vehicles/VehiclesScreen';
@@ -33,6 +34,7 @@ function CurrentScreen() {
     case 'prices': return <PricesScreen />;
     case 'news': return nav.newsId ? <ArticleScreen id={nav.newsId} /> : <NewsScreen />;
     case 'tax': return <TaxScreen />;
+    case 'charging': return <ChargingScreen />;
     case 'notif': return <NotificationsScreen />;
     case 'profile': return <ProfileScreen />;
     default: return <HomeScreen />;
