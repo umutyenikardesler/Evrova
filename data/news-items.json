@@ -1,5 +1,150 @@
 [
   {
+    "id": "n33",
+    "cat": "battery",
+    "published": "2026-10-29",
+    "readMin": 2,
+    "source": {
+      "name": "electrive.com",
+      "url": "https://www.electrive.com/2026/10/29/catl-advances-solid-state-battery-development-to-20-ah-samples/"
+    },
+    "images": [
+      "CATL Lifepo4 302Ah.jpg"
+    ],
+    "title": {
+      "tr": "CATL, katı hal batarya testlerini 20 Ah örneklere taşıdı",
+      "en": "CATL scales up solid-state battery testing to 20 Ah samples"
+    },
+    "body": {
+      "tr": [
+        "Çinli batarya devi CATL, Shenzhen Menkul Kıymetler Borsası'nın yatırımcı iletişim platformunda paylaştığı güncellemede, katı hal batarya programını 10 Ah'lik doğrulama hücrelerinden 20 Ah'lik örnek testlere taşıdığını açıkladı. Şirket, pilot üretimin 2027 planında kaldığını belirtirken, 1000'den fazla mühendisten oluşan ekibin hücre bazında yaklaşık 500 Wh/kg enerji yoğunluğunu hedeflediğini duyurdu.",
+        "CATL bu rakamı seri üretim hücreleri için kesin bir spesifikasyon olarak doğrulamadı; beklenen üretim hacmi, otomotiv müşterileri veya bu teknolojiye bağlı bir araç lansman tarihi de açıklanmadı. Büyük ölçekli üretim hâlâ 2030 civarı olarak planlanıyor. Katı elektrolitler (genellikle sülfür, polimer veya oksit bazlı) bugünün lityum-iyon hücrelerindeki sıvı elektroliti değiştirerek daha iyi yangın güvenliği, daha yüksek enerji yoğunluğu, daha hızlı şarj ve daha uzun servis ömrü vadediyor.",
+        "CATL'nin sülfür bazlı bir yaklaşıma odaklandığı belirtiliyor, ancak anot tasarımı henüz açıklanmadı. CEO Robin Zeng haziran ayında teknolojinin dokuz aşamalı Teknoloji Hazırlık Seviyesi'nde dördüncü seviyede olduğunu ve kitlesel pazara -muhtemelen önce premium platformlarla- girişin hâlâ yıllar aldığını söylemişti; CATL bu yarışta BYD, Toyota ve Factorial, QuantumScape gibi girişimlerle rekabet ediyor."
+      ],
+      "en": [
+        "Chinese battery giant CATL has told investors, via an update posted on the Shenzhen Stock Exchange's investor-relations platform, that its solid-state battery programme has moved from 10 Ah validation cells to test runs with 20 Ah samples. The company says pilot production is still on track for 2027, with a development team of more than 1,000 engineers targeting a cell-level energy density of around 500 Wh/kg.",
+        "CATL has not confirmed that figure as a specification for mass-produced cells, nor disclosed expected output volumes, automotive customers, or a vehicle launch date tied to the technology; large-scale production remains pencilled in for around 2030. Solid electrolytes (typically sulphide, polymer or oxide-based) replace the liquid electrolyte in today's lithium-ion cells, promising better fire safety, higher energy density, faster charging and longer service life.",
+        "CATL is reportedly focusing on a sulphide-based approach but hasn't revealed its anode design. In June, CEO Robin Zeng said the technology sits at level four of nine on the Technology Readiness Level scale and that mass-market deployment, likely starting with premium platforms, is still years away; CATL competes in the race with BYD, Toyota and startups such as Factorial and QuantumScape."
+      ]
+    }
+  },
+  {
+    "id": "n34",
+    "cat": "charging",
+    "published": "2026-10-29",
+    "readMin": 2,
+    "source": {
+      "name": "electrive.com",
+      "url": "https://www.electrive.com/2026/10/29/uk-government-pledges-100m-to-cut-public-ev-charging-costs/"
+    },
+    "images": [
+      "Electric Vehicle Charging Point, Orange Street Car Park, Bradford - geograph.org.uk - 7390343.jpg"
+    ],
+    "title": {
+      "tr": "İngiltere, sokak başı elektrikli araç şarjını ucuzlatmak için 100 milyon sterlin ayırdı",
+      "en": "UK pledges £100m to cut the cost of on-street EV charging"
+    },
+    "body": {
+      "tr": [
+        "İngiltere hükümeti, 2026 Sonbahar Bütçesi'nde, evlerinde garaj veya yol girişi olmayan sürücülerin kullandığı sokak lambası ve kaldırım tipi düşük güçlü (AC) halka açık şarj noktalarının fiyatını düşürmek için 100 milyon sterlin ayırdı. Para, bir inceleme AC şarj fiyatlarının 2021'den bu yana reel olarak %69, hızlı (DC) şarj fiyatlarının ise %94 arttığını ortaya koyduktan sonra, 2027 baharından başlayarak iki yıla yayılacak.",
+        "Hazine, fonun \"sürücülerin araçlarını saatlerce veya gece boyunca şarj için bırakabildiği ikamet sokaklarındaki\" şarj cihazlarını hedeflediğini ve etkilenen sürücülerin yılda yaklaşık 150 sterlin tasarruf etmesini beklediğini belirtti. Paranın şarj operatörlerine doğrudan sübvansiyon mu, indirim geri ödemesi mi yoksa başka bir mekanizma şeklinde mi dağıtılacağı henüz açıklanmadı. Ayrı bir sektör görev gücü, sürücülerin bazı halka açık şarj noktalarında kendi ev elektrik tarifesini kullanmasına izin verebilecek \"tarife taşınabilirliği\"ni araştıracak.",
+        "Bütçe, halka açık şarjda uygulanan %20'lik KDV'yi düşürmüyor; ev elektriği %5 KDV'ye tabi (ekim 2026'dan itibaren geçici olarak %0) ancak bütçe, 1 Kasım 2026'dan itibaren bu KDV'nin halka açık ve işyeri şarjına nasıl uygulanacağını netleştiriyor. Bu adım, İngiliz hanelerin kaldırım altından geçen \"gully\" kanallarını imar izni almadan kurabilmesini sağlayan önceki bir değişikliğin ardından geldi; o değişiklik de evden daha düşük tarifeyle şarj etmeyi kolaylaştırmayı amaçlıyordu."
+      ],
+      "en": [
+        "The UK government has earmarked £100 million in its 2026 Autumn Budget to lower prices at \"local, lower-powered\" public chargers, the lamppost- and pavement-mounted AC units used mainly by drivers without a driveway. The money will roll out over two years starting in spring 2027, after a review found AC charging prices had risen 69% in real terms since 2021, and DC fast-charging prices 94%.",
+        "The Treasury says the funding targets chargers \"on residential streets, where drivers can leave their vehicles to charge for several hours or overnight,\" and expects to save affected drivers around £150 a year. It hasn't yet said whether the money will subsidise charge-point operators directly, reimburse discounts, or work some other way. A separate industry taskforce will explore \"tariff porting,\" which would let drivers use their home electricity tariff at certain public chargers.",
+        "The Budget stops short of cutting the 20% VAT rate on public charging (domestic electricity is taxed at 5%, temporarily 0% from October 2026), though it does clarify from 1 November 2026 how that VAT applies to public and workplace charging. It follows an earlier change letting English households install cross-pavement \"gully\" channels without planning permission, intended to make it easier to charge from home power at a lower rate."
+      ]
+    }
+  },
+  {
+    "id": "n35",
+    "cat": "moto",
+    "published": "2026-10-30",
+    "readMin": 2,
+    "source": {
+      "name": "electrek.co",
+      "url": "https://electrek.co/2026/10/30/harley-davidsons-electric-motorcycle-brand-livewire-warns-it-may-not-survive/"
+    },
+    "images": [
+      "LiveWire S4 Honcho.jpg"
+    ],
+    "title": {
+      "tr": "LiveWire, hissesi %40 çökerken şirketin devamlılığına dair şüphe duyduğunu açıkladı",
+      "en": "LiveWire warns it may not survive as stock plunges 40%"
+    },
+    "body": {
+      "tr": [
+        "Harley-Davidson'ın elektrikli motosiklet yan kuruluşu LiveWire, yatırımcılarına faaliyetlerini sürdürme konusunda \"ciddi şüphe\" duyduğunu bildirerek yıllık finansal tahminlerini geri çekti. Haberle birlikte hisse %40'tan fazla düştü. Üçüncü çeyrek geliri %38 artarak 7,9 milyon dolara, motosiklet satış adedi de %21 yükselmiş olsa da, şirket hâlâ hızla nakit tüketiyor; çeyrekte 18,6 milyon dolar net zarar açıkladı.",
+        "LiveWire'ın nakit rezervi, 2025 sonundaki 82,8 milyon dolardan 30 Eylül 2026 itibarıyla 39,9 milyon dolara düştü. Şirket; finansman anlaşmaları, stratejik ortaklıklar, yatırım veya olası bir satışı değerlendirmek için özel bir yeniden yapılandırma komitesi kurdu ve 2026 için öngördüğü 70-80 milyon dolarlık faaliyet zararı tahminini geri çekti.",
+        "Zamanlama talihsiz: LiveWire, premium model yelpazesine bütçesi yetmeyen sürücüleri hedefleyen, 5.000 doların altında başlayan şimdiye kadarki en ucuz modelleri S4 Honcho serisini piyasaya sürmeye hazırlanıyor ve gelecek hafta Milano'daki EICMA'da yeni modeller sergilemeyi planlıyor. Honcho serisinin şirketin mali tablosunu değiştirecek kadar hızlı gelip gelmeyeceği ise henüz belirsiz."
+      ],
+      "en": [
+        "Harley-Davidson's electric motorcycle spin-off LiveWire has told investors it has \"substantial doubt\" about its ability to keep operating as a going concern, withdrawing its full-year financial guidance. The stock fell more than 40% on the news. The warning came even though third-quarter revenue rose 38% to $7.9 million and motorcycle unit sales rose 21%, because the company is still burning cash fast, a $18.6 million net loss for the quarter alone.",
+        "LiveWire's cash reserves dropped from $82.8 million at the end of 2025 to $39.9 million as of September 30, 2026. The company has set up a special restructuring committee to look at financing deals, strategic partnerships, investment, or a possible sale, and pulled its earlier guidance for a $70-80 million operating loss in 2026.",
+        "The timing is awkward: LiveWire is about to launch its cheapest-ever bikes, the S4 Honcho series, starting under $5,000 and aimed at riders priced out of its premium lineup, and plans to show new models at EICMA in Milan next week. Whether the Honcho line arrives fast enough to change the company's financial trajectory remains an open question."
+      ]
+    }
+  },
+  {
+    "id": "n36",
+    "cat": "software",
+    "published": "2026-10-28",
+    "readMin": 2,
+    "source": {
+      "name": "electrive.com",
+      "url": "https://www.electrive.com/2026/10/28/vw-receives-level-3-test-approval-in-china-xpeng-begins-level-4-demos/"
+    },
+    "images": [
+      "XPeng G6 (2025) IAA 2025 DSC 2057.jpg"
+    ],
+    "title": {
+      "tr": "VW Çin'de Seviye 3 test onayı aldı, Xpeng Seviye 4 robotaksi denemelerine başladı",
+      "en": "VW gets Level 3 testing approval in China as Xpeng starts Level 4 robotaxi demos"
+    },
+    "body": {
+      "tr": [
+        "Volkswagen Group China, Hefei'de kamuya açık yollarda SAE Seviye 3 yüksek otomasyonlu sürüşü test etme onayı aldı; bu testlerle 2027'de Seviye 3'ü seri üretime taşıma hedefine yönelik gerçek dünya verisi topluyor. Sistem, yerel ortak Horizon Robotics ile ortak girişimleri Carizon üzerinden geliştiriliyor; Seviye 3'te sürücü elini direksiyondan çekip yoldan gözünü ayırabiliyor, ancak sistem uyardığında yaklaşık on saniye içinde kontrolü yeniden almaya hazır olmalı.",
+        "VW, Çin'deki geliştirme çalışmalarının, günlük olarak 30 milyon gerçek trafik senaryosundan türetilmiş yaklaşık beş milyon kilometrelik simülasyon yapabilen kendi yapay zekâ dünya modeli GAIA 2.0 tarafından desteklendiğini belirtiyor; şirket bu çalışmanın zamanla daha yüksek otomasyon seviyelerine kapı açmasını bekliyor.",
+        "Ayrı bir gelişmede Xpeng, Guangzhou'nun tamamında Seviye 4 robotaksi deneme sürüşleri yapma onayı aldı; bu testlerde sadece sürüş teknolojisi değil, çağırma ve araç yönlendirmeden yolcu taşımaya kadar tüm hizmet süreci de denenecek. Erişim davet kodlarıyla kademeli olarak açılacak; ekim ayının ilk yarısında Yoyo robotaksi markasını tanıtan Xpeng, kendisinin büyük filolar işletmeyeceğini, bunun yerine ortaklarına araç, yazılım ve yapay zekâ teknolojisi sağlayacağını söylüyor; şirket Avrupalı mobilite platformlarıyla yurt dışı genişleme konusunda görüşmelere başladığını da belirtiyor."
+      ],
+      "en": [
+        "Volkswagen Group China has received approval to test SAE Level 3 highly automated driving on public roads in Hefei, gathering real-world data toward its goal of bringing Level 3 to series production in 2027. The system is being developed with local partner Horizon Robotics through their Carizon joint venture; at Level 3, drivers can take their hands off the wheel and look away from the road but must be ready to retake control within about ten seconds when prompted.",
+        "VW says its China development is backed by an in-house AI world model, GAIA 2.0, which already runs daily simulations covering around five million kilometres, built from 30 million real-world traffic scenarios, work it says should eventually support higher levels of automation.",
+        "Separately, Xpeng has been approved to run Level 4 robotaxi demonstration drives across the whole city of Guangzhou, testing not just the driving technology but the full service chain, from ride-hailing and dispatch to passenger handling. Access will open gradually via invitation codes; Xpeng, which unveiled its Yoyo robotaxi brand earlier in October, says it won't run large fleets itself but will supply vehicles, software and AI technology to partners, and is already talking to European mobility platforms about expanding abroad."
+      ]
+    }
+  },
+  {
+    "id": "n37",
+    "cat": "commercial",
+    "published": "2026-10-29",
+    "readMin": 2,
+    "source": {
+      "name": "electrive.com",
+      "url": "https://www.electrive.com/2026/10/29/india-ampstar-bags-order-for-100-electric-heavy-duty-trucks/"
+    },
+    "images": [
+      "DAF XDC 270 Electric FAT IAA Transportation 2026 (DSC0878).jpg"
+    ],
+    "title": {
+      "tr": "Ampstar ilk siparişini aldı: JSW Cement için Hindistan'da 100 elektrikli ağır kamyon",
+      "en": "Ampstar lands first order: 100 electric heavy trucks for JSW Cement in India"
+    },
+    "body": {
+      "tr": [
+        "Hint JSW Group'un JSW Greentech birimine ait yeni elektrikli ticari araç markası Ampstar, ilk ticari siparişini aldı: kardeş şirket JSW Cement için 100 elektrikli ağır kamyon. Kamyonlar, Karnataka'daki Vijayanagar ile Andhra Pradesh'teki Nandyal arasındaki yaklaşık 330 km'lik rotada klinker ve cüruf taşıyacak; ayda tahmini 125.000 ton yük hareket ettirilecek.",
+        "Ampstar, sıfır emisyonlu filonun JSW Cement'in dizel tüketimini yaklaşık 45 milyon litre azaltacağını ve sözleşme süresince yaklaşık 6.250 ton CO2 tasarrufu sağlayacağını öngörüyor. 100 kamyonun tamamı Ampstar'ın 55 tonluk 4x2 çekici modeli; 430 kW motor ve değiştirilebilir LFP bataryayla donatılmış. JSW Eco-Mobility rota boyunca dört batarya değişim istasyonu kuracak, operasyonu ise lojistik ortağı Paradeep Parivahan Limited yürütecek.",
+        "Sabit veya değiştirilebilir bataryayla sunulan 55 tonluk çekici, geçen ay 420 kW motor ve 140-150 km menzil sunan 282 kWh bataryayla piyasaya sürülmüştü ve o zamandan beri Hindistan'ın Merkezi Motorlu Taşıtlar Kuralları kapsamında sertifikalandırıldı. Geçen ay tanıtılan 12 metrelik elektrikli personel otobüsüyle birlikte Ampstar, Maharashtra'daki Chhatrapati Sambhajinagar'daki 90 dönümlük tesisinden Mart 2027'ye kadar 500 ile 2.000 arasında araç teslim etmeyi hedefliyor."
+      ],
+      "en": [
+        "Ampstar, the new electric commercial-vehicle brand of Indian conglomerate JSW Group's JSW Greentech unit, has won its first commercial order: 100 electric heavy-duty trucks for sister company JSW Cement. The trucks will haul clinker and slag along a roughly 330 km route between Vijayanagar, Karnataka, and Nandyal, Andhra Pradesh, moving an estimated 125,000 tonnes of cargo a month.",
+        "Ampstar expects the zero-emission fleet to cut JSW Cement's diesel use by about 45 million litres and save roughly 6,250 tonnes of CO2 over the contract. All 100 trucks are Ampstar's 55-tonne 4x2 tractor units, built with a 430 kW motor and a swappable LFP battery; JSW Eco-Mobility will build four battery-swap stations along the route, with logistics partner Paradeep Parivahan Limited running the operation.",
+        "The 55-tonne tractor, offered with fixed or swappable batteries, launched last month with a 420 kW motor and a 282 kWh battery good for 140-150 km of range, and has since been certified under India's Central Motor Vehicle Rules. Alongside a twelve-metre electric staff bus also launched last month, Ampstar expects to deliver 500 to 2,000 vehicles by March 2027 from its 90-acre plant in Chhatrapati Sambhajinagar, Maharashtra."
+      ]
+    }
+  },
+  {
     "id": "n28",
     "cat": "battery",
     "published": "2026-10-12",
