@@ -2,8 +2,8 @@ import React from 'react';
 import { View } from 'react-native';
 import AppText from '../../components/AppText';
 import { PrimaryButton } from '../../components/Buttons';
-import { ChipScroller } from '../../components/Chips';
 import { Card, Page, ScreenTitle } from '../../components/Layout';
+import StickyBlock from '../../components/StickyBlock';
 import { useApp } from '../../context/AppContext';
 import { useNav } from '../../navigation/NavContext';
 import { colors } from '../../theme/colors';
@@ -12,6 +12,7 @@ import { formatPct, pctChange } from '../../utils/format';
 import { monthLabels } from '../../utils/months';
 import AlarmRow from './AlarmRow';
 import MonthBars from './MonthBars';
+import VehiclePicker from './VehiclePicker';
 
 export default function PricesScreen() {
   const { t, lang, vehicles, listMonth, profile, price } = useApp();
@@ -24,7 +25,9 @@ export default function PricesScreen() {
   if (!sel) {
     return (
       <Page>
-        <ScreenTitle>{t('prices.title')}</ScreenTitle>
+        <StickyBlock>
+          <ScreenTitle>{t('prices.title')}</ScreenTitle>
+        </StickyBlock>
         <Card style={{ borderRadius: 22, padding: 18, gap: 10 }}>
           <AppText weight="bold" size={17}>{t('prices.emptyTitle')}</AppText>
           <AppText size={13} color={colors.muted}>{t('prices.emptyText')}</AppText>
@@ -43,10 +46,10 @@ export default function PricesScreen() {
 
   return (
     <Page>
-      <ScreenTitle>{t('prices.title')}</ScreenTitle>
-      <ChipScroller
-        items={watched.map((v) => ({ key: v.id, label: v.name, active: v.id === sel.id, onPress: () => nav.setPriceSel(v.id) }))}
-      />
+      <StickyBlock>
+        <ScreenTitle>{t('prices.title')}</ScreenTitle>
+        <VehiclePicker items={watched} selectedId={sel.id} onSelect={nav.setPriceSel} />
+      </StickyBlock>
 
       <Card style={{ borderRadius: 22, padding: 18, gap: 14 }}>
         <View>

@@ -13,12 +13,10 @@ import { useNav } from '../../navigation/NavContext';
 import type { VehicleType } from '../../types';
 import { brandOf, brandsOf, modelOf, modelsOf, trimOf } from '../../utils/brand';
 import { currentPrice } from '../../utils/format';
+import { fold } from '../../utils/text';
 import { modelImage } from '../../utils/vehicleImage';
 import BrandRow from './BrandRow';
 import VehicleCard from './VehicleCard';
-
-/** Aramada büyük/küçük harf, aksan ve Türkçe i/ı farkı yok sayılır. */
-const fold = (x: string) => x.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ı/g, 'i').toLowerCase();
 
 const FILTERS: ('all' | VehicleType)[] = ['all', 'moto', 'car', 'van'];
 
@@ -32,7 +30,7 @@ export default function VehiclesScreen() {
   const { vehicleType: type, vehicleBrand: brand, vehicleModel: model } = nav;
 
   const [query, setQuery] = useState('');
-  const words = fold(query).split(/s+/).filter(Boolean);
+  const words = fold(query).split(/\s+/).filter(Boolean);
   const searching = !brand && words.length > 0;
 
   const ofType = vehicles.filter((v) => type === 'all' || v.type === type);
@@ -74,8 +72,8 @@ export default function VehiclesScreen() {
         </View>
       ) : (
         <>
-          <ScreenTitle>{t('vehicles.title')}</ScreenTitle>
           <StickyBlock>
+          <ScreenTitle>{t('vehicles.title')}</ScreenTitle>
           <ChipRow
             items={FILTERS.map((f) => ({
               key: f,

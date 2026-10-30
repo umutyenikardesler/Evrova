@@ -48,7 +48,7 @@ const tr = {
   vehicles: { search: 'Marka veya model ara', noResult: 'Sonuç bulunamadı', clear: 'Temizle', modelCount: '{n} model', versionCount: '{n} paket', title: 'Araçlar', watch: 'Takibe al', rangeLine: '{range} menzil · {battery}', rangeOnly: '{range} menzil', batteryOnly: '{battery}' },
   detail: { photoBy: 'Fotoğraf: {author} · {license}', listPrice: '{month} liste fiyatı', per12: '{pct} / 12 ay', perN: '{pct} / {n} ay', newModel: 'Yeni model', history: 'Aylık fiyat geçmişini gör', track: 'Fiyatını takibe al' },
   prices: {
-    title: 'Fiyat takibi', emptyTitle: 'Takip listen boş',
+    title: 'Fiyat takibi', pick: 'Araç seç', emptyTitle: 'Takip listen boş',
     emptyText: 'Aylık fiyat değişimini görmek için Araçlar sayfasından bir model seç.', browse: 'Araçlara göz at',
     start: 'Takip başlangıcı', vsPrev: '{pct} önceki aya göre',
     alarm: 'Fiyat alarmı', alarmSub: "Fiyat %2'den fazla değişirse bildir",
