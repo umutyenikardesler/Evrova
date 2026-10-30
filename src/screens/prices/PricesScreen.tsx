@@ -3,10 +3,13 @@ import { View } from 'react-native';
 import AppText from '../../components/AppText';
 import { PrimaryButton } from '../../components/Buttons';
 import { Card, Page, ScreenTitle } from '../../components/Layout';
+import Icon from '../../components/Icon';
 import StickyBlock from '../../components/StickyBlock';
+import Tap from '../../components/Tap';
 import { useApp } from '../../context/AppContext';
 import { useNav } from '../../navigation/NavContext';
 import { colors } from '../../theme/colors';
+import { brandOf, modelOf, trimOf } from '../../utils/brand';
 import { changeColor } from '../../utils/color';
 import { formatPct, pctChange } from '../../utils/format';
 import { monthLabels } from '../../utils/months';
@@ -50,6 +53,15 @@ export default function PricesScreen() {
         <ScreenTitle>{t('prices.title')}</ScreenTitle>
         <VehiclePicker items={watched} selectedId={sel.id} onSelect={nav.setPriceSel} />
       </StickyBlock>
+
+      {/* Seçili aracın marka, model ve paketi; buton, aracın detay sayfasını açar. */}
+      <Tap onPress={() => nav.openDetail(sel.id)} accessibilityRole="button" pressedBg={colors.card2}
+        style={{ minHeight: 48, borderRadius: 14, borderWidth: 1, borderColor: colors.lime, backgroundColor: colors.limeSoft, flexDirection: 'row', alignItems: 'center', gap: 8, paddingVertical: 8, paddingLeft: 16, paddingRight: 12 }}>
+        <AppText weight="bold" size={15} numberOfLines={2} style={{ flex: 1 }}>
+          {[brandOf(sel), modelOf(sel), trimOf(sel)].filter(Boolean).join(' ')}
+        </AppText>
+        <Icon name="chevron" size={18} color={colors.lime} />
+      </Tap>
 
       <Card style={{ borderRadius: 22, padding: 18, gap: 14 }}>
         <View>

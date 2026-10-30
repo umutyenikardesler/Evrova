@@ -16,12 +16,9 @@ import TaxScreen from '../screens/tax/TaxScreen';
 import VehicleDetailScreen from '../screens/vehicles/VehicleDetailScreen';
 import VehiclesScreen from '../screens/vehicles/VehiclesScreen';
 import { colors } from '../theme/colors';
-import { useNav, type Tab } from './NavContext';
+import { TAB_ORDER as ORDER, useNav } from './NavContext';
 import { ScrollYContext } from './ScrollContext';
 import { isSwipeLocked } from './swipeLock';
-
-/** Alt menüdeki sıra; kaydırma ve geçiş yönü buna göre belirlenir. */
-const ORDER: Tab[] = ['home', 'vehicles', 'news', 'prices', 'profile'];
 
 /** Olay işleyicilerinin (kaydırma, yatay çekme) okuduğu güncel değerler; ekranda tek MainShell bulunur. */
 const live = { key: '', nav: null as ReturnType<typeof useNav> | null, offsets: {} as Record<string, number> };

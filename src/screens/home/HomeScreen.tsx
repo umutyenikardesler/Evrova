@@ -46,7 +46,7 @@ export default function HomeScreen() {
               const n = v.prices.length;
               const ch = n > 1 ? pctChange(v.prices[n - 2], v.prices[n - 1]) : null;
               return (
-                <Tap key={v.id} onPress={() => nav.openPrices(v.id)}
+                <Tap key={v.id} onPress={() => nav.openPrices(v.id, { viaWatch: true })}
                   style={{ flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 13, borderBottomWidth: i < watched.length - 1 ? 1 : 0, borderBottomColor: colors.line }}>
                   <View style={{ flex: 1, minWidth: 0 }}>
                     <AppText weight="bold" size={15}>{v.name}</AppText>
