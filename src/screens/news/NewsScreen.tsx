@@ -33,8 +33,8 @@ export default function NewsScreen() {
 
   return (
     <Page>
-      <ScreenTitle>{t('news.title')}</ScreenTitle>
       <StickyBlock>
+      <ScreenTitle>{t('news.title')}</ScreenTitle>
       <ChipScroller
         fade
         items={[{ id: 'all', label: t('common.all') }, ...NEWS_CATS.map((c) => ({ id: c.id, label: c.label[lang] }))].map((c) => ({

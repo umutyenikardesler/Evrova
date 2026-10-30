@@ -10,22 +10,17 @@ import { colors } from '../../theme/colors';
 import { changeColor } from '../../utils/color';
 import { currentPrice, formatPct, pctChange } from '../../utils/format';
 import { monthTitle } from '../../utils/months';
-import { nameParts } from '../../utils/name';
-import HomeHeader from './HomeHeader';
 import QuickTiles from './QuickTiles';
 
 export default function HomeScreen() {
-  const { t, lang, vehicles, listMonth, profile, price, notifications } = useApp();
+  const { t, lang, vehicles, listMonth, profile, price } = useApp();
   const nav = useNav();
   const watched = (profile?.watch ?? [])
     .map((id) => vehicles.find((v) => v.id === id))
     .filter((v): v is NonNullable<typeof v> => !!v);
-  const hasUnread = notifications.some((n) => !profile?.readNotifs.includes(n.id));
 
   return (
     <Page>
-      <HomeHeader name={nameParts(profile).full} hasUnread={hasUnread} />
-
       <Card style={{ borderRadius: 22, padding: 18, gap: 6 }}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: 8 }}>
           <AppText weight="semibold" size={13} color={colors.muted}>{t('home.prices')}</AppText>

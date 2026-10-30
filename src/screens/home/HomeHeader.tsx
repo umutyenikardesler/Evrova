@@ -6,13 +6,17 @@ import Tap from '../../components/Tap';
 import { useApp } from '../../context/AppContext';
 import { useNav } from '../../navigation/NavContext';
 import { colors } from '../../theme/colors';
+import { nameParts } from '../../utils/name';
 
-export default function HomeHeader({ name, hasUnread }: { name: string; hasUnread: boolean }) {
-  const { t } = useApp();
+/** Ana sayfanın üst satırı; sayfa kaydırılsa da sabit kalır (MainShell içeriğin üstünde çizer). */
+export default function HomeHeader() {
+  const { t, profile, notifications } = useApp();
   const nav = useNav();
+  const name = nameParts(profile).full;
+  const hasUnread = notifications.some((n) => !profile?.readNotifs.includes(n.id));
   const initial = (name[0] ?? '?').toUpperCase();
   return (
-    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12, paddingHorizontal: 18, paddingTop: 10, paddingBottom: 6, backgroundColor: colors.bg }}>
       <View style={{ width: 48, height: 48, borderRadius: 14, backgroundColor: colors.lime, alignItems: 'center', justifyContent: 'center' }}>
         <Icon name="zap" size={24} color={colors.bg} strokeWidth={2.2} />
       </View>

@@ -4,6 +4,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { GlassTarget } from '../components/Glass';
 import TabBar, { TAB_BAR_SPACE } from '../components/TabBar';
 import Toast from '../components/Toast';
+import HomeHeader from '../screens/home/HomeHeader';
 import HomeScreen from '../screens/home/HomeScreen';
 import NewsScreen from '../screens/news/NewsScreen';
 import ArticleScreen from '../screens/news/ArticleScreen';
@@ -105,6 +106,7 @@ export default function MainShell() {
       {/* İçerik menünün arkasından akar; menü cam efektiyle bunu bulanık gösterir */}
       <GlassTarget ref={blurTarget} style={{ flex: 1 }}>
         <Animated.View style={{ flex: 1, transform: [{ translateX: slide }] }} {...pan.panHandlers}>
+          {nav.tab === 'home' && !nav.detailId && <HomeHeader />}
           <Animated.ScrollView key={screenKey} ref={scrollRef} style={{ flex: 1 }} scrollEventThrottle={16}
             onScroll={onScroll}
             onContentSizeChange={() => { if (pendingY.current > 0) { scrollRef.current?.scrollTo({ y: pendingY.current, animated: false }); pendingY.current = 0; } }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled"

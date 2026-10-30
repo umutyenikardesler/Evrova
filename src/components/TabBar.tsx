@@ -82,7 +82,6 @@ export default function TabBar({ blurTarget }: { blurTarget?: React.RefObject<Vi
   const scaleX = Animated.add(1, Animated.multiply(stretch, dist));
   const scaleY = stretch.interpolate({ inputRange: [0, 1], outputRange: [1, 0.86] });
 
-  const border = dark ? 'rgba(255,255,255,0.20)' : 'rgba(255,255,255,0.85)';
   // Bulanıklık yoksa (eski build) içerik okunmasın diye zemin daha opak olur
   const tint = blurAvailable ? (dark ? 'rgba(28,40,58,0.42)' : 'rgba(255,255,255,0.40)') : (dark ? 'rgba(28,40,58,0.93)' : 'rgba(255,255,255,0.93)');
 
@@ -90,7 +89,7 @@ export default function TabBar({ blurTarget }: { blurTarget?: React.RefObject<Vi
     <View pointerEvents="box-none" style={{ position: 'absolute', left: 16, right: 16, bottom: Math.max(insets.bottom, 12) }}>
       {/* Dış katman: gölge */}
       <View style={{ borderRadius: 32, shadowColor: '#000', shadowOpacity: dark ? 0.45 : 0.18, shadowRadius: 22, shadowOffset: { width: 0, height: 10 }, elevation: 12 }}>
-        <View style={{ height: BAR_HEIGHT, borderRadius: 32, overflow: 'hidden', borderWidth: 1, borderColor: border }}>
+        <View style={{ height: BAR_HEIGHT, borderRadius: 32, overflow: 'hidden', borderWidth: 1, borderColor: colors.lime }}>
           {/* Cam: bulanıklık + yarı saydam renk + üstte parlama */}
           <GlassBlur blurTarget={blurTarget} intensity={dark ? 55 : 70} tint={dark ? 'dark' : 'light'} blurMethod="dimezisBlurViewSdk31Plus" style={StyleSheet.absoluteFill} />
           <View pointerEvents="none" style={[StyleSheet.absoluteFill, { backgroundColor: tint }]} />
