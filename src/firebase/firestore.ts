@@ -1,4 +1,4 @@
-import { collection, doc, onSnapshot, orderBy, query, setDoc, type Unsubscribe } from 'firebase/firestore';
+import { collection, deleteDoc, doc, onSnapshot, orderBy, query, setDoc, type Unsubscribe } from 'firebase/firestore';
 import type { AppNotification, NewsItem, UserProfile, Vehicle } from '../types';
 import { db } from './config';
 
@@ -39,11 +39,21 @@ export function watchUser(uid: string, cb: (p: Partial<UserProfile> | null) => v
   );
 }
 
+/** Hesap silinirken profil belgesinin dinleyici tarafından yeniden oluşturulmasını önler. */
+let userWritesLocked = false;
+export const setUserWritesLocked = (locked: boolean) => { userWritesLocked = locked; };
+
 export async function saveUser(uid: string, data: object): Promise<void> {
-  if (!db) return;
+  if (!db || userWritesLocked) return;
   try {
     await setDoc(doc(db, 'users', uid), data, { merge: true });
   } catch (e) {
     console.warn('[firestore] saveUser:', (e as Error).message);
   }
+}
+
+/** Kullanıcının profil belgesini (tercihler, bildirim kodları) siler. */
+export async function deleteUserData(uid: string): Promise<void> {
+  if (!db) return;
+  await deleteDoc(doc(db, 'users', uid));
 }

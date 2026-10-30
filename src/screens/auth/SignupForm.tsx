@@ -1,8 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
+import LegalSheet from './LegalSheet';
 import AppText from '../../components/AppText';
 import { BackButton, LinkButton, PrimaryButton } from '../../components/Buttons';
 import Icon from '../../components/Icon';
+import PasswordField from '../../components/PasswordField';
 import TextField from '../../components/TextField';
 import Tap from '../../components/Tap';
 import { useApp } from '../../context/AppContext';
@@ -30,8 +32,7 @@ export default function SignupForm({ f }: { f: AuthForm }) {
       </View>
       <TextField height={46} placeholder={t('auth.email')} value={f.email} onChangeText={f.setEmail} error={f.errField === 'email'}
         keyboardType="email-address" autoComplete="email" textContentType="emailAddress" />
-      <TextField height={46} placeholder={t('auth.passwordNew')} value={f.password} onChangeText={f.setPassword} error={f.errField === 'pw'}
-        secureTextEntry textContentType="newPassword" />
+      <PasswordField height={46} placeholder={t('auth.passwordNew')} value={f.password} onChangeText={f.setPassword} error={f.errField === 'pw'} textContentType="newPassword" />
       <Tap onPress={f.toggleTerms} accessibilityRole="checkbox" accessibilityState={{ checked: f.terms }}
         style={{ flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 2 }}>
         <View style={{
@@ -41,8 +42,17 @@ export default function SignupForm({ f }: { f: AuthForm }) {
         }}>
           {f.terms && <Icon name="check" size={13} color={colors.bg} strokeWidth={3.5} />}
         </View>
-        <AppText weight="medium" size={12} color={colors.muted} style={{ flex: 1, lineHeight: 17 }}>{t('auth.terms')}</AppText>
+        <AppText weight="medium" size={12} color={colors.muted} style={{ flex: 1, lineHeight: 17 }}>
+          {t('auth.termsPre')}
+          <AppText weight="bold" size={12} color={f.accepted.terms ? colors.lime : colors.ink} accessibilityRole="link"
+            style={{ textDecorationLine: 'underline' }} onPress={() => f.openLegal('terms')}>{t('auth.termsLink')}</AppText>
+          {t('auth.termsAnd')}
+          <AppText weight="bold" size={12} color={f.accepted.privacy ? colors.lime : colors.ink} accessibilityRole="link"
+            style={{ textDecorationLine: 'underline' }} onPress={() => f.openLegal('privacy')}>{t('auth.privacyLink')}</AppText>
+          {t('auth.termsPost')}
+        </AppText>
       </Tap>
+      <LegalSheet doc={f.legalDoc} accepted={f.legalDoc ? f.accepted[f.legalDoc] : false} onClose={f.closeLegal} onAccept={f.acceptLegal} />
       <AppText weight="semibold" size={12} color={colors.up} style={{ minHeight: 16 }}>{f.error}</AppText>
       <PrimaryButton label={f.loading ? t('auth.creating') : t('auth.signup')} onPress={f.submitSignup} />
       <View style={{ flexDirection: 'row', gap: 10 }}>

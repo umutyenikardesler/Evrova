@@ -2,6 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import AppText from '../../components/AppText';
 import { LinkButton, PrimaryButton } from '../../components/Buttons';
+import PasswordField from '../../components/PasswordField';
 import TextField from '../../components/TextField';
 import { useApp } from '../../context/AppContext';
 import { colors } from '../../theme/colors';
@@ -19,8 +20,7 @@ export default function LoginForm({ f }: { f: AuthForm }) {
       </View>
       <TextField placeholder={t('auth.email')} value={f.email} onChangeText={f.setEmail} error={f.errField === 'email'}
         keyboardType="email-address" autoComplete="email" textContentType="emailAddress" />
-      <TextField placeholder={t('auth.password')} value={f.password} onChangeText={f.setPassword} error={f.errField === 'pw'}
-        secureTextEntry autoComplete="password" textContentType="password" onSubmitEditing={f.submitLogin} returnKeyType="go" />
+      <PasswordField placeholder={t('auth.password')} value={f.password} onChangeText={f.setPassword} error={f.errField === 'pw'} autoComplete="password" textContentType="password" onSubmitEditing={f.submitLogin} returnKeyType="go" />
       <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 10, minHeight: 18 }}>
         <AppText weight="semibold" size={12} color={colors.up} style={{ flex: 1 }}>{f.error}</AppText>
         <LinkButton label={t('auth.forgot')} onPress={f.forgot} size={12} />

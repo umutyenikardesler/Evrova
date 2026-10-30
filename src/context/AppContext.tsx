@@ -4,7 +4,7 @@ import React, { createContext, useCallback, useContext, useEffect, useMemo, useR
 import { NEWS } from '../data/news';
 import { localNotifications } from '../data/notifications';
 import { LIST_MONTH, VEHICLES } from '../data/vehicles';
-import { resetPassword, signIn, signOut, signUp, subscribeAuth, type AuthUser } from '../firebase/auth';
+import { changeEmail, changePassword, createPassword, deleteAccount, resetPassword, signIn, signOut, signUp, subscribeAuth, type AuthUser } from '../firebase/auth';
 import { signInWithSocial, type SocialKind } from '../firebase/social';
 import { saveUser, watchNews, watchNotifications, watchUser, watchVehicles } from '../firebase/firestore';
 import { translate, type Lang, type TKey } from '../i18n';
@@ -23,8 +23,8 @@ const defaultProfile = (user: AuthUser, lang: Lang): UserProfile => ({
   name: user.displayName,
   ...splitName(user.displayName),
   email: user.email,
-  watch: ['togg-t10x-std', 'tesla-model-y', 'ford-e-transit-custom'],
-  alarms: { 'togg-t10x-std': true },
+  watch: [],
+  alarms: {},
   readNotifs: ['a4', 'a5'],
   notif: true,
   compact: false,
@@ -46,6 +46,12 @@ interface AppState {
   register: (firstName: string, lastName: string, email: string, password: string) => Promise<void>;
   updateName: (firstName: string, lastName: string) => void;
   sendReset: (email: string) => Promise<void>;
+  changeEmail: (currentPassword: string, newEmail: string) => Promise<void>;
+  changePassword: (currentPassword: string, newPassword: string) => Promise<void>;
+  /** Apple/Google hesabına şifre ekler; sağlayıcı doğrulaması iptal edilirse false. */
+  createPassword: (newPassword: string) => Promise<boolean>;
+  /** Hesabı ve verilerini kalıcı siler; sosyal doğrulama iptal edilirse false. */
+  deleteAccount: (currentPassword?: string) => Promise<boolean>;
   logout: () => Promise<void>;
 
   vehicles: Vehicle[];
@@ -136,7 +142,11 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     if (user.uid === 'demo') return;
     let created = false;
     return watchUser(user.uid, (remote) => {
-      if (remote) setProfile((p) => ({ ...(p ?? defaultProfile(user, langRef.current)), ...remote }) as UserProfile);
+      if (remote) {
+        // E-posta doğrulama bağlantısıyla değiştiyse profildeki adresi de güncelle (Auth'taki adres esas alınır).
+        if (user.email && remote.email !== user.email) saveUser(user.uid, { email: user.email });
+        setProfile((p) => ({ ...(p ?? defaultProfile(user, langRef.current)), ...remote, ...(user.email ? { email: user.email } : {}) }) as UserProfile);
+      }
       else if (!created) {
         created = true;
         saveUser(user.uid, defaultProfile(user, langRef.current));
@@ -186,6 +196,10 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         update({ firstName, lastName, name: `${firstName} ${lastName}`.trim() });
       },
       sendReset: resetPassword,
+      changeEmail,
+      changePassword,
+      createPassword,
+      deleteAccount,
       logout: signOut,
       vehicles, listMonth: vehicles.find((v) => v.listMonth)?.listMonth ?? LIST_MONTH, news, notifications,
       isWatched: (id) => !!p?.watch.includes(id),

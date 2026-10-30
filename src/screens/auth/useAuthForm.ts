@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { authErrorKey } from '../../firebase/auth';
 import { SOCIAL_UNAVAILABLE, type SocialKind } from '../../firebase/social';
+import type { LegalDocId } from '../../i18n/legal';
 import { useApp } from '../../context/AppContext';
+import { EMAIL_RE } from '../../utils/text';
 
 export type AuthMode = 'login' | 'signup';
 type Field = 'email' | 'pw' | 'first' | 'last' | 'terms' | null;
-
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 /** Giriş / kayıt formunun durumu ve doğrulaması. */
 export function useAuthForm() {
@@ -16,7 +16,10 @@ export function useAuthForm() {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [terms, setTerms] = useState(false);
+  // Kullanım koşulları ve gizlilik politikası ayrı ayrı okunup kabul edilir; ikisi de kabul edilince kutu işaretlenir.
+  const [accepted, setAccepted] = useState<Record<LegalDocId, boolean>>({ terms: false, privacy: false });
+  const [legalDoc, setLegalDoc] = useState<LegalDocId | null>(null);
+  const terms = accepted.terms && accepted.privacy;
   const [error, setError] = useState('');
   const [errField, setErrField] = useState<Field>(null);
   const [loading, setLoading] = useState(false);
@@ -74,7 +77,20 @@ export function useAuthForm() {
     lastName, setLastName: (v: string) => { setLastName(v); clear(); },
     email, setEmail: (v: string) => { setEmail(v); clear(); },
     password, setPassword: (v: string) => { setPassword(v); clear(); },
-    terms, toggleTerms: () => { setTerms((v) => !v); clear(); },
+    terms, accepted, legalDoc,
+    openLegal: (d: LegalDocId) => { setLegalDoc(d); clear(); },
+    closeLegal: () => setLegalDoc(null),
+    acceptLegal: () => {
+      if (legalDoc) setAccepted((a) => ({ ...a, [legalDoc]: true }));
+      setLegalDoc(null);
+      clear();
+    },
+    /** Kutuya dokunma: işaretliyse ikisini de geri alır; değilse henüz kabul edilmemiş ilk metni açar. */
+    toggleTerms: () => {
+      clear();
+      if (terms) setAccepted({ terms: false, privacy: false });
+      else setLegalDoc(accepted.terms ? 'privacy' : 'terms');
+    },
     error, errField, loading,
     submitLogin, submitSignup, forgot,
     social: async (kind: SocialKind) => {

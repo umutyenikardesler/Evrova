@@ -15,6 +15,6 @@ export function translate(lang: Lang, key: TKey, vars?: Record<string, string | 
   let cur: unknown = dictionaries[lang];
   for (const part of key.split('.')) cur = (cur as Record<string, unknown>)?.[part];
   let out = typeof cur === 'string' ? cur : key;
-  if (vars) for (const [k, v] of Object.entries(vars)) out = out.replace(`{${k}}`, String(v));
+  if (vars) for (const [k, v] of Object.entries(vars)) out = out.split(`{${k}}`).join(String(v));
   return out;
 }
