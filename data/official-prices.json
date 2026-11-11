@@ -265,5 +265,451 @@
       "price": 3220000,
       "src": "Hyundai Motor Türkiye IONIQ 3 satış duyurusu (8 Ekim 2026; yesilhaber.net, 9 Ekim)"
     }
+  },
+  "2026-11": {
+    "mercedes-benz-eqa-250plus-night-edition": {
+      "price": 4612000,
+      "src": "fiyat.mercedes-benz.com.tr/model/eqa-fl/fiyat/2026 (02.11.2026 kontrol edildi; sayfa güncelleme tarihi 01.10.2026, fiyat Ekim ile aynı)"
+    },
+    "mercedes-benz-eqe-280-amg": {
+      "price": 6292000,
+      "src": "fiyat.mercedes-benz.com.tr/model/eqe/fiyat/2026 (02.11.2026 kontrol edildi; fiyat Ekim ile aynı)"
+    },
+    "mercedes-benz-eqe-350-4matic-amg": {
+      "price": 7188000,
+      "src": "fiyat.mercedes-benz.com.tr/model/eqe/fiyat/2026 (02.11.2026 kontrol edildi; fiyat Ekim ile aynı)"
+    },
+    "mercedes-benz-g-580-heritage": {
+      "price": 15715000,
+      "src": "fiyat.mercedes-benz.com.tr/model/g-serisi/fiyat/2026 (02.11.2026 kontrol edildi; fiyat Ekim ile aynı)"
+    },
+    "togg-t10x-std": {
+      "price": 1909048,
+      "src": "togg.com.tr/en/price-list (02.11.2026 kontrol edildi, 15.06.2026'dan itibaren geçerli; değişmedi)"
+    },
+    "togg-t10x-v1-rwd-uzun-menzil": {
+      "price": 2219668,
+      "src": "togg.com.tr/en/price-list (02.11.2026 kontrol edildi; değişmedi)"
+    },
+    "togg-t10x-v2-rwd-uzun-menzil": {
+      "price": 2411000,
+      "src": "togg.com.tr/en/price-list (02.11.2026 kontrol edildi; değişmedi)"
+    },
+    "togg-t10x-v2-4more-obsidiyen": {
+      "price": 3218137,
+      "src": "togg.com.tr/en/price-list (02.11.2026 kontrol edildi; değişmedi)"
+    },
+    "togg-t10f-v1-rwd-standart-menzil": {
+      "price": 1884980,
+      "src": "togg.com.tr/en/t10f-price-list (02.11.2026 kontrol edildi; değişmedi)"
+    },
+    "togg-t10f-v1-rwd-uzun-menzil": {
+      "price": 2195600,
+      "src": "togg.com.tr/en/t10f-price-list (02.11.2026 kontrol edildi; değişmedi)"
+    },
+    "togg-t10f-v2-rwd-uzun-menzil": {
+      "price": 2370930,
+      "src": "togg.com.tr/en/t10f-price-list (02.11.2026 kontrol edildi; değişmedi)"
+    },
+    "togg-t10f-v2-4more": {
+      "price": 3217937,
+      "src": "togg.com.tr/en/t10f-price-list (02.11.2026 kontrol edildi; değişmedi)"
+    },
+    "renault-megane-e-tech-ev60-220hp": {
+      "price": 2386000,
+      "src": "renault.com.tr/elektrikli-araclar/megane-e-tech-elektrikli (02.11.2026 kontrol edildi; değişmedi)"
+    },
+    "renault-scenic-e-tech-ev87-220hp-esprit-alpine": {
+      "price": 3490000,
+      "src": "renault.com.tr/elektrikli-araclar/scenic-e-tech-elektrikli (02.11.2026 kontrol edildi; değişmedi)"
+    },
+    "kia-ev2-cool-107-8-kw": {
+      "price": 1819000,
+      "src": "kia.com/tr/modeller/ev2/fiyat-listesi.html (Kasım 2026 fiyat listesi, 01.11.2026'dan itibaren geçerli; tavsiye fiyat, kampanyalı 1.749.000)"
+    },
+    "kia-ev2-elegance-107-8-kw": {
+      "price": 1999000,
+      "src": "kia.com/tr/modeller/ev2/fiyat-listesi.html (Kasım 2026; tavsiye fiyat, kampanyalı 1.929.000)"
+    },
+    "kia-ev2-elegance-99-5-kw-uzun-menzil": {
+      "price": 2199000,
+      "src": "kia.com/tr/modeller/ev2/fiyat-listesi.html (Kasım 2026; tavsiye fiyat, kampanyalı 2.099.000)"
+    },
+    "kia-ev3-cool-150-kw-uzun-menzil": {
+      "price": 2450000,
+      "src": "kia.com/tr/modeller/ev3/fiyat-listesi.html (Kasım 2026; değişmedi)"
+    },
+    "kia-ev3-elegance-comfort-150-kw": {
+      "price": 2485000,
+      "src": "kia.com/tr/modeller/ev3/fiyat-listesi.html (Kasım 2026; değişmedi)"
+    },
+    "kia-ev3-elegance-150-kw-uzun-menzil": {
+      "price": 3199000,
+      "src": "kia.com/tr/modeller/ev3/fiyat-listesi.html (Kasım 2026; Ekim'deki +%28,7 sıçrama resmi sitede ikinci kez doğrulandı, veri hatası değil)"
+    },
+    "kia-ev3-prestige-150-kw": {
+      "price": 3199000,
+      "src": "kia.com/tr/modeller/ev3/fiyat-listesi.html (Kasım 2026; Ekim'deki sıçrama resmi sitede ikinci kez doğrulandı)"
+    },
+    "kia-ev3-gt-line-150-kw-uzun-menzil": {
+      "price": 3790000,
+      "src": "kia.com/tr/modeller/ev3/fiyat-listesi.html (Kasım 2026; değişmedi)"
+    },
+    "kia-niro-ev-elegance-150-kw": {
+      "price": 2299000,
+      "src": "kia.com/tr/modeller/niro-ev/fiyat-listesi.html (Kasım 2026; tavsiye fiyat, Ekim'deki 2.199.000 kampanyalı fiyatı Kasım listesinde yok)"
+    },
+    "kia-ev6-elegance-standart-menzil-125-kw-4x2": {
+      "price": 3790000,
+      "src": "kia.com/tr/modeller/ev6/fiyat-listesi.html (Kasım 2026; sayfada 'EV6 125 kW Otomatik Elegance' olarak geçiyor, 'Standart Menzil' ibaresi yok ama fiyat Ekim ile aynı; değişmedi)"
+    },
+    "kia-ev9-prestige-149-kw-7-koltuk": {
+      "price": 6540000,
+      "src": "kia.com/tr/modeller/ev9/fiyat-listesi.html (Kasım 2026; tavsiye fiyat, kampanyalı 6.390.000, değişmedi)"
+    },
+    "kia-ev9-gt-line-283-kw-4x4-6-koltuk": {
+      "price": 7870000,
+      "src": "kia.com/tr/modeller/ev9/fiyat-listesi.html (Kasım 2026; tavsiye fiyat, kampanyalı 7.720.000, değişmedi)"
+    },
+    "bmw-ix1-edrive20-sport-line": {
+      "price": 4304800,
+      "src": "borusanoto.bmw.com.tr/fiyat-listesi (02.11.2026; değişmedi)"
+    },
+    "bmw-ix1-edrive20-x-line": {
+      "price": 4531200,
+      "src": "borusanoto.bmw.com.tr/fiyat-listesi (02.11.2026; değişmedi)"
+    },
+    "bmw-ix1-edrive20-m-sport": {
+      "price": 4701100,
+      "src": "borusanoto.bmw.com.tr/fiyat-listesi (02.11.2026; değişmedi)"
+    },
+    "bmw-ix2-edrive20-m-sport": {
+      "price": 4747900,
+      "src": "borusanoto.bmw.com.tr/fiyat-listesi (02.11.2026; değişmedi)"
+    },
+    "bmw-ix3-50-xdrive-m-sport": {
+      "price": 6819500,
+      "src": "borusanoto.bmw.com.tr/fiyat-listesi (02.11.2026; değişmedi)"
+    },
+    "bmw-i4-edrive40-sport-line": {
+      "price": 5688000,
+      "src": "borusanoto.bmw.com.tr/fiyat-listesi (02.11.2026; ilk resmi doğrulama, önceki 5.630.700 tahmini taban fiyattı)"
+    },
+    "bmw-i4-edrive40-m-sport": {
+      "price": 6293800,
+      "src": "borusanoto.bmw.com.tr/fiyat-listesi (02.11.2026; Ekim'den +%1,0)"
+    },
+    "bmw-i4-edrive40-edition-m-sport": {
+      "price": 6930900,
+      "src": "borusanoto.bmw.com.tr/fiyat-listesi (02.11.2026; Ekim'den +%1,0)"
+    },
+    "bmw-i5-edrive40-m-sport": {
+      "price": 7921300,
+      "src": "borusanoto.bmw.com.tr/fiyat-listesi (02.11.2026; ilk resmi doğrulama, önceki 7.842.600 tahmini taban fiyattı)"
+    },
+    "bmw-i5-edrive40-edition-m-sport": {
+      "price": 8129500,
+      "src": "borusanoto.bmw.com.tr/fiyat-listesi (02.11.2026; ilk resmi doğrulama)"
+    },
+    "bmw-i5-m60-xdrive": {
+      "price": 10472200,
+      "src": "borusanoto.bmw.com.tr/fiyat-listesi, 'BMW M Modelleri' bölümü (02.11.2026; ilk resmi doğrulama, +%1,1)"
+    },
+    "bmw-i5-m60-xdrive-touring": {
+      "price": 10532400,
+      "src": "borusanoto.bmw.com.tr/fiyat-listesi, 'BMW M Modelleri' bölümü (02.11.2026; ilk resmi doğrulama, +%1,0)"
+    },
+    "bmw-ix-xdrive60-m-sport": {
+      "price": 10893300,
+      "src": "borusanoto.bmw.com.tr/fiyat-listesi (02.11.2026; ilk resmi doğrulama)"
+    },
+    "bmw-ix-m70-xdrive": {
+      "price": 11626800,
+      "src": "borusanoto.bmw.com.tr/fiyat-listesi (02.11.2026; +%1,1; sayfada ayrıca aynı satırda yanlışlıkla i7 M70 fiyatıyla (16.169.400) çakışan ikinci bir 'Yeni BMW iX M70 xDrive' satırı var, görmezden gelindi)"
+    },
+    "bmw-i7-60-xdrive-pure-excellence": {
+      "price": 14522500,
+      "src": "borusanoto.bmw.com.tr/fiyat-listesi, 'Yeni BMW i7' etiketli satır (02.11.2026; ilk resmi doğrulama)"
+    },
+    "bmw-i7-60-xdrive-m-excellence": {
+      "price": 15297100,
+      "src": "borusanoto.bmw.com.tr/fiyat-listesi, 'Yeni BMW i7' etiketli satır (02.11.2026; ilk resmi doğrulama)"
+    },
+    "bmw-i7-m70-xdrive": {
+      "price": 16169400,
+      "src": "borusanoto.bmw.com.tr/fiyat-listesi (02.11.2026; +%1,1)"
+    },
+    "byd-seal-excellence": {
+      "price": 4077000,
+      "src": "bydauto.com.tr/fiyat-listesi (2 Kasım 2026 tarihi için geçerli liste; ilk resmi doğrulama, tavsiye fiyat, kampanyalı 3.772.000; dipnotta '2025 model yılı' ibaresi var)"
+    },
+    "byd-tang-flagship": {
+      "price": 5418000,
+      "src": "bydauto.com.tr/fiyat-listesi (2 Kasım 2026 tarihi için geçerli liste; ilk resmi doğrulama; dipnotta '2025 model yılı' ibaresi var)"
+    },
+    "kia-ev9-gt-line-283-kw-4x4-7-koltuk": {
+      "price": 7870000,
+      "src": "kia.com/tr/modeller/ev9/fiyat-listesi.html (01.11.2026 kontrol edildi; GT-Line 6 ve 7 koltuk aynı sayfada aynı fiyatla listeleniyor, değişmedi)"
+    },
+    "hyundai-ioniq-3-select-standart-menzil-107-8-kw-ekim": {
+      "price": 1799000,
+      "src": "hyundai.com/tr/tr/satis/fiyat-listesi.html (01.11.2026, 08 Ekim kampanya azami fiyatı etiketiyle hâlâ gösteriliyor; değişmedi)"
+    },
+    "hyundai-ioniq-5-dynamic-vision-roof-125-kw-4x2": {
+      "price": 3350000,
+      "src": "hyundai.com/tr/tr/satis/fiyat-listesi.html (01.11.2026, değişmedi)"
+    },
+    "hyundai-ioniq-6-advance-125-kw-standart-menzil": {
+      "price": 3246000,
+      "src": "hyundai.com/tr/tr/satis/fiyat-listesi.html (01.11.2026, değişmedi)"
+    },
+    "hyundai-ioniq-9-progressive-160-kw-4x2": {
+      "price": 6040000,
+      "src": "hyundai.com/tr/tr/satis/fiyat-listesi.html (01.11.2026) — ilk kez resmi siteden doğrulandı; uygulamadaki Eylül tabanından (5.930.000) farkı +%1,9, eşik altı"
+    },
+    "peugeot-e-208-gt-100-kw": {
+      "price": 2080000,
+      "src": "kampanya.peugeot.com.tr/fiyat-listesi (01.11.2026, değişmedi)"
+    },
+    "peugeot-e-2008-allure-115-kw": {
+      "price": 2245000,
+      "src": "kampanya.peugeot.com.tr/fiyat-listesi (01.11.2026, değişmedi)"
+    },
+    "peugeot-e-2008-gt-115-kw": {
+      "price": 2400000,
+      "src": "kampanya.peugeot.com.tr/fiyat-listesi (01.11.2026, değişmedi)"
+    },
+    "peugeot-e-3008-allure-157-kw": {
+      "price": 3384500,
+      "src": "kampanya.peugeot.com.tr/fiyat-listesi (01.11.2026, değişmedi)"
+    },
+    "peugeot-e-3008-gt-157-kw": {
+      "price": 3585000,
+      "src": "kampanya.peugeot.com.tr/fiyat-listesi (01.11.2026, değişmedi)"
+    },
+    "peugeot-e-5008-allure-157-kw": {
+      "price": 3573500,
+      "src": "kampanya.peugeot.com.tr/fiyat-listesi (01.11.2026, değişmedi)"
+    },
+    "peugeot-e-5008-gt-157-kw": {
+      "price": 3717000,
+      "src": "kampanya.peugeot.com.tr/fiyat-listesi (01.11.2026, değişmedi)"
+    },
+    "citroen-e-c3-83-kw-plus": {
+      "price": 1645000,
+      "src": "talep.citroen.com.tr/fiyat-listesi/arac/yeni-ec3 (01.11.2026, değişmedi)"
+    },
+    "citroen-e-c3-83-kw-max": {
+      "price": 1725000,
+      "src": "talep.citroen.com.tr/fiyat-listesi/arac/yeni-ec3 (01.11.2026, değişmedi)"
+    },
+    "citroen-e-c3-aircross-83-kw-max-standart-menzil": {
+      "price": 1875000,
+      "src": "talep.citroen.com.tr/fiyat-listesi/arac/e-c3-aircross (01.11.2026, değişmedi)"
+    },
+    "citroen-e-c3-aircross-83-kw-collection-uzun-menzil": {
+      "price": 1990000,
+      "src": "talep.citroen.com.tr/fiyat-listesi/arac/e-c3-aircross (01.11.2026, değişmedi)"
+    },
+    "citroen-e-c3-aircross-83-kw-max-uzun-menzil": {
+      "price": 2020000,
+      "src": "talep.citroen.com.tr/fiyat-listesi/arac/e-c3-aircross (01.11.2026, değişmedi)"
+    },
+    "citroen-e-c4-115-kw-max": {
+      "price": 2375000,
+      "src": "talep.citroen.com.tr/fiyat-listesi/arac/e-c4 (01.11.2026, değişmedi)"
+    },
+    "citroen-e-c4-x-115-kw-max": {
+      "price": 2340000,
+      "src": "talep.citroen.com.tr/fiyat-listesi/arac/e-c4x (01.11.2026, değişmedi)"
+    },
+    "opel-corsa-e-100-kw-gs": {
+      "price": 1890000,
+      "src": "fiyatlisteleri.opel.com.tr/arac/corsa-e (01.11.2026, MY26, değişmedi)"
+    },
+    "opel-frontera-elektrik-100-kw-gs": {
+      "price": 1895000,
+      "src": "fiyatlisteleri.opel.com.tr/arac/frontera-elektrik (01.11.2026, MY26, değişmedi)"
+    },
+    "opel-frontera-elektrik-100-kw-gs-uzun-menzil": {
+      "price": 2010000,
+      "src": "fiyatlisteleri.opel.com.tr/arac/frontera-elektrik (01.11.2026, MY26, değişmedi)"
+    },
+    "opel-grandland-elektrik-157-kw-edition": {
+      "price": 3200000,
+      "src": "fiyatlisteleri.opel.com.tr/arac/yeni-grandland-elektrik (01.11.2026, MY26, değişmedi)"
+    },
+    "opel-grandland-elektrik-157-kw-gs": {
+      "price": 4220000,
+      "src": "fiyatlisteleri.opel.com.tr/arac/yeni-grandland-elektrik (01.11.2026, MY26, değişmedi) — NOT: resmi sayfada bu donanım '239 kW AWD GS' olarak geçiyor, vehicles.ts'teki '157 kW' etiketiyle uyuşmuyor, spec kontrolü önerilir"
+    },
+    "opel-combo-elektrik-100-kw-edition": {
+      "price": 2200000,
+      "src": "fiyatlisteleri.opel.com.tr/arac/combo-elektrik (01.11.2026, MY26 Tavsiye Edilen Anahtar Teslim Fiyatı) — ÖNCEKİ 2.345.000'den -%6,2, resmi siteden doğrulandı"
+    },
+    "bmw-i5-xdrive40-m-sport": {
+      "price": 8500700,
+      "src": "borusanoto.bmw.com.tr/fiyat-listesi (11.11.2026; sayfada 'BMW i5 xDrive40 Touring M Sport' olarak geçiyor — xDrive40 motoru TR'de sadece Touring gövdede satılıyor; ilk resmi doğrulama, +%1,2)"
+    },
+    "bmw-i5-xdrive40-edition-m-sport": {
+      "price": 8934200,
+      "src": "borusanoto.bmw.com.tr/fiyat-listesi (11.11.2026; 'BMW i5 xDrive40 Touring Edition M Sport'; ilk resmi doğrulama, +%1,2)"
+    },
+    "hyundai-inster-dynamic-71-1-kw": {
+      "price": 1670000,
+      "src": "hyundai.com/tr/tr/modeller/inster/konfigurator.html (11.11.2026; liste/azami fiyat, Kasım kampanyalı 1.520.000; ilk resmi doğrulama, +%4,7)"
+    },
+    "hyundai-inster-advance-84-5-kw": {
+      "price": 1920000,
+      "src": "hyundai.com/tr/tr/modeller/inster/konfigurator.html (11.11.2026; liste fiyat, kampanyalı 1.770.000; ilk resmi doğrulama, +%4,1)"
+    },
+    "hyundai-inster-cross-advance-84-5-kw": {
+      "price": 1970000,
+      "src": "hyundai.com/tr/tr/modeller/inster/konfigurator.html (11.11.2026; liste fiyat, kampanyalı 1.820.000; ilk resmi doğrulama) — ÖNCEKİ 1.840.000'den +%7,1, KONTROL ÖNERİLİR"
+    },
+    "hyundai-ioniq-3-trend-uzun-menzil": {
+      "price": 2099000,
+      "src": "hyundai.com/tr/tr/modeller/ioniq3/konfigurator.html (11.11.2026 kontrol edildi; Ekim'den değişmedi)"
+    },
+    "hyundai-ioniq-3-prime-uzun-menzil": {
+      "price": 2249000,
+      "src": "hyundai.com/tr/tr/modeller/ioniq3/konfigurator.html (11.11.2026 kontrol edildi; değişmedi)"
+    },
+    "hyundai-ioniq-3-n-line-evo-uzun-menzil": {
+      "price": 3220000,
+      "src": "hyundai.com/tr/tr/modeller/ioniq3/konfigurator.html (11.11.2026 kontrol edildi; değişmedi)"
+    },
+    "hyundai-ioniq-6-progressive-160-kw-uzun-menzil": {
+      "price": 3795000,
+      "src": "hyundai.com/tr/tr/modeller/ioniq-6/konfigurator.html (11.11.2026; 84 kWh/160 kW/680 km WLTP eşleşiyor; ilk resmi doğrulama, +%0,7)"
+    },
+    "hyundai-ioniq-9-calligraphy-226-1-kw-4x4": {
+      "price": 7190000,
+      "src": "hyundai.com/tr/tr/modeller/ioniq9/konfigurator.html (11.11.2026; 6 koltuklu, 110,3 kWh/226,1 kW eşleşiyor; ilk resmi doğrulama, +%1,6; Bluelink'li versiyon 7.300.000 TL)"
+    },
+    "citroen-ami-6-kw": {
+      "price": 605000,
+      "src": "talep.citroen.com.tr/fiyat-listesi/binek (11.11.2026; liste fiyatı, kampanyalı 575.000; ilk resmi doğrulama, +%0,8)"
+    },
+    "citroen-ami-dark-side-6-kw": {
+      "price": 620000,
+      "src": "talep.citroen.com.tr/fiyat-listesi/binek (11.11.2026; liste fiyatı, kampanyalı 590.000; ilk resmi doğrulama, +%0,8)"
+    },
+    "citroen-ami-sunrise-6-kw": {
+      "price": 645000,
+      "src": "talep.citroen.com.tr/fiyat-listesi/binek (11.11.2026; liste fiyatı, kampanyalı 615.000; ilk resmi doğrulama, +%0,8)"
+    },
+    "citroen-ami-sunset-6-kw": {
+      "price": 645000,
+      "src": "talep.citroen.com.tr/fiyat-listesi/binek (11.11.2026; liste fiyatı, kampanyalı 615.000; ilk resmi doğrulama, +%0,8)"
+    },
+    "renault-5-e-tech-ev52-150hp": {
+      "price": 2101000,
+      "src": "renault.com.tr/elektrikli-araclar/r5-e-tech-elektrikli/modeller-versiyonlar.html (11.11.2026; 'Techno' donanımı, sayfanın webDisplayPrices.displayPrice alanı; ilk resmi doğrulama, +%0,1)"
+    },
+    "ford-explorer-bev-125-kw-select": {
+      "price": 2322000,
+      "src": "ford.com.tr fwebapi/main/carPriceListNewUI (11.11.2026; 2026 model yılı; ÖNCEKİ 2.232.300'den +%4,0; ilk resmi doğrulama)"
+    },
+    "ford-explorer-bev-140-kw-select": {
+      "price": 2391300,
+      "src": "ford.com.tr fwebapi/main/carPriceListNewUI (11.11.2026; 2026 model yılı; +%4,0; ilk resmi doğrulama)"
+    },
+    "ford-explorer-bev-125-kw-premium": {
+      "price": 2457300,
+      "src": "ford.com.tr fwebapi/main/carPriceListNewUI (11.11.2026; değişmedi; ilk resmi doğrulama)"
+    },
+    "ford-explorer-bev-140-kw-premium": {
+      "price": 3104800,
+      "src": "ford.com.tr fwebapi/main/carPriceListNewUI (11.11.2026; değişmedi; ilk resmi doğrulama)"
+    },
+    "ford-explorer-bev-250-kw-premium": {
+      "price": 4217200,
+      "src": "ford.com.tr fwebapi/main/carPriceListNewUI (11.11.2026; değişmedi; ilk resmi doğrulama)"
+    },
+    "ford-capri-premium-125-kw": {
+      "price": 3211600,
+      "src": "ford.com.tr fwebapi/main/carPriceListNewUI (11.11.2026; değişmedi; ilk resmi doğrulama)"
+    },
+    "ford-capri-premium-140-kw": {
+      "price": 3371600,
+      "src": "ford.com.tr fwebapi/main/carPriceListNewUI (11.11.2026; değişmedi; ilk resmi doğrulama)"
+    },
+    "ford-capri-premium-250-kw": {
+      "price": 4330000,
+      "src": "ford.com.tr fwebapi/main/carPriceListNewUI (11.11.2026; değişmedi; ilk resmi doğrulama)"
+    },
+    "ford-e-transit-custom": {
+      "price": 2851500,
+      "src": "ford.com.tr/fiyat-listesi/ticari/ford-yeni-elektrikli-transit-custom-van (11.11.2026; kampanyalı fiyat — liste fiyatı 3.098.900; değişmedi; ilk resmi doğrulama)"
+    },
+    "ford-e-transit-custom-deluxe-van-340l": {
+      "price": 2920000,
+      "src": "ford.com.tr/fiyat-listesi/ticari/ford-yeni-elektrikli-transit-custom-van (11.11.2026; kampanyalı — liste 3.173.300; değişmedi; ilk resmi doğrulama)"
+    },
+    "ford-e-transit-custom-titanium-van-320s": {
+      "price": 3007500,
+      "src": "ford.com.tr/fiyat-listesi/ticari/ford-yeni-elektrikli-transit-custom-van (11.11.2026; kampanyalı — liste 3.268.400; değişmedi; ilk resmi doğrulama)"
+    },
+    "skoda-elroq-60-e-prestige-204-ps": {
+      "price": 3315000,
+      "src": "skoda.com.tr/fiyat-listesi (11.11.2026, sayfa tarihi 05.11.2026; NOT: sitede güç 190 PS yazıyor, 204 PS değil — spec kontrolü önerilir; ilk resmi doğrulama, +%0,003)"
+    },
+    "skoda-enyaq-60-e-prestige-204-ps": {
+      "price": 4100000,
+      "src": "skoda.com.tr/fiyat-listesi (11.11.2026, sayfa tarihi 05.11.2026; NOT: sitede 190 PS yazıyor; ilk resmi doğrulama, +%2,5)"
+    },
+    "skoda-enyaq-coupe-60-e-sportline-204-ps": {
+      "price": 4200000,
+      "src": "skoda.com.tr/fiyat-listesi (11.11.2026, sayfa tarihi 05.11.2026; NOT: sitede 190 PS yazıyor; ilk resmi doğrulama, +%2,4)"
+    },
+    "skoda-enyaq-coupe-e-rs-340-ps-4x4": {
+      "price": 5650000,
+      "src": "skoda.com.tr/fiyat-listesi (11.11.2026, sayfa tarihi 05.11.2026; ilk resmi doğrulama, +%2,7)"
+    },
+    "volkswagen-id-4-125-kw-170-ps": {
+      "price": 3126250,
+      "src": "binekarac.vw.com.tr/tr/modeller-fiyatlar/volkswagen-fiyat-listesi.html (11.11.2026; 'Pure' donanımı, 2025 model yılı sekmesi; değişmedi; ilk resmi doğrulama)"
+    },
+    "fiat-grande-panda-la-prima-44-kwh": {
+      "price": 1609900,
+      "src": "talep.fiat.com.tr/fiyat-listesi (11.11.2026; ilk resmi doğrulama, +%4,2)"
+    },
+    "fiat-600e-la-prima": {
+      "price": 1989900,
+      "src": "talep.fiat.com.tr/fiyat-listesi (11.11.2026; değişmedi; kampanyalı 1.854.900; ilk resmi doğrulama)"
+    },
+    "fiat-500e-giorgio-armani-42-kwh": {
+      "price": 2379900,
+      "src": "talep.fiat.com.tr/fiyat-listesi (11.11.2026; değişmedi; ilk resmi doğrulama)"
+    },
+    "fiat-topolino-6-kw": {
+      "price": 629900,
+      "src": "talep.fiat.com.tr/fiyat-listesi (11.11.2026; değişmedi; kampanyalı 579.900; ilk resmi doğrulama)"
+    },
+    "fiat-topolino-plus-6-kw": {
+      "price": 654900,
+      "src": "talep.fiat.com.tr/fiyat-listesi (11.11.2026; değişmedi; kampanyalı 604.900; ilk resmi doğrulama)"
+    },
+    "fiat-e-doblo-cargo": {
+      "price": 2116900,
+      "src": "talep.fiat.com.tr/fiyat-listesi, Ticari Araç Fiyat Listesi (11.11.2026; değişmedi; ilk resmi doğrulama)"
+    },
+    "tesla-model-y": {
+      "price": 2474985,
+      "src": "Tesla TR resmi liste (tesla.com 403; cnbce.com + webtekno.com 06.11.2026 ile çapraz doğrulandı, 11.11.2026 kontrol edildi); değişmedi"
+    },
+    "tesla-model-y-premium-uzun-menzil-arkadan-cekis": {
+      "price": 3906000,
+      "src": "Tesla TR resmi liste (tesla.com 403; cnbce.com + webtekno.com 06.11.2026 ile çapraz doğrulandı, 11.11.2026 kontrol edildi); değişmedi"
+    },
+    "tesla-model-y-premium-uzun-menzil-dort-ceker": {
+      "price": 4620000,
+      "src": "Tesla TR resmi liste (tesla.com 403; cnbce.com + webtekno.com 06.11.2026 ile çapraz doğrulandı, 11.11.2026 kontrol edildi); değişmedi"
+    },
+    "tesla-model-y-performance-dort-ceker": {
+      "price": 4966500,
+      "src": "Tesla TR resmi liste (tesla.com 403; cnbce.com + webtekno.com 06.11.2026 ile çapraz doğrulandı, 11.11.2026 kontrol edildi); değişmedi"
+    }
   }
 }
